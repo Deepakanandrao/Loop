@@ -1773,6 +1773,9 @@
         }
       }
     },
+    "Brisk" : {
+
+    },
     "Cannot be enabled when the preview is disabled." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4390,6 +4393,9 @@
           }
         }
       }
+    },
+    "Fluid" : {
+
     },
     "Focus window on resize" : {
       "extractionState" : "manual",
@@ -16875,6 +16881,9 @@
         }
       }
     },
+    "Relaxed" : {
+
+    },
     "Remind me later" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19955,6 +19964,9 @@
           }
         }
       }
+    },
+    "Snappy" : {
+
     },
     "Some features, ideas, and bug fixes" : {
       "extractionState" : "manual",

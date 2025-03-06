@@ -106,7 +106,7 @@ class CGEventMonitor: EventMonitor, Identifiable, Equatable {
                 let observer = Unmanaged<CGEventMonitor>.fromOpaque(refcon!).takeUnretainedValue()
                 return observer.handleEvent(event: event)
             },
-            userInfo: Unmanaged.passRetained(self).toOpaque()
+            userInfo: Unmanaged.passUnretained(self).toOpaque()
         )
 
         if let eventTap {
@@ -130,7 +130,8 @@ class CGEventMonitor: EventMonitor, Identifiable, Equatable {
             self.runLoopSource = nil
         }
 
-        if eventTap != nil {
+        if let eventTap {
+            CFMachPortInvalidate(eventTap)
             self.eventTap = nil
         }
     }
