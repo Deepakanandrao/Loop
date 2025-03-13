@@ -186,7 +186,7 @@ private extension Migrator {
         let keybinds = SavedKeybindsFormat.generateFromDefaults()
 
         let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted]
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         let data = try encoder.encode(keybinds)
 
         guard let json = String(data: data, encoding: .utf8) else {
