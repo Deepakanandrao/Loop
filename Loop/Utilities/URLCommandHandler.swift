@@ -464,13 +464,10 @@ final class URLCommandHandler {
             writeToOutput("Executing custom action: \(customAction.name ?? "unnamed")")
 
             // Try multiple methods to get the target window
-            var targetWindow = WindowEngine.getTargetWindow()
-            if targetWindow == nil {
-                targetWindow = findTargetWindow(from: WindowEngine.windowList.filter { win in
-                    guard let app = win.nsRunningApplication else { return false }
-                    return app.activationPolicy == .regular && !win.isHidden && !win.minimized
-                })
-            }
+            let targetWindow = findTargetWindow(from: WindowEngine.windowList.filter { win in
+                guard let app = win.nsRunningApplication else { return false }
+                return app.activationPolicy == .regular && !win.isHidden && !win.minimized
+            })
 
             if let window = targetWindow,
                let screen = NSScreen.main {
@@ -483,7 +480,7 @@ final class URLCommandHandler {
             // For list command, just show the actions without the invalid message
             printAvailableActions()
         } else if let direction = WindowDirection.allCases.first(where: { $0.rawValue.lowercased() == actionStr }),
-                  let window = WindowEngine.getTargetWindow() ?? findTargetWindow(from: WindowEngine.windowList),
+                  let window = findTargetWindow(from: WindowEngine.windowList),
                   let screen = NSScreen.main {
             writeToOutput("Executing action: \(direction.rawValue)")
             activateAndResizeWindow(window, .init(direction), screen)
