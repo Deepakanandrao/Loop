@@ -13,6 +13,7 @@
 		4C6B93E72C1DCF6E00AFF832 /* TheLoopTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B93E12C1DCF6E00AFF832 /* TheLoopTimes.swift */; };
 		4C6B93E82C1DCF6E00AFF832 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B93E22C1DCF6E00AFF832 /* Updater.swift */; };
 		4C6B93E92C1DCF6E00AFF832 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B93E32C1DCF6E00AFF832 /* UpdateView.swift */; };
+		4C93290A2D79928E00CE0B72 /* URLCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9329092D79928E00CE0B72 /* URLCommandHandler.swift */; };
 		4CD883A42C30F0D7009A132A /* WallpaperColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD883A32C30F0D7009A132A /* WallpaperColors.swift */; };
 		A8055EC22AFEDE0B00459D13 /* Keycorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8055EC12AFEDE0B00459D13 /* Keycorder.swift */; };
 		A80900D52AA3F9F30085C63B /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80900D32AA3F9F20085C63B /* VisualEffectView.swift */; };
@@ -99,6 +100,7 @@
 		4C6B93E12C1DCF6E00AFF832 /* TheLoopTimes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheLoopTimes.swift; sourceTree = "<group>"; };
 		4C6B93E22C1DCF6E00AFF832 /* Updater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		4C6B93E32C1DCF6E00AFF832 /* UpdateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		4C9329092D79928E00CE0B72 /* URLCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCommandHandler.swift; sourceTree = "<group>"; };
 		4CD883A32C30F0D7009A132A /* WallpaperColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperColors.swift; sourceTree = "<group>"; };
 		A80521312A84878200BF7E22 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A8055EC12AFEDE0B00459D13 /* Keycorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycorder.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				A8D6D3002B6C894C0061B11F /* PaddingModel.swift */,
 				A80D49BA2BAE479900493B67 /* Migrator.swift */,
 				4C0F2ACE2C3CFD09006CB34D /* RectangleTranslationLayer.swift */,
+				4C9329092D79928E00CE0B72 /* URLCommandHandler.swift */,
 				A86B97AC2AB79E2500099D7F /* ShakeEffect.swift */,
 				A80900D32AA3F9F20085C63B /* VisualEffectView.swift */,
 				A8D6D3042B6C92F20061B11F /* WallpaperView.swift */,
@@ -638,6 +641,7 @@
 				A8A583B82BE5A117005F4CB2 /* CycleActionConfigurationView.swift in Sources */,
 				A8A1C5212BD4863B00515A14 /* KeybindsConfigurationView.swift in Sources */,
 				A88E83C52B37B354009D332F /* CGEvent+Extensions.swift in Sources */,
+				4C93290A2D79928E00CE0B72 /* URLCommandHandler.swift in Sources */,
 				A8E8903C2BA7AAFE006C5074 /* NSEvent+Extensions.swift in Sources */,
 				0A6DC3EB2BB869DE002AB05F /* WindowAction+Image.swift in Sources */,
 				A83E1C352ABFCA3200853FE9 /* WindowRecords.swift in Sources */,
