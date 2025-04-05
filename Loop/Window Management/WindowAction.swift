@@ -133,28 +133,32 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
         return result.normalized()
     }
 
+    /// Returns the frame for the specified window action within a given boundary.
+    /// - Parameters:
+    ///   - window: the window to be manipulated.
+    ///   - bounds: the boundary within which the window should be manipulated.
+    ///   - disablePadding: whether to disable padding. `true` when calculating non-AX-usage frames, such as for angle calculations in radial menu or in config UI.
+    ///   - screen: the screen on which the bounds are located. Only used to determine if padding should be applied (see `getBounds()`).
+    ///   - isPreview: ensures that when manipulating the preview window, the last target frame does not affect the actual resizing of the window.
+    /// - Returns: the calculated frame for the specified window action.
     func getFrame(window: Window?, bounds: CGRect, disablePadding: Bool = false, screen: NSScreen? = nil, isPreview: Bool = false) -> CGRect {
         let noFrameActions: [WindowDirection] = [.noAction, .cycle, .minimize, .hide]
         guard !noFrameActions.contains(direction) else {
             return NSRect(origin: bounds.center, size: .zero)
         }
 
-        var bounds = bounds
-        var result: CGRect = .zero
-
-        // Get padded bounds only if padding can be applied
-        if !disablePadding && Defaults[.enablePadding],
-           Defaults[.paddingMinimumScreenSize] == .zero || screen?.diagonalSize ?? .zero > Defaults[.paddingMinimumScreenSize] {
-            bounds = getPaddedBounds(bounds)
-        }
-
         if !willManipulateExistingWindowFrame {
             LoopManager.sidesToAdjust = nil
         }
 
-        result = calculateTargetFrame(direction, window, bounds, isPreview)
+        var bounds: CGRect = getBounds(from: bounds, disablePadding: disablePadding, screen: screen)
+        var result: CGRect = calculateTargetFrame(direction, window, bounds, isPreview)
 
         if !disablePadding {
+            // Convert rects to integers as that's what the AX API works with to move windows
+            bounds = bounds.integerRect()
+            result = result.integerRect()
+
             // If window can't be resized, center it within the already-resized frame.
             if let window, window.isResizable == false {
                 result = window.frame.size
@@ -183,6 +187,16 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
 // MARK: - Window Frame Calculations
 
 private extension WindowAction {
+    func getBounds(from originalBounds: CGRect, disablePadding: Bool, screen: NSScreen?) -> CGRect {
+        // Get padded bounds only if padding can be applied
+        if !disablePadding && Defaults[.enablePadding],
+           Defaults[.paddingMinimumScreenSize] == .zero || screen?.diagonalSize ?? .zero > Defaults[.paddingMinimumScreenSize] {
+            getPaddedBounds(originalBounds)
+        } else {
+            originalBounds
+        }
+    }
+
     func calculateTargetFrame(_ direction: WindowDirection, _ window: Window?, _ bounds: CGRect, _ isPreview: Bool) -> CGRect {
         var result: CGRect = .zero
 
