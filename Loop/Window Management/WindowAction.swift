@@ -552,22 +552,22 @@ private extension WindowAction {
             return croppedWindowFrame
         }
 
-        if abs(croppedWindowFrame.minX - bounds.minX) <= 2 {
+        if abs(croppedWindowFrame.minX - bounds.minX) > 1 {
             tempLogger.log("Applying inter-window padding to left; croppedWindowFrame.minX: \(croppedWindowFrame.minX) bounds.minX: \(bounds.minX)")
             croppedWindowFrame = croppedWindowFrame.padding(.leading, halfPadding)
         }
 
-        if abs(croppedWindowFrame.maxX - bounds.maxX) <= 2 {
+        if abs(croppedWindowFrame.maxX - bounds.maxX) > 1 {
             tempLogger.log("Applying inter-window padding to right; croppedWindowFrame.maxX: \(croppedWindowFrame.maxX) bounds.maxX: \(bounds.maxX)")
             croppedWindowFrame = croppedWindowFrame.padding(.trailing, halfPadding)
         }
 
-        if abs(croppedWindowFrame.minY - bounds.minY) <= 2 {
+        if abs(croppedWindowFrame.minY - bounds.minY) > 1 {
             tempLogger.log("Applying inter-window padding to top; croppedWindowFrame.minY: \(croppedWindowFrame.minY) bounds.minY: \(bounds.minY)")
             croppedWindowFrame = croppedWindowFrame.padding(.top, halfPadding)
         }
 
-        if abs(croppedWindowFrame.maxY - bounds.maxY) <= 2 {
+        if abs(croppedWindowFrame.maxY - bounds.maxY) > 1 {
             tempLogger.log("Applying inter-window padding to bottom; croppedWindowFrame.maxY: \(croppedWindowFrame.maxY) bounds.maxY: \(bounds.maxY)")
             croppedWindowFrame = croppedWindowFrame.padding(.bottom, halfPadding)
         }
