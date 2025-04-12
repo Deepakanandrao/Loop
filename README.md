@@ -106,6 +106,39 @@ To set Caps Lock as your trigger key, you have two options:
 - [Hyperkey](https://hyperkey.app/)
 - [Karabiner Elements](https://karabiner-elements.pqrs.org/)
 
+#### c. Shell/AppleScript
+
+Loop can be controlled via shell commands or AppleScript using its URL scheme:
+
+```bash
+# Shell examples
+open "loop://direction/right"     # Move window to right half
+open "loop://action/maximize"     # Maximize window
+open "loop://screen/next"         # Move to next screen
+
+# AppleScript examples
+osascript -e 'tell application "Loop" to activate'
+osascript -e 'open location "loop://direction/left"'
+```
+
+You can also create custom scripts to chain multiple actions:
+
+```bash
+#!/bin/bash
+# Example: Move window right and then maximize
+open "loop://direction/right"
+sleep 0.5
+open "loop://action/maximize"
+```
+
+For a complete list of available commands:
+
+```bash
+open "loop://list/all"           # List all commands
+open "loop://list/actions"       # List window actions
+open "loop://list/keybinds"      # List custom keybinds
+```
+
 ### Keyboard Shortcuts
 
 <table>
