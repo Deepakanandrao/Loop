@@ -32,7 +32,7 @@ class AboutConfigurationModel: ObservableObject {
         ),
         .init(
             "Kami",
-            "Development support",
+            "Development",
             url: .init(string: "https://github.com/senpaihunters")!,
             avatar: Image(.kami)
         ),
