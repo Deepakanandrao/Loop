@@ -192,4 +192,15 @@ extension CGRect {
 
         return result
     }
+
+    /// Returns a new rectangle with integer values for the origin and size.
+    /// - Returns: A new rectangle with integer values for the origin and size.
+    func integerRect() -> CGRect {
+        CGRect(
+            x: floor(minX),
+            y: floor(minY),
+            width: floor(width),
+            height: floor(height)
+        )
+    }
 }
