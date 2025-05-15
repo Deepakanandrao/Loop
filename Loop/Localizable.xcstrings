@@ -54,7 +54,7 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%@"
           }
         },
@@ -285,7 +285,7 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%lld"
           }
         },
@@ -1774,7 +1774,14 @@
       }
     },
     "Brisk" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "민첩함"
+          }
+        }
+      }
     },
     "Cannot be enabled when the preview is disabled." : {
       "extractionState" : "manual",
@@ -4395,7 +4402,14 @@
       }
     },
     "Fluid" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "부드러움"
+          }
+        }
+      }
     },
     "Focus window on resize" : {
       "extractionState" : "manual",
@@ -4592,8 +4606,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Go Back"
+            "state" : "translated",
+            "value" : "뒤로 가기"
           }
         },
         "nl-BE" : {
@@ -5670,8 +5684,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Daylight"
+            "state" : "translated",
+            "value" : "주간"
           }
         },
         "nl-BE" : {
@@ -10838,8 +10852,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "macOS's \"Tile by dragging windows to screen edges\" feature is currently\nenabled, which will conflict with Loop's window snapping functionality."
+            "state" : "translated",
+            "value" : "macOS의 \"창을 화면 가장자리로 드래그하여 타일 배치\" 기능이 현재 활성화되어 있으며, 이는 Loop의 창 스냅 기능과 충돌할 수 있습니다."
           }
         },
         "nl-BE" : {
@@ -16882,7 +16896,14 @@
       }
     },
     "Relaxed" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "느긋함"
+          }
+        }
+      }
     },
     "Remind me later" : {
       "extractionState" : "manual",
@@ -17773,8 +17794,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Screen capture access"
+            "state" : "translated",
+            "value" : "화면 캡처 접근 권한"
           }
         },
         "nl-BE" : {
@@ -17850,8 +17871,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Please grant access to be able to dynamically set Loop's accent color based on your wallpaper. Please relaunch %@ after granting access."
+            "state" : "translated",
+            "value" : "배경화면에 따라 Loop의 강조 색상을 동적으로 설정할 수 있도록 접근 권한을 부여해주세요. 접근 권한을 부여한 후 %@을(를) 다시 실행해주세요."
           }
         },
         "nl-BE" : {
@@ -17927,8 +17948,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "%@ Needs Screen Recording Permissions"
+            "state" : "translated",
+            "value" : "%@ 화면 녹화 권한이 필요합니다"
           }
         },
         "nl-BE" : {
@@ -18158,8 +18179,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Select a keybinds file"
+            "state" : "translated",
+            "value" : "키바인드 파일 선택"
           }
         },
         "nl-BE" : {
@@ -18543,8 +18564,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "About"
+            "state" : "translated",
+            "value" : "정보"
           }
         },
         "nl-BE" : {
@@ -18620,8 +18641,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Accent Color"
+            "state" : "translated",
+            "value" : "강조 색상"
           }
         },
         "nl-BE" : {
@@ -18697,8 +18718,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Advanced"
+            "state" : "translated",
+            "value" : "고급"
           }
         },
         "nl-BE" : {
@@ -18774,8 +18795,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Behavior"
+            "state" : "translated",
+            "value" : "동작"
           }
         },
         "nl-BE" : {
@@ -18851,8 +18872,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Excluded Apps"
+            "state" : "translated",
+            "value" : "제외된 앱"
           }
         },
         "nl-BE" : {
@@ -18928,8 +18949,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Icon"
+            "state" : "translated",
+            "value" : "아이콘"
           }
         },
         "nl-BE" : {
@@ -19005,8 +19026,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Keybinds"
+            "state" : "translated",
+            "value" : "키바인드"
           }
         },
         "nl-BE" : {
@@ -19082,8 +19103,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Preview"
+            "state" : "translated",
+            "value" : "미리보기"
           }
         },
         "nl-BE" : {
@@ -19159,8 +19180,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "방사형 메뉴"
+            "state" : "translated",
+            "value" : "원형 메뉴 "
           }
         },
         "nl-BE" : {
@@ -19966,7 +19987,14 @@
       }
     },
     "Snappy" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "빠릿함"
+          }
+        }
+      }
     },
     "Some features, ideas, and bug fixes" : {
       "extractionState" : "manual",
@@ -20702,8 +20730,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "There are other keybinds that conflict with this key combination."
+            "state" : "translated",
+            "value" : "이 키 조합과 충돌하는 다른 키바인드가 있습니다"
           }
         },
         "nl-BE" : {
@@ -21278,7 +21306,14 @@
       }
     },
     "Updates are disabled" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "업데이트가 비활성화됨"
+          }
+        }
+      }
     },
     "Use coordinates" : {
       "extractionState" : "manual",
@@ -21475,8 +21510,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Use macOS window manager when available"
+            "state" : "translated",
+            "value" : "사용 가능한 경우 macOS 창 관리자 사용"
           }
         },
         "nl-BE" : {
@@ -23169,8 +23204,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Horizontal Center Half"
+            "state" : "translated",
+            "value" : "수평 중앙 절반"
           }
         },
         "nl-BE" : {
@@ -23862,8 +23897,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Maximize Height"
+            "state" : "translated",
+            "value" : "높이 최대화"
           }
         },
         "nl-BE" : {
@@ -23939,8 +23974,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Maximize Width"
+            "state" : "translated",
+            "value" : "너비 최대화"
           }
         },
         "nl-BE" : {
@@ -25710,8 +25745,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Vertical Center Half"
+            "state" : "translated",
+            "value" : "수직 중앙 절반"
           }
         },
         "nl-BE" : {
