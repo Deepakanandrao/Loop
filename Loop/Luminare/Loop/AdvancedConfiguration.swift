@@ -47,7 +47,6 @@ class AdvancedConfigurationModel: ObservableObject {
     @Published var didResetSuccessfullyAlert = false
 
     @Published var isAccessibilityAccessGranted = AccessibilityManager.getStatus()
-    @Published var isScreenCaptureAccessGranted = ScreenCaptureManager.getStatus()
     @Published var accessibilityChecker: Publishers.Autoconnect<Timer.TimerPublisher> = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @Published var accessibilityChecks: Int = 0
 
@@ -224,7 +223,6 @@ struct AdvancedConfigurationView: View {
     func permissionsSection() -> some View {
         LuminareSection("Permissions") {
             accessibilityComponent()
-            screenCaptureComponent()
         }
         .onReceive(model.accessibilityChecker) { _ in
             model.refreshAccessiblityStatus()
@@ -250,32 +248,6 @@ struct AdvancedConfigurationView: View {
                     .padding(.horizontal, 8)
             }
             .disabled(model.isAccessibilityAccessGranted)
-            .buttonStyle(LuminareCompactButtonStyle(extraCompact: true))
-        }
-        .padding(.leading, 8)
-        .padding(.trailing, 2)
-        .frame(height: elementHeight)
-    }
-
-    func screenCaptureComponent() -> some View {
-        HStack {
-            if model.isScreenCaptureAccessGranted {
-                Image(._18PxBadgeCheck2)
-                    .foregroundStyle(tintColor())
-            }
-
-            Text("Screen capture access")
-
-            Spacer()
-
-            Button {
-                ScreenCaptureManager.requestAccess()
-            } label: {
-                Text("Request…")
-                    .frame(height: 30)
-                    .padding(.horizontal, 8)
-            }
-            .disabled(model.isScreenCaptureAccessGranted)
             .buttonStyle(LuminareCompactButtonStyle(extraCompact: true))
         }
         .padding(.leading, 8)
