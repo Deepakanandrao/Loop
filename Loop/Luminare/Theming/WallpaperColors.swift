@@ -201,11 +201,64 @@ public class WallpaperProcessor {
     /// - Returns: An NSImage of the screenshot or nil if the operation fails.
     private static func takeScreenshot() async -> NSImage? {
         let screen = NSScreen.screenWithMouse ?? NSScreen.main ?? NSScreen.screens[0]
+        let screenFrame = screen.displayBounds
+        let windows = CGWindowListCopyWindowInfo(.optionAll, kCGNullWindowID) as! [[CFString: Any]]
+        var wallpaperWindows = windows
+            .filter { $0[kCGWindowOwnerName] as? String == "Dock" }
+            .filter { ($0[kCGWindowName] as? String ?? "").contains("Wallpaper") }
+            .filter { $0[kCGWindowIsOnscreen] as? Int == 1 }
+            .filter { window in
+                if let bounds = window[kCGWindowBounds] as? [String: CGFloat],
+                   bounds["X"] == screenFrame.origin.x,
+                   bounds["Y"] == screenFrame.origin.y,
+                   bounds["Width"] == screenFrame.width,
+                   bounds["Height"] == screenFrame.height {
+                    true
+                } else {
+                    false
+                }
+            }
+            .map { $0[kCGWindowNumber] as! CGWindowID }
 
-        guard let screenshotCGImage = CGDisplayCreateImage(screen.displayID!) else {
+        let cid = CGSMainConnectionID()
+        let images = CGSHWCaptureWindowList(
+            cid,
+            &wallpaperWindows,
+            wallpaperWindows.count,
+            [.ignoreGlobalClipShape, .bestResolution, .fullSize]
+        ).takeUnretainedValue() as! [CGImage]
+
+        if let image = images.first {
+            return NSImage(cgImage: image, size: NSSize.zero)
+        } else {
             NSLog("Failed to capture the desktop wallpaper.")
             return nil
         }
-        return NSImage(cgImage: screenshotCGImage, size: NSSize.zero)
     }
+}
+
+// MARK: - Private APIs
+// Thanks to AltTab for some of the code!
+
+typealias CGSConnectionID = UInt32
+
+@_silgen_name("CGSMainConnectionID")
+func CGSMainConnectionID() -> CGSConnectionID
+
+@_silgen_name("CGSHWCaptureWindowList")
+func CGSHWCaptureWindowList(
+    _ cid: CGSConnectionID,
+    _ windowList: UnsafeMutablePointer<CGWindowID>,
+    _ windowCount: Int,
+    _ options: CGSWindowCaptureOptions
+) -> Unmanaged<CFArray>
+
+struct CGSWindowCaptureOptions: OptionSet {
+    let rawValue: UInt32
+    static let ignoreGlobalClipShape = CGSWindowCaptureOptions(rawValue: 1 << 11)
+    // on a retina display, 1px is spread on 4px, so nominalResolution is 1/4 of bestResolution
+    static let nominalResolution = CGSWindowCaptureOptions(rawValue: 1 << 9)
+    static let bestResolution = CGSWindowCaptureOptions(rawValue: 1 << 8)
+    // when Stage Manager is enabled, screenshots can become skewed. This param gets us full-size screenshots regardless
+    static let fullSize = CGSWindowCaptureOptions(rawValue: 1 << 19)
 }
