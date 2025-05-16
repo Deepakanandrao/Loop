@@ -8,6 +8,19 @@
 import Defaults
 import SwiftUI
 
+// MARK: - Wallpaper processor error
+
+/// Represents errors that can occur during wallpaper processing.
+public enum WallpaperProcessorError: Error {
+    case screenshotFailed
+    case dominantColorsCalculationFailed
+    case noWallpaperWindowsFound
+    case wallpaperWindowCaptureFailed
+    case screenCaptureFailed
+    case imageResizeFailed
+    case bitmapCreationFailed
+}
+
 // MARK: - Wallpaper colour processor
 
 /// IMPORTANT: FOR THE COLOR EXTRACTION FEATURE TO FUNCTION AUTOMATICALLY WITH LOOP, IT'S CRUCIAL TO GRANT
@@ -50,7 +63,7 @@ extension NSImage {
             let dataProvider = resizedCGImage.dataProvider,
             let data = CFDataGetBytePtr(dataProvider.data)
         else {
-            NSLog("Error: Unable to get CGImage or its data provider from the resized image.")
+            NSLog("Error: \(WallpaperProcessorError.imageResizeFailed)")
             return nil
         }
 
@@ -173,7 +186,7 @@ extension NSImage {
             samplesPerPixel: 4, hasAlpha: true, isPlanar: false,
             colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0
         ) else {
-            NSLog("Error: Unable to create NSBitmapImageRep for new size.")
+            NSLog("Error: \(WallpaperProcessorError.bitmapCreationFailed)")
             return nil
         }
         bitmapRep.size = newSize
@@ -225,7 +238,7 @@ public class WallpaperProcessor {
     }
 
     /// Processes the current wallpaper and returns the dominant colors.
-    /// - Throws: An error if the screenshot fails or dominant colors cannot be calculated.
+    /// - Throws: A WallpaperProcessorError if the screenshot fails or dominant colors cannot be calculated.
     /// - Returns: An array of NSColor representing the dominant colors.
     ///
     /// This method coordinates the wallpaper capture and color analysis process.
@@ -236,11 +249,7 @@ public class WallpaperProcessor {
         // Take a screenshot of the main display.
         guard let screenshot = await takeScreenshot() else {
             // If taking a screenshot fails, throw an error.
-            throw NSError(
-                domain: "WallpaperProcessorError",
-                code: 1,
-                userInfo: [NSLocalizedDescriptionKey: "Failed to take a screenshot of the desktop wallpaper."]
-            )
+            throw WallpaperProcessorError.screenshotFailed
         }
 
         // Calculate the dominant colors from the screenshot.
@@ -249,11 +258,7 @@ public class WallpaperProcessor {
         // Ensure that dominant colors are calculated and the array is not empty.
         guard let colors = dominantColors, !colors.isEmpty else {
             // If no colors are found, throw an error.
-            throw NSError(
-                domain: "WallpaperProcessorError",
-                code: 2,
-                userInfo: [NSLocalizedDescriptionKey: "Could not calculate the dominant colors."]
-            )
+            throw WallpaperProcessorError.dominantColorsCalculationFailed
         }
 
         return colors
@@ -262,9 +267,10 @@ public class WallpaperProcessor {
     /// Takes a screenshot of the main display.
     /// - Returns: An NSImage of the screenshot or nil if the operation fails.
     ///
-    /// This method attempts to capture the desktop wallpaper using two approaches:
-    /// 1. First, it tries to find and capture the Dock's wallpaper window directly
-    /// 2. If that fails, it falls back to capturing the entire screen
+    /// This method attempts to capture the desktop wallpaper using three approaches:
+    /// 1. First, it tries to find and capture the Dock's wallpaper window directly that matches our screen dimensions
+    /// 2. If that fails, it tries to capture any wallpaper window from the Dock (even if not on our exact screen)
+    /// 3. As a last resort, it falls back to capturing the entire screen
     ///
     /// The direct wallpaper capture is preferred as it gets only the wallpaper without desktop icons,
     /// but requires accessibility permissions (this is accepted required for Loop, so it's fine).
@@ -273,35 +279,45 @@ public class WallpaperProcessor {
         let screen = NSScreen.screenWithMouse ?? NSScreen.main ?? NSScreen.screens[0]
         let screenFrame = screen.displayBounds
 
-        // First try to get the wallpaper window from the Dock app
-        if let wallpaperImage = try? await captureWallpaperFromDock(screenFrame: screenFrame) {
+        // First try to get the wallpaper window from the Dock app that matches our screen dimensions
+        if let wallpaperImage = try? await captureWallpaperFromDock(screenFrame: screenFrame, matchFrame: true) {
             return wallpaperImage
         }
 
-        // Fall back to capturing the full screen if we couldn't get the wallpaper
+        // Second fallback: try to get any wallpaper window from the Dock, regardless of screen dimensions
+        if let anyWallpaperImage = try? await captureWallpaperFromDock(screenFrame: screenFrame, matchFrame: false) {
+            return anyWallpaperImage
+        }
+
+        // Final fallback: capture the full screen if we couldn't get any wallpaper window
         if let fallbackImage = try? await captureFullScreen() {
             return fallbackImage
         }
 
-        NSLog("Failed to capture the desktop wallpaper using any method.")
+        NSLog("Error: \(WallpaperProcessorError.screenshotFailed)")
         return nil
     }
 
     /// Attempts to capture the wallpaper window from the Dock app.
-    /// - Parameter screenFrame: The frame of the screen to capture.
+    /// - Parameters:
+    ///   - screenFrame: The frame of the screen to capture.
+    ///   - matchFrame: Whether to match the exact screen frame dimensions or get any wallpaper window.
     /// - Returns: An NSImage of the wallpaper or nil if the operation fails.
     ///
     /// This approach uses window capturing APIs to specifically target the Dock's wallpaper window.
     /// It requires appropriate permissions, but provides the cleanest capture of just the wallpaper.
     /// The method identifies the wallpaper window by filtering window properties from the Dock process.
-    private static func captureWallpaperFromDock(screenFrame: CGRect) async throws -> NSImage? {
-        // Get all windows and filter for the Dock's wallpaper windows that match our screen dimensions
+    private static func captureWallpaperFromDock(screenFrame: CGRect, matchFrame: Bool) async throws -> NSImage? {
+        // Get all windows and filter for the Dock's wallpaper windows
         let windows = CGWindowListCopyWindowInfo(.optionAll, kCGNullWindowID) as! [[CFString: Any]]
         var wallpaperWindows = windows
             .filter { $0[kCGWindowOwnerName] as? String == "Dock" }
             .filter { ($0[kCGWindowName] as? String ?? "").contains("Wallpaper") }
             .filter { $0[kCGWindowIsOnscreen] as? Int == 1 }
-            .filter { window in
+
+        // Apply additional frame filtering only if matchFrame is true
+        if matchFrame {
+            wallpaperWindows = wallpaperWindows.filter { window in
                 if let bounds = window[kCGWindowBounds] as? [String: CGFloat],
                    bounds["X"] == screenFrame.origin.x,
                    bounds["Y"] == screenFrame.origin.y,
@@ -312,32 +328,27 @@ public class WallpaperProcessor {
                     false
                 }
             }
-            .map { $0[kCGWindowNumber] as! CGWindowID }
+        }
 
-        guard !wallpaperWindows.isEmpty else {
-            throw NSError(
-                domain: "WallpaperProcessorError",
-                code: 3,
-                userInfo: [NSLocalizedDescriptionKey: "No wallpaper windows found."]
-            )
+        let windowIDs = wallpaperWindows.map { $0[kCGWindowNumber] as! CGWindowID }
+
+        guard !windowIDs.isEmpty else {
+            throw WallpaperProcessorError.noWallpaperWindowsFound
         }
 
         // Use the private CGSHWCaptureWindowList API to capture high-quality images of the windows
         // This approach provides better results than the public APIs for this specific use case
+        var captureWindowIDs = windowIDs
         let cid = CGSMainConnectionID()
         let images = CGSHWCaptureWindowList(
             cid,
-            &wallpaperWindows,
-            wallpaperWindows.count,
+            &captureWindowIDs,
+            captureWindowIDs.count,
             [.ignoreGlobalClipShape, .bestResolution, .fullSize]
         ).takeUnretainedValue() as! [CGImage]
 
         guard let image = images.first else {
-            throw NSError(
-                domain: "WallpaperProcessorError",
-                code: 4,
-                userInfo: [NSLocalizedDescriptionKey: "Failed to capture the wallpaper window."]
-            )
+            throw WallpaperProcessorError.wallpaperWindowCaptureFailed
         }
 
         return NSImage(cgImage: image, size: NSSize.zero)
@@ -361,11 +372,7 @@ public class WallpaperProcessor {
             kCGNullWindowID,
             [.shouldBeOpaque, .bestResolution]
         ) else {
-            throw NSError(
-                domain: "WallpaperProcessorError",
-                code: 5,
-                userInfo: [NSLocalizedDescriptionKey: "Failed to capture the screen."]
-            )
+            throw WallpaperProcessorError.screenCaptureFailed
         }
 
         return NSImage(cgImage: cgImage, size: NSSize.zero)
