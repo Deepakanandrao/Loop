@@ -14,6 +14,10 @@ class KeybindsConfigurationModel: ObservableObject {
         didSet { Defaults[.triggerDelay] = triggerDelay }
     }
 
+    @Published var cycleBackwardsOnShiftPressed = Defaults[.cycleBackwardsOnShiftPressed] {
+        didSet { Defaults[.cycleBackwardsOnShiftPressed] = cycleBackwardsOnShiftPressed }
+    }
+
     @Published var doubleClickToTrigger = Defaults[.doubleClickToTrigger] {
         didSet { Defaults[.doubleClickToTrigger] = doubleClickToTrigger }
     }
@@ -32,11 +36,20 @@ struct KeybindsConfigurationView: View {
     @Default(.triggerKey) var triggerKey
     @Default(.keybinds) var keybinds
 
+    /// Is there at least one keybind action that is a cycle?
+    private var isCycleActionPresentInKeybinds: Bool {
+        keybinds.contains(where: { $0.cycle != nil })
+    }
+
     var body: some View {
         LuminareSection("Trigger Key", noBorder: true) {
             // TODO: Make long trigger keys fit in bounds
             TriggerKeycorder($triggerKey)
                 .environmentObject(model)
+        }
+
+        if isCycleActionPresentInKeybinds {
+            CycleBackwardsView(triggerKey: triggerKey, isOn: $model.cycleBackwardsOnShiftPressed)
         }
 
         LuminareSection("Settings") {

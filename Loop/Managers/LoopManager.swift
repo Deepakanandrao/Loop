@@ -328,9 +328,13 @@ private extension LoopManager {
         disableHapticFeedback: Bool = false,
         canAdvanceCycle: Bool = true
     ) {
-        // Only allow cycling backwards if either the action keybind or the trigger key includes the Shift key.
+        // Allow cycling backwards only if:
+        // - Shift is not part of the action's keybind
+        // - Shift is not part of the trigger key
+        // - The user has enabled the setting
         let allowReverseCycle = newAction.keybind.contains(.kVK_Shift) == false
             && Defaults[.triggerKey].contains(.kVK_Shift) == false
+            && Defaults[.cycleBackwardsOnShiftPressed]
 
         // This will allow us to compare different window actions without needing to consider different keybinds/custom names/ids.
         // This is useful when the radial menu and keybinds have the same set of cycle actions, so we don't need to worry about not having a keybind.
