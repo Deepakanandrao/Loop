@@ -34,7 +34,7 @@ class LoopManager: ObservableObject {
 
     @Published var currentAction: WindowAction = .init(.noAction)
     private var parentCycleAction: WindowAction? = nil
-    private var initialMousePosition: CGPoint = .init()
+    private(set) var initialMousePosition: CGPoint = .init()
     private var angleToMouse: Angle = .init(degrees: 0)
     private var distanceToMouse: CGFloat = 0
 
@@ -336,17 +336,15 @@ private extension LoopManager {
             && Defaults[.triggerKey].contains(.kVK_Shift) == false
             && Defaults[.cycleBackwardsOnShiftPressed]
 
-        // This will allow us to compare different window actions without needing to consider different keybinds/custom names/ids.
-        // This is useful when the radial menu and keybinds have the same set of cycle actions, so we don't need to worry about not having a keybind.
-        var newAction = newAction.stripNonResizingProperties()
-
         guard
-            currentAction != newAction || newAction.willManipulateExistingWindowFrame,
+            !currentAction.isSameManipulation(as: newAction) || newAction.willManipulateExistingWindowFrame,
             isLoopActive,
             let currentScreen = screenToResizeOn
         else {
             return
         }
+
+        var newAction = newAction
 
         if newAction.direction == .cycle {
             parentCycleAction = newAction

@@ -30,7 +30,7 @@ struct CycleBackwardsView: View {
     private var cycleBackwardsInfoView: LuminareInfoView? {
         guard isShiftUsedByTriggerKey else { return nil }
         return LuminareInfoView(
-            "Shift-cycling actions work only\nif Shift isn't in your trigger key",
+            "Cycling actions backward will only work\nif Shift isn't in your trigger key",
             .blue
         )
     }
