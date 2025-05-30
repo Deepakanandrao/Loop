@@ -3094,6 +3094,9 @@
         }
       }
     },
+    "Cycling actions backwards will only work\nif Shift isn't in your trigger key" : {
+
+    },
     "Design" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19363,9 +19366,6 @@
           }
         }
       }
-    },
-    "Shift-cycling actions work only\nif Shift isn't in your trigger key" : {
-
     },
     "Show in dock" : {
       "extractionState" : "manual",

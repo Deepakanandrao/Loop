@@ -337,7 +337,7 @@ private extension LoopManager {
             && Defaults[.cycleBackwardsOnShiftPressed]
 
         guard
-            currentAction.isSameManipulation(as: newAction) || newAction.willManipulateExistingWindowFrame,
+            !currentAction.isSameManipulation(as: newAction) || newAction.willManipulateExistingWindowFrame,
             isLoopActive,
             let currentScreen = screenToResizeOn
         else {

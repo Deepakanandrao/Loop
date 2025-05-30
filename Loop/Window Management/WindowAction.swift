@@ -159,7 +159,26 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
     /// - Resizing the window (grow/shrink)
     /// - Moving the window (move)
     var willManipulateExistingWindowFrame: Bool {
-        direction.willAdjustSize || direction.willShrink || direction.willGrow || direction.willMove
+        if direction.willAdjustSize ||
+            direction.willShrink ||
+            direction.willGrow ||
+            direction.willMove {
+            return true
+        }
+
+        return false
+    }
+
+    var isPaddingApplicable: Bool {
+        if direction == .undo || direction == .initialFrame {
+            return false
+        }
+
+        if direction == .custom, sizeMode == .initialSize || sizeMode == .preserveSize {
+            return false
+        }
+
+        return true
     }
 
     /// Determines the angle to show in the radial menu, if applicable.
@@ -218,11 +237,11 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
                 result = window.frame.size
                     .center(inside: result)
                     .pushInside(bounds)
-            }
-
-            // Apply padding between windows
-            if direction != .undo, direction != .initialFrame {
-                result = applyInnerPadding(result, bounds)
+            } else {
+                // Apply padding between windows
+                if isPaddingApplicable {
+                    result = applyInnerPadding(result, bounds)
+                }
             }
 
             // Store the last target frame. This is used when growing/shrinking windows
@@ -314,6 +333,7 @@ private extension WindowAction {
 
         } else if direction == .initialFrame, let window {
             result = getInitialFrame(window)
+
         } else if direction == .maximizeHeight, let window {
             result = CGRect(
                 x: window.frame.minX,
