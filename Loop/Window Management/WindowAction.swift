@@ -228,9 +228,11 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
         var result: CGRect = calculateTargetFrame(direction, window, bounds, isPreview)
 
         if !disablePadding {
-            // Convert rects to integers as that's what the AX API works with to move windows
-            bounds = bounds.integerRect()
-            result = result.integerRect()
+            if !willManipulateExistingWindowFrame {
+                // Convert rects to integers as that's what the AX API works with to move windows
+                bounds = bounds.integerRect()
+                result = result.integerRect()
+            }
 
             // If window can't be resized, center it within the already-resized frame.
             if let window, window.isResizable == false {
