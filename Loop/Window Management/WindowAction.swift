@@ -9,9 +9,26 @@ import Defaults
 import OSLog
 import SwiftUI
 
+/// The window action struct represents a single action that can be performed on a window, such as resizing, moving, or cycling through actions.
+///
+/// Common actions, such as right half, or bottom right quarter, are represented by `WindowDirection` enum, while user-made actions, such as custom frames and cycles are speciied by this struct.
 struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serializable {
-    var id: UUID
+    var id: UUID = .init()
 
+    /// Initializes a `WindowAction` with the specified parameters. Only to be used when decoding from JSON.
+    /// - Parameters:
+    ///   - direction: the direction of the window action. If custom or cycle, use those and further specify the action with the parameters below.
+    ///   - keybind: the keybinds associated with this action. If empty, the action is not bound to any key.
+    ///   - name: the name of the action. If `nil`, the name will be derived from the direction.
+    ///   - unit: the unit of measurement for width and height.  This needs to be specified for custom actions.
+    ///   - anchor: the anchor point for the action.  This needs to be specified for custom actions that use a `generic` ``positionMode``
+    ///   - width: the width of the window. This needs to be specified for custom actions.
+    ///   - height: the height of the window. This needs to be specified for custom actions.
+    ///   - xPoint: the x-coordinate of the window's position. This needs to be specified for custom actions with a `coordinates` ``positionMode``.
+    ///   - yPoint: the y-coordinate of the window's position. This needs to be specified for custom actions with a `coordinates` ``positionMode``.
+    ///   - positionMode: whether to use anchors or exact coordinates to move a window. This needs to be specified for custom actions.
+    ///   - sizeMode: the size mode of the action, which allows users to preserve size when manipulating a window.
+    ///   - cycle: The cycling window actions.
     init(
         _ direction: WindowDirection,
         keybind: Set<CGKeyCode>,
@@ -41,23 +58,36 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
         self.cycle = cycle
     }
 
-    init(_ direction: WindowDirection) {
-        self.init(direction, keybind: [])
+    /// Initializes a `WindowAction` with the specified direction and an empty keybind.
+    /// - Parameter direction: the direction of the window action.
+    init(_ direction: WindowDirection, keybind: Set<CGKeyCode> = []) {
+        self.direction = direction
+        self.keybind = keybind
     }
 
-    init(_ name: String? = nil, _ cycle: [WindowAction], _ keybind: Set<CGKeyCode> = []) {
-        self.init(.cycle, keybind: keybind, name: name, cycle: cycle)
+    /// Initializes a cycle `WindowAction`. Used for user-defined cycles.
+    /// - Parameters:
+    ///   - name: the name of the cycle. If `nil`, a default name will be used (eg. "Custom Cycle").
+    ///   - cycle: the cycle of window actions. This is an array of `WindowAction` that will be cycled through when the action is triggered.
+    ///   - keybind: the keybinds associated with this action.
+    init(_ name: String? = nil, cycle: [WindowAction], keybind: Set<CGKeyCode> = []) {
+        self.direction = .cycle
+        self.name = name
+        self.cycle = cycle
+        self.keybind = keybind
     }
 
+    /// Initializes a cycle without a name or keybind. Used in radial menu.
+    /// - Parameter cycle: the cycle of window actions.
     init(_ cycle: [WindowAction]) {
-        self.init(nil, cycle)
+        self.init(nil, cycle: cycle)
     }
 
+    // Generic Properties
     var direction: WindowDirection
     var keybind: Set<CGKeyCode>
 
-    // MARK: CUSTOM KEYBINDS
-
+    // Custom Keybind Properties
     var name: String?
     var unit: CustomWindowActionUnit?
     var anchor: CustomWindowActionAnchor?
@@ -68,23 +98,39 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
     var xPoint: Double?
     var yPoint: Double?
 
+    // Custom Cycle Properties
     var cycle: [WindowAction]?
 
-    static let commonID = UUID()
-    // Removes ID, keybind and name. This is useful when checking for equality between an otherwise identical keybind and radial menu action.
-    func stripNonResizingProperties() -> WindowAction {
-        var strippedAction = self
-        strippedAction.id = WindowAction.commonID
-        strippedAction.keybind = []
-        strippedAction.name = nil
+    // MARK: - Methods
 
-        if let cycle {
-            strippedAction.cycle = cycle.map { $0.stripNonResizingProperties() }
+    /// Determines if one action is equivalent to another, ignore all properties that are not related to resizing or moving the window.
+    /// - Parameter other: the other `WindowAction` to compare against.
+    /// - Returns: `true` if the two actions are equivalent in terms of resizing or moving the window, otherwise `false`.
+    func isSameManipulation(as other: WindowAction) -> Bool {
+        let commonID = UUID()
+
+        // Removes ID, keybind and name. This is useful when checking for equality between an otherwise identical keybind and radial menu action.
+        func stripNonResizingProperties(of action: WindowAction) -> WindowAction {
+            var strippedAction = action
+            strippedAction.id = commonID
+            strippedAction.keybind = []
+            strippedAction.name = nil
+
+            if let cycle {
+                strippedAction.cycle = cycle.map { stripNonResizingProperties(of: $0) }
+            }
+
+            return strippedAction
         }
 
-        return strippedAction
+        let modifiedSelf = stripNonResizingProperties(of: self)
+        let modifiedOther = stripNonResizingProperties(of: other)
+
+        return modifiedSelf == modifiedOther
     }
 
+    /// Retrieves the name of the action, either from the `name` property or from the `direction` enum.
+    /// - Returns: the name of the action.
     func getName() -> String {
         var result = ""
 
@@ -107,17 +153,24 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
         return result
     }
 
+    /// Determines if the action will manipulate the existing window frame, rather than setting an entirely new frame from scratch.
+    /// Examples of such actions are:
+    /// - Resizing the window (grow/shrink specific sides)
+    /// - Resizing the window (grow/shrink)
+    /// - Moving the window (move)
     var willManipulateExistingWindowFrame: Bool {
         direction.willAdjustSize || direction.willShrink || direction.willGrow || direction.willMove
     }
 
-    static func getAction(for keybind: Set<CGKeyCode>) -> WindowAction? {
-        for item in Defaults[.keybinds] where item.keybind == keybind {
-            return item
-        }
-        return nil
-    }
-
+    /// Determines the angle to show in the radial menu, if applicable.
+    /// Examples of actions where the radial menu angle is not applicable:
+    /// - No action (noAction)
+    /// - Hiding the window (hide)
+    /// - Minimizing the window (minimize)
+    /// - Cycling through actions (cycle) - the selected action's angle will be used instead within the radial menu's selected action logic.
+    ///
+    /// - Parameter window: the window to be manipulated. If `nil`, the angle will be calculated based on the screen center.
+    /// - Returns: the angle to show in the radial menu, or `nil` if the action does not have a radial menu angle.
     func radialMenuAngle(window: Window?) -> Angle? {
         guard
             direction.frameMultiplyValues != nil,
@@ -567,5 +620,17 @@ private extension WindowAction {
         }
 
         return croppedWindowFrame
+    }
+}
+
+extension WindowAction {
+    /// Returns the respective action for the given keybind.
+    /// - Parameter keybind: the keybind to search for.
+    /// - Returns: the `WindowAction` that matches the keybind, or `nil` if no action is found.
+    static func getAction(for keybind: Set<CGKeyCode>) -> WindowAction? {
+        for item in Defaults[.keybinds] where item.keybind == keybind {
+            return item
+        }
+        return nil
     }
 }
