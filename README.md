@@ -60,6 +60,12 @@ Loop can become very powerful when paired with cycles. These enable you to perfo
 
 <div><video controls src="https://github.com/user-attachments/assets/1adb1325-775d-4687-9085-71c7f775d65d" muted="false"></video></div>
 
+### Stash
+
+Hide windows at the screen edge to declutter your workspace. Hover near the edge or use a keybind to access them whenever you need.
+
+<div><video controls src="assets/graphics/Stash.mp4" muted="false"></video></div>
+
 ### Theming
 
 #### Radial Menu

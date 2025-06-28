@@ -53,6 +53,9 @@ extension Defaults.Keys {
     static let focusWindowOnResize = Key<Bool>("focusWindowOnResize", default: true, iCloud: true)
     static let respectStageManager = Key<Bool>("respectStageManager", default: true, iCloud: true)
     static let stageStripSize = Key<CGFloat>("stageStripSize", default: 150, iCloud: true)
+    static let animateStashedWindows = Key<Bool>("animateStashedWindows", default: true, iCloud: true)
+    static let stashedWindowVisiblePadding = Key<CGFloat>("stashedWindowVisiblePadding", default: 20, iCloud: true)
+    static let shiftFocusWhenStashed = Key<Bool>("shiftFocusWhenStashed", default: true, iCloud: true)
 
     // Keybinds
     static let triggerKey = Key<Set<CGKeyCode>>("trigger", default: [.kVK_Function], iCloud: true)
@@ -197,4 +200,8 @@ extension Defaults.Keys {
         ]),
         iCloud: true
     )
+
+    // StashManager
+    static let stashManagerRevealedWindows = Key<Set<CGWindowID>>("stashManagerRevealed", default: Set<CGWindowID>(), iCloud: false)
+    static let stashManagerStashedWindows = Key<[CGWindowID: WindowAction]>("stashManagerStashed", default: [:], iCloud: false)
 }

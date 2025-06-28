@@ -1156,6 +1156,9 @@
         }
       }
     },
+    "Animated" : {
+
+    },
     "Animation speed" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -15821,6 +15824,9 @@
         }
       }
     },
+    "Peek size" : {
+
+    },
     "Permissions" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19367,6 +19373,9 @@
         }
       }
     },
+    "Shift focus when stashed" : {
+
+    },
     "Show in dock" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -20224,6 +20233,9 @@
         }
       }
     },
+    "Stash" : {
+
+    },
     "Suggest new icon" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -20608,6 +20620,9 @@
           }
         }
       }
+    },
+    "That keybind is already being used by another stash keybind." : {
+
     },
     "Theming" : {
       "extractionState" : "manual",
@@ -21217,6 +21232,9 @@
           }
         }
       }
+    },
+    "Unstashed Size" : {
+
     },
     "Update…" : {
       "extractionState" : "manual",
@@ -25232,6 +25250,17 @@
         }
       }
     },
+    "Window Direction/Name: Stash" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Stash"
+          }
+        }
+      }
+    },
     "Window Direction/Name: Top Half" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -25690,6 +25719,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "撤銷"
+          }
+        }
+      }
+    },
+    "Window Direction/Name: Unstash" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unstash"
           }
         }
       }

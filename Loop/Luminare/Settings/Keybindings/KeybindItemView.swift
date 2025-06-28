@@ -41,6 +41,7 @@ struct KeybindItemView: View {
         .init(.init(localized: "Shrink"), WindowDirection.shrink),
         .init(.init(localized: "Grow"), WindowDirection.grow),
         .init(.init(localized: "Move"), WindowDirection.move),
+        .init(.init(localized: "Stash"), [WindowDirection.stash, WindowDirection.unstash]),
         .init(.init(localized: "Go Back"), [WindowDirection.initialFrame, WindowDirection.undo])
     ]
 
@@ -68,7 +69,7 @@ struct KeybindItemView: View {
                 label()
 
                 HStack {
-                    if keybind.direction == .custom {
+                    if keybind.direction.isCustomizable {
                         Button(action: {
                             isConfiguringCustom = true
                         }, label: {
@@ -76,8 +77,13 @@ struct KeybindItemView: View {
                         })
                         .buttonStyle(.plain)
                         .luminareModal(isPresented: $isConfiguringCustom) {
-                            CustomActionConfigurationView(action: $keybind, isPresented: $isConfiguringCustom)
-                                .frame(width: 400)
+                            if keybind.direction == .custom {
+                                CustomActionConfigurationView(action: $keybind, isPresented: $isConfiguringCustom)
+                                    .frame(width: 400)
+                            } else {
+                                StashActionConfigurationView(action: $keybind, isPresented: $isConfiguringCustom)
+                                    .frame(width: 400)
+                            }
                         }
                         .help("Customize this keybind's custom frame.")
                     }
@@ -160,7 +166,7 @@ struct KeybindItemView: View {
             searchText = ""
         }
         .onChange(of: keybind.direction) { _ in
-            if keybind.direction == .custom {
+            if keybind.direction.isCustomizable {
                 isConfiguringCustom = true
             }
             if keybind.direction == .cycle {
