@@ -20931,6 +20931,9 @@
         }
       }
     },
+    "To save power, window animations are\nunavailable in Low Power Mode." : {
+
+    },
     "Top" : {
       "extractionState" : "manual",
       "localizations" : {
