@@ -240,31 +240,33 @@ final class Updater: ObservableObject {
                     continue
                 }
 
-                let line = String(line)
-                    .replacingOccurrences(of: "- ", with: "") // Remove bullet point
+                let cleanedLine = String(line)
+                    .replacingOccurrences(of: "- ", with: "")
                     .trimmingCharacters(in: .whitespaces)
 
-                var user: String?
-                if let regex = try? NSRegularExpression(pattern: #"\(@(.*)\)"#),
-                   let match = regex.firstMatch(in: line, range: NSRange(line.startIndex..., in: line)) {
-                    user = Range(match.range(at: 1), in: line).flatMap { String(line[$0]) }
-                }
+                let user = try? NSRegularExpression(pattern: #"\(@(.*?)\)"#)
+                    .firstMatch(in: cleanedLine, range: NSRange(cleanedLine.startIndex..., in: cleanedLine))
+                    .flatMap { Range($0.range(at: 1), in: cleanedLine).map { String(cleanedLine[$0]) } }
 
-                var reference: Int?
-                if let regex = try? NSRegularExpression(pattern: #"#(\d+)"#),
-                   let match = regex.firstMatch(in: line, range: NSRange(line.startIndex..., in: line)) {
-                    reference = Int(Range(match.range(at: 1), in: line).flatMap { String(line[$0]) } ?? "")
-                }
+                let reference = try? NSRegularExpression(pattern: #"#(\d+)"#)
+                    .firstMatch(in: cleanedLine, range: NSRange(cleanedLine.startIndex..., in: cleanedLine))
+                    .flatMap { Range($0.range(at: 1), in: cleanedLine).flatMap { Int(cleanedLine[$0]) } }
 
-                let emoji = line.unicodeScalars.first(where: \.properties.isEmoji) ?? currentSection?.unicodeScalars.first(where: \.properties.isEmoji) ?? "🔄"
+                /// we should use `isEmojiPresentation` instead of `isEmoji` to ensure that `#`s are excluded.
+                let emoji = cleanedLine.unicodeScalars.first(where: \.properties.isEmojiPresentation) ?? currentSection?.unicodeScalars.first(where: \.properties.isEmojiPresentation) ?? "🔄"
 
-                let text = line
-                    .suffix(line.count - 1)
-                    .replacingOccurrences(of: #"#\d+"#, with: "", options: .regularExpression) // Remove issue number
-                    .replacingOccurrences(of: #"\(@.*\)"#, with: "", options: .regularExpression) // Remove author
+                let text = cleanedLine
+                    .drop(while: { $0.unicodeScalars.first?.properties.isEmojiPresentation == true }) // remove any emojis
+                    .replacingOccurrences(of: #"#\d+"#, with: "", options: .regularExpression)
+                    .replacingOccurrences(of: #"\(@.*?\)"#, with: "", options: .regularExpression)
                     .trimmingCharacters(in: .whitespacesAndNewlines)
 
-                changelog[index].body.append(.init(emoji: String(emoji), text: text, user: user, reference: reference))
+                changelog[index].body.append(.init(
+                    emoji: String(emoji),
+                    text: text,
+                    user: user,
+                    reference: reference
+                ))
             }
         }
     }
