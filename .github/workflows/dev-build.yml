@@ -12,7 +12,7 @@ on:
 jobs:
   pre-release:
     name: Development Build
-    runs-on: macos-26-arm64
+    runs-on: macos-26
     permissions:
       contents: write
       pull-requests: read
