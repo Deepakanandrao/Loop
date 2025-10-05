@@ -17,6 +17,7 @@ struct BehaviorConfigurationView: View {
     @Default(.hideMenuBarIcon) var hideMenuBarIcon
     @Default(.animationConfiguration) var animationConfiguration
     @Default(.windowSnapping) var windowSnapping
+    @Default(.suppressMissionControlOnTopDrag) var suppressMissionControlOnTopDrag
     @Default(.restoreWindowFrameOnDrag) var restoreWindowFrameOnDrag
     @Default(.useSystemWindowManagerWhenAvailable) var useSystemWindowManagerWhenAvailable
     @Default(.enablePadding) var enablePadding
@@ -63,23 +64,6 @@ struct BehaviorConfigurationView: View {
         LuminareSection("Window") {
             LuminareToggle("Move window to cursor's screen", isOn: $useScreenWithCursor)
 
-            if #available(macOS 15, *) {
-                LuminareToggle(isOn: $windowSnapping) {
-                    if SystemWindowManager.MoveAndResize.snappingEnabled {
-                        Text("Window snapping")
-                            .padding(.trailing, 4)
-                            .luminarePopover(attachedTo: .topTrailing) {
-                                Text("macOS's \"Tile by dragging windows to screen edges\" feature is currently\nenabled, which will conflict with Loop's window snapping functionality.")
-                                    .padding(6)
-                            }
-                    } else {
-                        Text("Window snapping")
-                    }
-                }
-            } else {
-                LuminareToggle("Window snapping", isOn: $windowSnapping)
-            }
-
             // Enabling the system window manager will override these options.
             if !useSystemWindowManagerWhenAvailable {
                 LuminareToggle("Restore window frame on drag", isOn: $restoreWindowFrameOnDrag)
@@ -109,6 +93,36 @@ struct BehaviorConfigurationView: View {
 
             if resizeWindowUnderCursor {
                 LuminareToggle("Focus window on resize", isOn: $focusWindowOnResize)
+            }
+        }
+
+        LuminareSection("Window Snapping") {
+            if #available(macOS 15, *) {
+                LuminareToggle(isOn: $windowSnapping) {
+                    if SystemWindowManager.MoveAndResize.snappingEnabled {
+                        Text("Enable window snapping")
+                            .padding(.trailing, 4)
+                            .luminarePopover(attachedTo: .topTrailing) {
+                                Text("macOS's \"Tile by dragging windows to screen edges\" feature is currently\nenabled, which will conflict with Loop's window snapping functionality.")
+                                    .padding(6)
+                            }
+                    } else {
+                        Text("Enable window snapping")
+                    }
+                }
+            } else {
+                LuminareToggle("Enable window snapping", isOn: $windowSnapping)
+            }
+
+            if windowSnapping {
+                LuminareToggle(isOn: $suppressMissionControlOnTopDrag) {
+                    Text("Suppress Mission Control")
+                        .padding(.trailing, 4)
+                        .luminarePopover(attachedTo: .topTrailing) {
+                            Text("Whether to allow Mission Control to open when windows\nare dragged to the top of the screen.")
+                                .padding(6)
+                        }
+                }
             }
         }
 
