@@ -80,7 +80,7 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
           # Commit the formatted file
-          git add Loop/Localizable.xcstrings
+          git add .
           git commit -m "🌐 Format translations"
           git push origin l10n
 
