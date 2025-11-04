@@ -60,8 +60,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "%"
           }
         },
         "ru" : {
@@ -284,7 +284,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ posiziona la finestra leggermente al di sopra del centro assoluto, risultando più ergonomica per alcuni."
+            "value" : "%@ posiziona la finestra leggermente al di sopra del centro assoluto,\nrisultando più ergonomica per alcuni."
           }
         },
         "ja" : {
@@ -1955,8 +1955,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Tela inferior"
           }
         },
         "ru" : {
@@ -4015,8 +4015,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Ciclos"
           }
         },
         "ru" : {
@@ -4592,8 +4592,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Ativar encaixe automático de janelas"
           }
         },
         "ru" : {
@@ -5086,8 +5086,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Primeiro Quarto"
           }
         },
         "ru" : {
@@ -5228,14 +5228,14 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focus"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "フォーカス"
           }
         },
         "ko" : {
@@ -5252,8 +5252,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Foco"
           }
         },
         "ru" : {
@@ -5311,14 +5311,14 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focus in basso"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "下にフォーカス"
           }
         },
         "ko" : {
@@ -5335,8 +5335,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focar para baixo"
           }
         },
         "ru" : {
@@ -5394,14 +5394,14 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focus a sinistra"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "左にフォーカス"
           }
         },
         "ko" : {
@@ -5418,8 +5418,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focar à Esquerda"
           }
         },
         "ru" : {
@@ -5477,14 +5477,14 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focus a destra"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "右にフォーカス"
           }
         },
         "ko" : {
@@ -5501,8 +5501,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focar para a direita"
           }
         },
         "ru" : {
@@ -5560,14 +5560,14 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focus in alto"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "上にフォーカス"
           }
         },
         "ko" : {
@@ -5584,8 +5584,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Foco para cima"
           }
         },
         "ru" : {
@@ -5749,8 +5749,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Quarto Quarto"
           }
         },
         "ru" : {
@@ -6329,8 +6329,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Aumentar horizontalmente"
           }
         },
         "ru" : {
@@ -6661,8 +6661,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Aumentar verticalmente"
           }
         },
         "ru" : {
@@ -7238,8 +7238,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Metade do Centro Horizontal"
           }
         },
         "ru" : {
@@ -7404,8 +7404,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Quartos Horizontais"
           }
         },
         "ru" : {
@@ -10531,8 +10531,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Tela esquerda"
           }
         },
         "ru" : {
@@ -10697,8 +10697,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Três quartos da esquerda"
           }
         },
         "ru" : {
@@ -13550,7 +13550,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La funzione \"Disponi le finestre a mosaico trascinandole verso i bordi dello schermo\" di macOS è attualmente abilitata, creando conflitto con la funzionalità \"Aggancia ai bordi\" di Loop."
+            "value" : "La funzione \"Disponi le finestre a mosaico trascinandole verso i bordi dello schermo\" di macOS\nè attualmente abilitata, creando conflitto con la funzionalità \"Aggancia ai bordi\" di Loop."
           }
         },
         "ja" : {
@@ -13739,8 +13739,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Maximizar altura"
           }
         },
         "ru" : {
@@ -13822,8 +13822,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Maximizar largura"
           }
         },
         "ru" : {
@@ -14070,8 +14070,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Minimizar Outros"
           }
         },
         "ru" : {
@@ -14378,7 +14378,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sposta sotto"
+            "value" : "Sposta in basso"
           }
         },
         "ja" : {
@@ -14627,7 +14627,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sposta sopra"
+            "value" : "Sposta in alto"
           }
         },
         "ja" : {
@@ -15287,7 +15287,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quest’app è più aggiornata degli appunti sul mio diario!"
+            "value" : "Quest'app è più aggiornata degli appunti sul mio diario!"
           }
         },
         "ja" : {
@@ -15329,7 +15329,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "-"
+            "value" : "這個應用程式比我的日記都新！"
           }
         }
       }
@@ -15411,7 +15411,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "-"
+            "value" : "視野清晰，目視範圍內無更新！"
           }
         }
       }
@@ -15493,7 +15493,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "-"
+            "value" : "機會留給有準備的人，而Loop早就準備好了！"
           }
         }
       }
@@ -15575,7 +15575,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "-"
+            "value" : "賽博減肥中，吃不下了。"
           }
         }
       }
@@ -15657,7 +15657,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "-"
+            "value" : "新版本？不好意思，我被這個版本完全吸引了。"
           }
         }
       }
@@ -15739,7 +15739,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "-"
+            "value" : "從沒見過如此適合環繞的版本！"
           }
         }
       }
@@ -15903,7 +15903,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "-"
+            "value" : "很久以前在一個遙遠的星系中…也沒有更新！"
           }
         }
       }
@@ -16189,7 +16189,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Abbiamo smarrito il pulsante “Aggiorna”. Ops!"
+            "value" : "Abbiamo smarrito il pulsante \"Aggiorna\". Ops!"
           }
         },
         "ja" : {
@@ -16681,7 +16681,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L’inverno sta arrivando. Gli aggiornamenti non ancora."
+            "value" : "L'inverno sta arrivando. Gli aggiornamenti non ancora."
           }
         },
         "ja" : {
@@ -17665,7 +17665,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ehm… io… scusa, l’ho perso"
+            "value" : "Ehm… io… scusa, l'ho perso"
           }
         },
         "ja" : {
@@ -18239,7 +18239,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La speranza è l’ultima a morire."
+            "value" : "La speranza è l'ultima a morire."
           }
         },
         "ja" : {
@@ -21636,8 +21636,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Tela direita"
           }
         },
         "ru" : {
@@ -21802,8 +21802,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Três quartos da direita"
           }
         },
         "ru" : {
@@ -21968,8 +21968,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "s"
           }
         },
         "ru" : {
@@ -22216,8 +22216,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Segundo Quarto"
           }
         },
         "ru" : {
@@ -24025,8 +24025,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Diminuir horizontalmente"
           }
         },
         "ru" : {
@@ -24357,8 +24357,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Diminuir verticalmente"
           }
         },
         "ru" : {
@@ -25266,8 +25266,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Suporta efeitos de Liquid Glass do macOS Tahoe"
           }
         },
         "ru" : {
@@ -25349,8 +25349,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Suprimir Controle de Missão"
           }
         },
         "ru" : {
@@ -26089,8 +26089,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Terceiro Quarto"
           }
         },
         "ru" : {
@@ -26668,8 +26668,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Tela superior"
           }
         },
         "ru" : {
@@ -26917,8 +26917,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Tratar as teclas esquerda e direita de forma diferente"
           }
         },
         "ru" : {
@@ -27248,8 +27248,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Revelar"
           }
         },
         "ru" : {
@@ -28070,8 +28070,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Metade do Centro Vertical"
           }
         },
         "ru" : {
@@ -28402,8 +28402,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Se deseja permitir que o Controle de Missão abra quando janelas\nforem arrastadas para o topo da tela."
           }
         },
         "ru" : {
@@ -28733,8 +28733,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Encaixe de janelas"
           }
         },
         "ru" : {
