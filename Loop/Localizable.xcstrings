@@ -66,8 +66,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "%"
           }
         },
         "zh-Hans" : {
@@ -231,8 +231,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
           }
         },
         "zh-Hans" : {
@@ -1053,8 +1053,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Анимировано"
           }
         },
         "zh-Hans" : {
@@ -1961,8 +1961,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Нижний экран"
           }
         },
         "zh-Hans" : {
@@ -2210,8 +2210,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Мгновенная"
           }
         },
         "zh-Hans" : {
@@ -3856,8 +3856,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Обратный цикл при нажатии на shift"
           }
         },
         "zh-Hans" : {
@@ -4021,8 +4021,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Цикл"
           }
         },
         "zh-Hans" : {
@@ -4598,8 +4598,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Включить привязку окон"
           }
         },
         "zh-Hans" : {
@@ -5092,8 +5092,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Первая четверть"
           }
         },
         "zh-Hans" : {
@@ -5175,8 +5175,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Плавная"
           }
         },
         "zh-Hans" : {
@@ -5341,8 +5341,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Фокус вниз"
           }
         },
         "zh-Hans" : {
@@ -5424,8 +5424,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Фокус влево"
           }
         },
         "zh-Hans" : {
@@ -5507,8 +5507,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Фокус вправо"
           }
         },
         "zh-Hans" : {
@@ -5590,8 +5590,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Фокус вверх"
           }
         },
         "zh-Hans" : {
@@ -5755,8 +5755,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Четвертая четверть"
           }
         },
         "zh-Hans" : {
@@ -6335,8 +6335,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Растянуть по горизонтали"
           }
         },
         "zh-Hans" : {
@@ -6667,8 +6667,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Растянуть по вертикали"
           }
         },
         "zh-Hans" : {
@@ -7410,8 +7410,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Горизонтальные четверти"
           }
         },
         "zh-Hans" : {
@@ -8126,7 +8126,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Loopマスター"
+            "value" : "Loop マスター"
           }
         },
         "ko" : {
@@ -8866,7 +8866,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "すでに25回もループしました！ご褒美として、新しいアイコン「%@」をプレゼント！さらにループして、新しいアイコンをアンロックしましょう！"
+            "value" : "すでに25回も Loop しました！ご褒美として、新しいアイコン「%@」をプレゼント！さらに Loop して、新しいアイコンをアンロックしましょう！"
           }
         },
         "ko" : {
@@ -8949,7 +8949,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "5000回のループを達成！宇宙がループマスターの誕生を見守りました！偉業にふさわしいご褒美、新しいアイコンをどうぞ！"
+            "value" : "5000回の Loop を達成！宇宙が Loop マスターの誕生を見守りました！偉業にふさわしいご褒美、新しいアイコンをどうぞ！"
           }
         },
         "ko" : {
@@ -10537,8 +10537,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Левый монитор"
           }
         },
         "zh-Hans" : {
@@ -10703,8 +10703,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Три четветри слева"
           }
         },
         "zh-Hans" : {
@@ -11255,7 +11255,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループを続ければ、このアイコンもすぐに手に入るよ。"
+            "value" : "Loop を続ければ、このアイコンもすぐに手に入るよ。"
           }
         },
         "ko" : {
@@ -11583,7 +11583,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "このアイコンをアンロックするには、時間とループが必要なだけ。"
+            "value" : "このアイコンをアンロックするには、時間と Loop が必要なだけ。"
           }
         },
         "ko" : {
@@ -12239,7 +12239,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "千のループの旅も、最初の一歩から始まる。"
+            "value" : "千の Loop の旅も、最初の一歩から始まる。"
           }
         },
         "ko" : {
@@ -12321,7 +12321,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループの一つ一つが、待つ宝物に近づけてくれる。"
+            "value" : "Loop の一つ一つが、待つ宝物に近づけてくれる。"
           }
         },
         "ko" : {
@@ -12403,7 +12403,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループを重ねるたびに、このアイコンのロックは緩んでいく。"
+            "value" : "Loop を重ねるたびに、このアイコンのロックは緩んでいく。"
           }
         },
         "ko" : {
@@ -12485,7 +12485,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループを重ねるごとに、君の努力が成功への鍵を刻む。"
+            "value" : "Loop を重ねるごとに、君の努力が成功への鍵を刻む。"
           }
         },
         "ko" : {
@@ -12567,7 +12567,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "アイコンはただアンロックされるだけじゃない、ループごとに勝ち取るものだ。"
+            "value" : "アイコンはただアンロックされるだけじゃない、Loop ごとに勝ち取るものだ。"
           }
         },
         "ko" : {
@@ -12649,7 +12649,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループが積み重なると同時に、君のアイコンコレクションも増えていく。"
+            "value" : "Loop が積み重なると同時に、君のアイコンコレクションも増えていく。"
           }
         },
         "ko" : {
@@ -12813,7 +12813,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループを続ける君の粘りが、すべてのアイコンのマスターキーだ。"
+            "value" : "Loop を続ける君の粘りが、すべてのアイコンのマスターキーだ。"
           }
         },
         "ko" : {
@@ -12895,7 +12895,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "障害をループしろ、君の報酬はその先にある。"
+            "value" : "障害を Loop しろ、君の報酬はその先にある。"
           }
         },
         "ko" : {
@@ -12977,7 +12977,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループを重ねるたびに、アイコンが育つ種をまいているんだよ。"
+            "value" : "Loop を重ねるたびに、アイコンが育つ種をまいているんだよ。"
           }
         },
         "ko" : {
@@ -13059,7 +13059,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "月の満ち欠けのように、君のアイコンはループの周期ごとに姿を現す。"
+            "value" : "月の満ち欠けのように、君のアイコンは Loop の周期ごとに姿を現す。"
           }
         },
         "ko" : {
@@ -13141,7 +13141,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "アイコンは待っている、まだ踏まれていないループのヴェールの向こうに。"
+            "value" : "アイコンは待っている、まだ踏まれていない Loop のヴェールの向こうに。"
           }
         },
         "ko" : {
@@ -13322,7 +13322,7 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "あと %lld 回のループ"
+                  "value" : "残り %lld 回の Loop"
                 }
               }
             }
@@ -14076,8 +14076,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Свернуть остальные"
           }
         },
         "zh-Hans" : {
@@ -15539,7 +15539,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループをなめると痛い目に遭うぞ。"
+            "value" : "Loop をなめると痛い目に遭うぞ。"
           }
         },
         "ko" : {
@@ -15703,7 +15703,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループ更新？笑止千万。"
+            "value" : "Loop 更新？笑止千万。"
           }
         },
         "ko" : {
@@ -15949,7 +15949,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループを舐めるな。"
+            "value" : "Loop を舐めるな。"
           }
         },
         "ko" : {
@@ -16851,7 +16851,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループを更新する？甘く見ないで。"
+            "value" : "Loop を更新する？甘く見ないで。"
           }
         },
         "ko" : {
@@ -17179,7 +17179,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループ更新の道は、果てしなく険しい。"
+            "value" : "Loop 更新の道は、果てしなく険しい。"
           }
         },
         "ko" : {
@@ -17261,7 +17261,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "君はもう最高のループを手にしてる！"
+            "value" : "君はもう最高の Loop を手にしてる！"
           }
         },
         "ko" : {
@@ -17343,7 +17343,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループを更新するのは、富士山に登るより難しい。"
+            "value" : "Loop を更新するのは、富士山に登るより難しい。"
           }
         },
         "ko" : {
@@ -17507,7 +17507,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "石の上にも三年…ループ更新にはまだ早い。"
+            "value" : "石の上にも三年… Loop 更新にはまだ早い。"
           }
         },
         "ko" : {
@@ -18491,7 +18491,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループは全盛期だ！"
+            "value" : "Loop は全盛期だ！"
           }
         },
         "ko" : {
@@ -19582,8 +19582,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Размер предпросмотра"
           }
         },
         "zh-Hans" : {
@@ -20653,8 +20653,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Спокойная"
           }
         },
         "zh-Hans" : {
@@ -21642,8 +21642,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Правый монитор"
           }
         },
         "zh-Hans" : {
@@ -21808,8 +21808,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Правые три четверти"
           }
         },
         "zh-Hans" : {
@@ -22222,8 +22222,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Вторая четверть"
           }
         },
         "zh-Hans" : {
@@ -23618,8 +23618,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Поменять фокус при скрытии"
           }
         },
         "zh-Hans" : {
@@ -23759,7 +23759,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループ中にプレビューを表示"
+            "value" : "Loop 中にプレビューを表示"
           }
         },
         "ko" : {
@@ -24031,8 +24031,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Сжать по горизонтали"
           }
         },
         "zh-Hans" : {
@@ -24363,8 +24363,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Сжать по вертикали"
           }
         },
         "zh-Hans" : {
@@ -24858,8 +24858,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Резкая"
           }
         },
         "zh-Hans" : {
@@ -25189,8 +25189,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Скрыть"
           }
         },
         "zh-Hans" : {
@@ -25355,8 +25355,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Игнорировать Mission Control"
           }
         },
         "zh-Hans" : {
@@ -25766,8 +25766,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Это сочетание клавиш уже используется для другого сочетания клавиш."
           }
         },
         "zh-Hans" : {
@@ -26095,8 +26095,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Третья четверть"
           }
         },
         "zh-Hans" : {
@@ -26674,8 +26674,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Верхний экран"
           }
         },
         "zh-Hans" : {
@@ -26923,8 +26923,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Разные левая и правая клавиши"
           }
         },
         "zh-Hans" : {
@@ -27254,8 +27254,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Раскрыть"
           }
         },
         "zh-Hans" : {
@@ -27336,8 +27336,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Размер после раскрытия"
           }
         },
         "zh-Hans" : {
@@ -28408,8 +28408,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Разрешить Mission Control при перетаскивании окон в верхнюю часть экрана."
           }
         },
         "zh-Hans" : {
@@ -28739,8 +28739,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Привязка окон"
           }
         },
         "zh-Hans" : {
@@ -29293,7 +29293,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld 回ループしました！"
+            "value" : "%lld 回 Loop しました！"
           }
         },
         "ko" : {
@@ -29375,7 +29375,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ループした…えっと…もう数えられない…"
+            "value" : "Loop した…えっと…もう数えられない…"
           }
         },
         "ko" : {
