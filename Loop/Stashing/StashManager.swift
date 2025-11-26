@@ -113,7 +113,7 @@ final class StashManager {
         guard !stashedWindow.window.isWindowHidden, !stashedWindow.window.isApplicationHidden else { return false }
         guard stashedWindow.screen.isSameScreen(screen) else { return false }
 
-        logger.info("Intercepting window action for stashed window \(stashedWindow.window.description)")
+        logger.info("Intercepting window action for stashed window \(stashedWindow.window.debugDescription)")
 
         if store.isWindowRevealed(stashedWindow.id) {
             hideWindow(stashedWindow, animate: true)
@@ -198,7 +198,7 @@ extension StashManager {
     /// Add the given `StashWindow` to the list of monitored windows, move the window to the stashed area
     /// and start mouse moved listener if needed.
     private func stash(_ windowToStash: StashedWindow) {
-        logger.info("stash \(windowToStash.window.description)")
+        logger.info("stash \(windowToStash.window.debugDescription)")
 
         unstashOverlappingWindows(windowToStash)
 
@@ -218,7 +218,7 @@ extension StashManager {
 
     /// Stop monitoring the window. If `resetFrame` is true, the window will be moved to its initial frame.
     private func unstash(_ window: StashedWindow, resetFrame: Bool, resetFrameAnimated: Bool) {
-        logger.info("unstash \(window.window.description)")
+        logger.info("unstash \(window.window.debugDescription)")
 
         if resetFrame {
             let action = WindowAction(.initialFrame)
@@ -260,7 +260,7 @@ private extension StashManager {
         store.markWindowAsRevealed(window.id)
         window.window.setFrame(frame, animate: animate)
 
-        logger.info("revealWindow \(window.window.description)")
+        logger.info("revealWindow \(window.window.debugDescription)")
     }
 
     /// Hides a stashed window by moving it to its stashed frame.
@@ -273,7 +273,7 @@ private extension StashManager {
         window.window.setFrame(frame, animate: animate)
         store.markWindowAsHidden(window.id)
 
-        logger.info("hideWindow \(window.window.description)")
+        logger.info("hideWindow \(window.window.debugDescription)")
     }
 
     /// Checks if the window reveal / hide should be throttled based on the last reveal time.
@@ -306,7 +306,7 @@ private extension StashManager {
         })
 
         if let focusWindow {
-            logger.info("Focusing another window on the same screen: \(focusWindow.description).")
+            logger.info("Focusing another window on the same screen: \(focusWindow.debugDescription).")
             focusWindow.activate()
         }
     }

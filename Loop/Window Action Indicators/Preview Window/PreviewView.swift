@@ -9,39 +9,25 @@ import Defaults
 import SwiftUI
 
 struct PreviewView: View {
-    @Environment(\.luminareAnimation) private var luminareAnimation
+    @Environment(\.luminareAnimation) var luminareAnimation
     @ObservedObject private var accentColorController: AccentColorController = .shared
-    @ObservedObject private var viewModel: PreviewViewModel
 
-    @Default(.previewPadding) private var previewPadding
-    @Default(.padding) private var padding
-    @Default(.previewCornerRadius) private var previewCornerRadius
-    @Default(.previewBorderThickness) private var previewBorderThickness
-    @Default(.animationConfiguration) private var animationConfiguration
-
-    init(viewModel: PreviewViewModel) {
-        self.viewModel = viewModel
-    }
-
-    private var cornerRadii: RectangleCornerRadii {
-        viewModel.overrideCornerRadii?.inset(by: previewPadding) ?? RectangleCornerRadii(
-            topLeading: previewCornerRadius,
-            bottomLeading: previewCornerRadius,
-            bottomTrailing: previewCornerRadius,
-            topTrailing: previewCornerRadius
-        )
-    }
+    @Default(.previewPadding) var previewPadding
+    @Default(.padding) var padding
+    @Default(.previewCornerRadius) var previewCornerRadius
+    @Default(.previewBorderThickness) var previewBorderThickness
+    @Default(.animationConfiguration) var animationConfiguration
 
     var body: some View {
         GeometryReader { _ in
             ZStack {
                 VisualEffectView(material: .hudWindow, blendingMode: .behindWindow)
-                    .clipShape(.rect(cornerRadii: cornerRadii))
+                    .clipShape(.rect(cornerRadius: previewCornerRadius))
 
-                UnevenRoundedRectangle(cornerRadii: cornerRadii)
+                RoundedRectangle(cornerRadius: previewCornerRadius)
                     .strokeBorder(.quinary, lineWidth: 1)
 
-                UnevenRoundedRectangle(cornerRadii: cornerRadii)
+                RoundedRectangle(cornerRadius: previewCornerRadius)
                     .stroke(
                         LinearGradient(
                             gradient: Gradient(

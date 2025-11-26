@@ -104,22 +104,21 @@ extension LoopManager {
             return
         }
 
-        let window = WindowUtility.userDefinedTargetWindow()
+        logger.info("Opening Loop with starting action: \(startingAction?.debugDescription ?? "none")")
 
+        targetWindow = WindowUtility.userDefinedTargetWindow()
         guard
-            window?.isAppExcluded != true,
-            (window?.fullscreen ?? false && Defaults[.ignoreFullscreen]) == false
+            targetWindow?.isAppExcluded != true,
+            (targetWindow?.fullscreen ?? false && Defaults[.ignoreFullscreen]) == false
         else {
             return
         }
 
-        logger.info("Opening Loop with starting action: \(startingAction?.description ?? "(none)") and target window: \(window?.description ?? "(none)")")
-
         // Record the first frame in advance if the preview window is disabled
-        if let window,
-           !WindowRecords.hasBeenRecorded(window),
+        if let targetWindow,
+           !WindowRecords.hasBeenRecorded(targetWindow),
            !Defaults[.previewVisibility] {
-            WindowRecords.recordFirst(for: window)
+            WindowRecords.recordFirst(for: targetWindow)
         }
 
         // Refresh accent colors in case user has enabled the wallpaper processor
@@ -128,7 +127,6 @@ extension LoopManager {
         }
 
         currentAction = .init(.noAction)
-        targetWindow = window
         parentCycleAction = nil
         initialMousePosition = NSEvent.mouseLocation
         screenToResizeOn = Defaults[.useScreenWithCursor] ? NSScreen.screenWithMouse : NSScreen.main
@@ -141,7 +139,7 @@ extension LoopManager {
         }
 
         if !Defaults[.hideUntilDirectionIsChosen] {
-            openWindows(startingAction: startingAction, window: window)
+            openWindows(startingAction: startingAction)
         }
 
         if let window = targetWindow {
@@ -165,7 +163,6 @@ extension LoopManager {
         logger.info("Closing Loop (force closed: \(forceClose))")
 
         closeWindows()
-        isLoopActive = false
 
         Task { @MainActor in
             mouseInteractionObserver.stop()
@@ -175,7 +172,8 @@ extension LoopManager {
         if let targetWindow,
            let screenToResizeOn,
            forceClose == false,
-           currentAction.direction != .noAction, !currentAction.direction.willFocusWindow {
+           currentAction.direction != .noAction, !currentAction.direction.willFocusWindow,
+           isLoopActive {
             if Defaults[.previewVisibility] {
                 WindowEngine.resize(
                     targetWindow,
@@ -194,15 +192,16 @@ extension LoopManager {
             IconManager.checkIfUnlockedNewIcon()
         }
 
+        isLoopActive = false
         LoopManager.sidesToAdjust = nil
         LoopManager.lastTargetFrame = .zero
     }
 
-    private func openWindows(startingAction: WindowAction?, window: Window?) {
+    private func openWindows(startingAction: WindowAction?) {
         if Defaults[.previewVisibility], let targetWindow, let screenToResizeOn {
             previewController.open(
                 screen: screenToResizeOn,
-                window: window,
+                window: targetWindow,
                 startingAction: startingAction
             )
         }
@@ -210,7 +209,7 @@ extension LoopManager {
         if Defaults[.radialMenuVisibility] {
             radialMenuController.open(
                 position: initialMousePosition,
-                window: window,
+                window: targetWindow,
                 startingAction: startingAction
             )
         }
@@ -396,7 +395,7 @@ extension LoopManager {
             currentAction = newAction
 
             if Defaults[.hideUntilDirectionIsChosen] {
-                openWindows(startingAction: newAction, window: targetWindow)
+                openWindows(startingAction: newAction)
             }
 
             Task { @MainActor in
@@ -427,12 +426,12 @@ extension LoopManager {
 
                         // If the previous window was nil, then the preview may have not opened.
                         // So open them here just in case.
-                        openWindows(startingAction: newAction, window: newWindow)
+                        openWindows(startingAction: newAction)
                     }
                 }
             }
 
-            logger.info("Window action changed: \(newAction.description)")
+            logger.info("Window action changed: \(newAction.debugDescription)")
         }
     }
 

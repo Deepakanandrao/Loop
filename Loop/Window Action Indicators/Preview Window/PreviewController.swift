@@ -11,8 +11,6 @@ import SwiftUI
 
 final class PreviewController {
     private var controller: NSWindowController?
-    private var viewModel: PreviewViewModel?
-
     private var screen: NSScreen?
     private var window: Window?
     private let logger = Logger(category: "PreviewController")
@@ -27,12 +25,6 @@ final class PreviewController {
             return
         }
 
-        let viewModel = PreviewViewModel(window: window)
-        self.viewModel = viewModel
-
-        self.screen = screen
-        self.window = window
-
         let panel = ActivePanel(
             contentRect: .zero,
             styleMask: [.borderless, .nonactivatingPanel],
@@ -45,11 +37,14 @@ final class PreviewController {
         panel.setFrame(NSRect(origin: screen.stageStripFreeFrame.center, size: .zero), display: true)
         // This ensures that this is below the radial menu
         panel.level = NSWindow.Level(NSWindow.Level.screenSaver.rawValue - 1)
-        panel.contentView = NSHostingView(rootView: PreviewView(viewModel: viewModel))
+        panel.contentView = NSHostingView(rootView: PreviewView())
         panel.collectionBehavior = .canJoinAllSpaces
         panel.ignoresMouseEvents = true
         panel.orderFrontRegardless()
         controller = .init(window: panel)
+
+        self.screen = screen
+        self.window = window
 
         if let action = startingAction {
             setAction(to: action)
@@ -79,7 +74,6 @@ final class PreviewController {
 
     func setWindow(to newWindow: Window) {
         window = newWindow
-        viewModel?.setWindow(to: newWindow)
     }
 
     func setScreen(to newScreen: NSScreen) {
@@ -189,6 +183,6 @@ final class PreviewController {
             windowController.window?.alphaValue = shouldBecomeTransparent ? 0 : 1
         }
 
-        logger.log("PreviewController: Set action to '\(newAction.description)'")
+        logger.log("PreviewController: Set action to '\(newAction.debugDescription)'")
     }
 }
