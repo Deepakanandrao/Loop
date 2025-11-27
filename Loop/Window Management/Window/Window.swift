@@ -9,20 +9,6 @@ import Defaults
 import OSLog
 import SwiftUI
 
-@_silgen_name("_AXUIElementGetWindow") @discardableResult
-func _AXUIElementGetWindow(_ axUiElement: AXUIElement, _ wid: inout CGWindowID) -> AXError
-
-@_silgen_name("GetProcessForPID") @discardableResult
-func GetProcessForPID(_ pid: pid_t, _ psn: inout ProcessSerialNumber) -> OSStatus
-
-@_silgen_name("_SLPSSetFrontProcessWithOptions") @discardableResult
-func _SLPSSetFrontProcessWithOptions(_ psn: inout ProcessSerialNumber, _ wid: UInt32, _ mode: UInt32) -> CGError
-
-@_silgen_name("SLPSPostEventRecordTo") @discardableResult
-func SLPSPostEventRecordTo(_ psn: inout ProcessSerialNumber, _ bytes: inout UInt8) -> CGError
-
-let kCPSUserGenerated: UInt32 = 0x200
-
 enum WindowError: LocalizedError {
     case invalidWindow
 
@@ -53,8 +39,8 @@ final class Window {
 
         self.cgWindowID = try axWindow.getWindowID()
 
-        if self.role != .window,
-           self.subrole != .standardWindow {
+        if role != .window,
+           subrole != .standardWindow {
             throw WindowError.invalidWindow
         }
 
@@ -122,7 +108,7 @@ final class Window {
 
     var role: NSAccessibility.Role? {
         do {
-            guard let value: String = try self.axWindow.getValue(.role) else {
+            guard let value: String = try axWindow.getValue(.role) else {
                 return nil
             }
             return NSAccessibility.Role(rawValue: value)
@@ -134,7 +120,7 @@ final class Window {
 
     var subrole: NSAccessibility.Subrole? {
         do {
-            guard let value: String = try self.axWindow.getValue(.subrole) else {
+            guard let value: String = try axWindow.getValue(.subrole) else {
                 return nil
             }
             return NSAccessibility.Subrole(rawValue: value)
@@ -146,7 +132,7 @@ final class Window {
 
     var title: String? {
         do {
-            return try self.axWindow.getValue(.title)
+            return try axWindow.getValue(.title)
         } catch {
             logger.error("Failed to get title: \(error.localizedDescription)")
             return nil
@@ -183,7 +169,7 @@ final class Window {
     /// Activate the window. This will bring it to the front and focus it if possible
     func activate() {
         // First activate the application to ensure proper window management context
-        if let runningApplication = self.nsRunningApplication {
+        if let runningApplication = nsRunningApplication {
             runningApplication.activate(options: .activateIgnoringOtherApps)
         }
 
@@ -195,56 +181,15 @@ final class Window {
         focus()
     }
 
-    ///
-    /// Focuses the window. This will attempt to bring the window to the front and make it the active window.
-    /// Note that this first sets the process as frontmost, *then* sends a left click event to the window itself.
-    ///
     /// - Returns:
     /// `true` if the window was successfully focused; `false` otherwise.
-    ///
-    /// - Description:
-    /// This method uses a private API to focus the window.
-    /// The code for this method is derived from the Amethyst source code. Details of its implementation can be found [here](https://github.com/Hammerspoon/hammerspoon/issues/370#issuecomment-545545468)
     @discardableResult
     private func focus() -> Bool {
         guard let pid = try? axWindow.getPID() else { return false }
-
-        var wid = cgWindowID
-        var psn = ProcessSerialNumber()
-        let status = GetProcessForPID(pid, &psn)
-
-        guard status == noErr else {
-            return false
-        }
-
-        var cgStatus = _SLPSSetFrontProcessWithOptions(&psn, wid, kCPSUserGenerated)
-
-        guard cgStatus == .success else {
-            return false
-        }
-
-        /// `0x01` is left click down, `0x02` is left click up (see `CGEventType`)
-        for byte in [0x01, 0x02] {
-            /// Create raw `SLSEvent` data.
-            /// Future consideration: instead of manually creating the bytes here, investigate:
-            /// - Creating a `SLSEvent` (likely analogous to `CGEvent`)
-            /// - Apply an identifier to the event to help Loop differentiate events that originate from itself
-            /// - Converting the `SLSEvent` to data using `SLEventCreateData` in SkyLight
-            var bytes = [UInt8](repeating: 0, count: 0xF8)
-            bytes[0x04] = 0xF8
-            bytes[0x08] = UInt8(byte)
-            bytes[0x3A] = 0x10
-            memcpy(&bytes[0x3C], &wid, MemoryLayout<UInt32>.size)
-            memset(&bytes[0x20], 0xFF, 0x10)
-            cgStatus = bytes.withUnsafeMutableBufferPointer { pointer in
-                SLPSPostEventRecordTo(&psn, &pointer.baseAddress!.pointee)
-            }
-            guard cgStatus == .success else {
-                return false
-            }
-        }
-
-        return true
+        return SkyLightToolBelt.focusWindow(
+            windowID: cgWindowID,
+            pid: pid
+        )
     }
 
     var isAppExcluded: Bool {
@@ -258,7 +203,7 @@ final class Window {
     var fullscreen: Bool {
         get {
             do {
-                let result: NSNumber? = try self.axWindow.getValue(.fullScreen)
+                let result: NSNumber? = try axWindow.getValue(.fullScreen)
                 return result?.boolValue ?? false
             } catch {
                 logger.error("Failed to get fullscreen: \(error.localizedDescription)")
@@ -267,7 +212,7 @@ final class Window {
         }
         set {
             do {
-                try self.axWindow.setValue(.fullScreen, value: newValue)
+                try axWindow.setValue(.fullScreen, value: newValue)
             } catch {
                 logger.error("Failed to set fullscreen: \(error.localizedDescription)")
             }
@@ -280,7 +225,7 @@ final class Window {
 
     /// Check with the `NSRunningApplication` if the app is hidden (⌘H).
     var isApplicationHidden: Bool {
-        self.nsRunningApplication?.isHidden ?? false
+        nsRunningApplication?.isHidden ?? false
     }
 
     /// Checks if the app has any visible windows using the `CGWindow` API.
@@ -315,25 +260,25 @@ final class Window {
     func setHidden(_ state: Bool) -> Bool {
         var result = false
         if state {
-            result = self.nsRunningApplication?.hide() ?? false
+            result = nsRunningApplication?.hide() ?? false
         } else {
-            result = self.nsRunningApplication?.unhide() ?? false
+            result = nsRunningApplication?.unhide() ?? false
         }
         return result
     }
 
     @discardableResult
     func toggleHidden() -> Bool {
-        if !self.isApplicationHidden {
-            return self.setHidden(true)
+        if !isApplicationHidden {
+            return setHidden(true)
         }
-        return self.setHidden(false)
+        return setHidden(false)
     }
 
     var minimized: Bool {
         get {
             do {
-                let result: NSNumber? = try self.axWindow.getValue(.minimized)
+                let result: NSNumber? = try axWindow.getValue(.minimized)
                 return result?.boolValue ?? false
             } catch {
                 logger.error("Failed to get minimized: \(error.localizedDescription)")
@@ -342,7 +287,7 @@ final class Window {
         }
         set {
             do {
-                try self.axWindow.setValue(.minimized, value: newValue)
+                try axWindow.setValue(.minimized, value: newValue)
             } catch {
                 logger.error("Failed to set minimized: \(error.localizedDescription)")
             }
@@ -356,7 +301,7 @@ final class Window {
     var position: CGPoint {
         get {
             do {
-                guard let result: CGPoint = try self.axWindow.getValue(.position) else {
+                guard let result: CGPoint = try axWindow.getValue(.position) else {
                     return .zero
                 }
                 return result
@@ -367,7 +312,7 @@ final class Window {
         }
         set {
             do {
-                try self.axWindow.setValue(.position, value: newValue)
+                try axWindow.setValue(.position, value: newValue)
             } catch {
                 logger.error("Failed to set position: \(error.localizedDescription)")
             }
@@ -377,7 +322,7 @@ final class Window {
     var size: CGSize {
         get {
             do {
-                guard let result: CGSize = try self.axWindow.getValue(.size) else {
+                guard let result: CGSize = try axWindow.getValue(.size) else {
                     return .zero
                 }
                 return result
@@ -388,7 +333,7 @@ final class Window {
         }
         set {
             do {
-                try self.axWindow.setValue(.size, value: newValue)
+                try axWindow.setValue(.size, value: newValue)
             } catch {
                 logger.error("Failed to set size: \(error.localizedDescription)")
             }
@@ -397,7 +342,7 @@ final class Window {
 
     var isResizable: Bool {
         do {
-            let result: Bool = try self.axWindow.canSetValue(.size)
+            let result: Bool = try axWindow.canSetValue(.size)
             return result
         } catch {
             logger.error("Failed to determine if window size can be set: \(error.localizedDescription)")
@@ -406,7 +351,7 @@ final class Window {
     }
 
     var frame: CGRect {
-        CGRect(origin: self.position, size: self.size)
+        CGRect(origin: position, size: size)
     }
 
     /// Set the frame of this Window.
@@ -423,12 +368,12 @@ final class Window {
         bounds: CGRect = .zero,
         completionHandler: @escaping (() -> ()) = {}
     ) {
-        let enhancedUI = self.enhancedUserInterface
+        let enhancedUI = enhancedUserInterface
 
         if enhancedUI {
             let appName = nsRunningApplication?.localizedName
             logger.info("\(appName ?? "This app")'s enhanced UI will be temporarily disabled while resizing.")
-            self.enhancedUserInterface = false
+            enhancedUserInterface = false
         }
 
         if animate {
@@ -441,22 +386,22 @@ final class Window {
             animation.startInBackground()
         } else {
             if sizeFirst {
-                self.size = rect.size
+                size = rect.size
             }
-            self.position = rect.origin
-            self.size = rect.size
+            position = rect.origin
+            size = rect.size
 
             completionHandler()
         }
 
         if enhancedUI {
-            self.enhancedUserInterface = true
+            enhancedUserInterface = true
         }
     }
 }
 
-extension Window: CustomDebugStringConvertible {
-    var debugDescription: String {
+extension Window: CustomStringConvertible {
+    var description: String {
         let name = nsRunningApplication?.localizedName ?? title ?? "<unknown>"
         return "Window(id: \(cgWindowID), title: \(name))"
     }
