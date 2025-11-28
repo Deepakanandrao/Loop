@@ -25,7 +25,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%"
           }
         },
         "fr" : {
@@ -55,7 +55,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%"
           }
         },
         "pt-BR" : {
@@ -89,7 +89,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%@"
           }
         },
         "de" : {
@@ -107,7 +107,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%@"
           }
         },
         "fr" : {
@@ -172,7 +172,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%1$@ %2$@"
           }
         },
         "de" : {
@@ -190,7 +190,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%1$@ %2$@"
           }
         },
         "fr" : {
@@ -214,13 +214,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%1$@ %2$@"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%1$@ %2$@"
           }
         },
         "pt-BR" : {
@@ -336,7 +336,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%lld"
           }
         },
         "de" : {
@@ -354,7 +354,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%lld"
           }
         },
         "fr" : {
@@ -830,7 +830,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Always start cycles from first item"
           }
         },
         "de" : {
@@ -848,7 +848,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Always start cycles from first item"
           }
         },
         "fr" : {
@@ -872,13 +872,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Always start cycles from first item"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Always start cycles from first item"
           }
         },
         "pt-BR" : {
@@ -994,7 +994,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Animated"
           }
         },
         "de" : {
@@ -1012,7 +1012,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Animated"
           }
         },
         "fr" : {
@@ -1036,13 +1036,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Animated"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Animated"
           }
         },
         "pt-BR" : {
@@ -1323,7 +1323,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Apply trigger delay on middle-click"
           }
         },
         "de" : {
@@ -1341,7 +1341,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Apply trigger delay on middle-click"
           }
         },
         "fr" : {
@@ -1365,13 +1365,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Apply trigger delay on middle-click"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Apply trigger delay on middle-click"
           }
         },
         "pt-BR" : {
@@ -1902,7 +1902,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Bottom Screen"
           }
         },
         "de" : {
@@ -1920,7 +1920,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Bottom Screen"
           }
         },
         "fr" : {
@@ -1944,13 +1944,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Bottom Screen"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Bottom Screen"
           }
         },
         "pt-BR" : {
@@ -2151,7 +2151,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Brisk"
           }
         },
         "de" : {
@@ -2169,7 +2169,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Brisk"
           }
         },
         "fr" : {
@@ -2199,7 +2199,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Brisk"
           }
         },
         "pt-BR" : {
@@ -2233,7 +2233,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "By default, Loop resumes cycles from where you last left off in each window."
           }
         },
         "de" : {
@@ -2251,7 +2251,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "By default, Loop resumes cycles from where you last left off in each window."
           }
         },
         "fr" : {
@@ -2275,13 +2275,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "By default, Loop resumes cycles from where you last left off in each window."
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "By default, Loop resumes cycles from where you last left off in each window."
           }
         },
         "pt-BR" : {
@@ -2663,7 +2663,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Color"
           }
         },
         "fr" : {
@@ -2891,7 +2891,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Copied!"
           }
         },
         "de" : {
@@ -2909,7 +2909,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Copied!"
           }
         },
         "fr" : {
@@ -2933,13 +2933,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Copied!"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Copied!"
           }
         },
         "pt-BR" : {
@@ -2969,6 +2969,7 @@
       }
     },
     "Corner radius" : {
+      "comment" : "Label for a slider when configuring the preview or radial menu's corner radius.",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3052,7 +3053,86 @@
     },
     "Corner Radius" : {
       "comment" : "Section header for configuration related to the corner radius of the preview.",
-      "isCommentAutoGenerated" : true
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corner Radius"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rayon des coins"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コーナーの半径"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "nl-BE" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Corner Radius"
+          }
+        }
+      }
     },
     "Credits" : {
       "comment" : "Section header shown in settings",
@@ -3108,7 +3188,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Credits"
           }
         },
         "pt-BR" : {
@@ -3161,7 +3241,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cursor"
           }
         },
         "fr" : {
@@ -3801,7 +3881,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cycle backward with Shift"
           }
         },
         "de" : {
@@ -3819,7 +3899,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cycle backward with Shift"
           }
         },
         "fr" : {
@@ -3843,13 +3923,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cycle backward with Shift"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cycle backward with Shift"
           }
         },
         "pt-BR" : {
@@ -3966,7 +4046,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cycles"
           }
         },
         "de" : {
@@ -3984,7 +4064,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cycles"
           }
         },
         "fr" : {
@@ -4008,13 +4088,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cycles"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Cycles"
           }
         },
         "pt-BR" : {
@@ -4045,7 +4125,86 @@
     },
     "Default corner radius" : {
       "comment" : "Label for the slider that controls the corner radius of the preview when the user has not selected a window.",
-      "isCommentAutoGenerated" : true
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default corner radius"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rayon des coins par défaut"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルトのコーナーの丸み"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "nl-BE" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default corner radius"
+          }
+        }
+      }
     },
     "Design" : {
       "comment" : "Role title shown in Loop’s credits section.",
@@ -4547,7 +4706,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Enable window snapping"
           }
         },
         "de" : {
@@ -4565,7 +4724,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Enable window snapping"
           }
         },
         "fr" : {
@@ -4589,13 +4748,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Enable window snapping"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Enable window snapping"
           }
         },
         "pt-BR" : {
@@ -5041,7 +5200,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "First Fourth"
           }
         },
         "de" : {
@@ -5059,7 +5218,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "First Fourth"
           }
         },
         "fr" : {
@@ -5083,13 +5242,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "First Fourth"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "First Fourth"
           }
         },
         "pt-BR" : {
@@ -5124,7 +5283,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Fluid"
           }
         },
         "de" : {
@@ -5142,7 +5301,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Fluid"
           }
         },
         "fr" : {
@@ -5172,7 +5331,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Fluid"
           }
         },
         "pt-BR" : {
@@ -5207,7 +5366,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus"
           }
         },
         "de" : {
@@ -5225,13 +5384,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focaliser"
           }
         },
         "it" : {
@@ -5249,13 +5408,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus"
           }
         },
         "pt-BR" : {
@@ -5267,7 +5426,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus"
           }
         },
         "zh-Hans" : {
@@ -5290,7 +5449,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Down"
           }
         },
         "de" : {
@@ -5308,13 +5467,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Down"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focus vers le bas"
           }
         },
         "it" : {
@@ -5332,13 +5491,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Down"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Down"
           }
         },
         "pt-BR" : {
@@ -5373,7 +5532,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Left"
           }
         },
         "de" : {
@@ -5391,13 +5550,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Left"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focaliser vers la gauche"
           }
         },
         "it" : {
@@ -5415,13 +5574,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Left"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Left"
           }
         },
         "pt-BR" : {
@@ -5456,7 +5615,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Right"
           }
         },
         "de" : {
@@ -5474,13 +5633,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Right"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focaliser vers la droit"
           }
         },
         "it" : {
@@ -5498,13 +5657,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Right"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Right"
           }
         },
         "pt-BR" : {
@@ -5539,7 +5698,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Up"
           }
         },
         "de" : {
@@ -5557,13 +5716,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Up"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Focaliser vers le haut"
           }
         },
         "it" : {
@@ -5581,13 +5740,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Up"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Focus Up"
           }
         },
         "pt-BR" : {
@@ -5704,7 +5863,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Fourth Fourth"
           }
         },
         "de" : {
@@ -5722,7 +5881,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Fourth Fourth"
           }
         },
         "fr" : {
@@ -5746,13 +5905,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Fourth Fourth"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Fourth Fourth"
           }
         },
         "pt-BR" : {
@@ -5888,7 +6047,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "General"
           }
         },
         "fr" : {
@@ -5953,7 +6112,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Go Back"
           }
         },
         "de" : {
@@ -5971,7 +6130,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Go Back"
           }
         },
         "fr" : {
@@ -6118,7 +6277,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow"
           }
         },
         "de" : {
@@ -6136,7 +6295,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow"
           }
         },
         "fr" : {
@@ -6284,7 +6443,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow Horizontally"
           }
         },
         "de" : {
@@ -6302,7 +6461,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow Horizontally"
           }
         },
         "fr" : {
@@ -6326,13 +6485,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow Horizontally"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow Horizontally"
           }
         },
         "pt-BR" : {
@@ -6616,7 +6775,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow Vertically"
           }
         },
         "de" : {
@@ -6634,7 +6793,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow Vertically"
           }
         },
         "fr" : {
@@ -6658,13 +6817,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow Vertically"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Grow Vertically"
           }
         },
         "pt-BR" : {
@@ -7193,7 +7352,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Horizontal Center Half"
           }
         },
         "de" : {
@@ -7211,7 +7370,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Horizontal Center Half"
           }
         },
         "fr" : {
@@ -7241,7 +7400,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Horizontal Center Half"
           }
         },
         "pt-BR" : {
@@ -7359,7 +7518,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Horizontal Fourths"
           }
         },
         "de" : {
@@ -7377,7 +7536,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Horizontal Fourths"
           }
         },
         "fr" : {
@@ -7401,13 +7560,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Horizontal Fourths"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Horizontal Fourths"
           }
         },
         "pt-BR" : {
@@ -7770,7 +7929,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Daylight"
           }
         },
         "de" : {
@@ -7788,7 +7947,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Daylight"
           }
         },
         "fr" : {
@@ -7818,7 +7977,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Daylight"
           }
         },
         "pt-BR" : {
@@ -7952,7 +8111,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Holo"
           }
         },
         "fr" : {
@@ -8116,7 +8275,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Loop Master"
           }
         },
         "fr" : {
@@ -8198,7 +8357,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Meta Loop"
           }
         },
         "fr" : {
@@ -8280,7 +8439,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Neon"
           }
         },
         "fr" : {
@@ -8362,7 +8521,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Rosé Pine"
           }
         },
         "fr" : {
@@ -8444,7 +8603,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Summer"
           }
         },
         "fr" : {
@@ -8526,7 +8685,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Synthwave Sunset"
           }
         },
         "fr" : {
@@ -8608,7 +8767,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "White"
           }
         },
         "fr" : {
@@ -10486,7 +10645,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Left Screen"
           }
         },
         "de" : {
@@ -10504,7 +10663,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Left Screen"
           }
         },
         "fr" : {
@@ -10528,13 +10687,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Left Screen"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Left Screen"
           }
         },
         "pt-BR" : {
@@ -10652,7 +10811,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Left Three Fourths"
           }
         },
         "de" : {
@@ -10670,7 +10829,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Left Three Fourths"
           }
         },
         "fr" : {
@@ -10694,13 +10853,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Left Three Fourths"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Left Three Fourths"
           }
         },
         "pt-BR" : {
@@ -13216,7 +13375,7 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "needs_review",
-                  "value" : ""
+                  "value" : "%lld Loops left"
                 }
               },
               "two" : {
@@ -13528,7 +13687,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "macOS's \"Tile by dragging windows to screen edges\" feature is currently\nenabled, which will conflict with Loop's window snapping functionality."
           }
         },
         "de" : {
@@ -13546,7 +13705,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "macOS's \"Tile by dragging windows to screen edges\" feature is currently\nenabled, which will conflict with Loop's window snapping functionality."
           }
         },
         "fr" : {
@@ -13576,7 +13735,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "macOS's \"Tile by dragging windows to screen edges\" feature is currently\nenabled, which will conflict with Loop's window snapping functionality."
           }
         },
         "pt-BR" : {
@@ -13694,7 +13853,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Maximize Height"
           }
         },
         "de" : {
@@ -13712,7 +13871,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Maximize Height"
           }
         },
         "fr" : {
@@ -13742,7 +13901,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Maximize Height"
           }
         },
         "pt-BR" : {
@@ -13777,7 +13936,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Maximize Width"
           }
         },
         "de" : {
@@ -13795,7 +13954,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Maximize Width"
           }
         },
         "fr" : {
@@ -13825,7 +13984,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Maximize Width"
           }
         },
         "pt-BR" : {
@@ -14025,7 +14184,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Minimize Others"
           }
         },
         "de" : {
@@ -14043,7 +14202,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Minimize Others"
           }
         },
         "fr" : {
@@ -14067,13 +14226,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Minimize Others"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Minimize Others"
           }
         },
         "pt-BR" : {
@@ -14191,7 +14350,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Move"
           }
         },
         "de" : {
@@ -14209,7 +14368,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Move"
           }
         },
         "fr" : {
@@ -18791,7 +18950,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "None"
           }
         },
         "de" : {
@@ -18955,7 +19114,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "%@'s notification permissions are currently disabled."
           }
         },
         "de" : {
@@ -19119,7 +19278,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Please turn them on in System Settings."
           }
         },
         "de" : {
@@ -19301,7 +19460,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "OK"
           }
         },
         "fr" : {
@@ -19448,7 +19607,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Padding"
           }
         },
         "de" : {
@@ -19531,7 +19690,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Peek size"
           }
         },
         "de" : {
@@ -19549,7 +19708,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Peek size"
           }
         },
         "fr" : {
@@ -19573,13 +19732,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Peek size"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Peek size"
           }
         },
         "pt-BR" : {
@@ -19614,7 +19773,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Permissions"
           }
         },
         "de" : {
@@ -19860,7 +20019,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Press \"Add\" to add a cycle item"
           }
         },
         "de" : {
@@ -20268,7 +20427,86 @@
     },
     "Prioritize selected window’s corner radius" : {
       "comment" : "Toggle that allows the user to prioritize the corner radius of the currently selected window over the default value.",
-      "isCommentAutoGenerated" : true
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prioriser le rayon des coins de la fenêtre sélectionnée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択中のウィンドウのコーナーの丸みを優先する"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "nl-BE" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        }
+      }
     },
     "px" : {
       "comment" : "Unit symbol: pixels",
@@ -20294,7 +20532,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "px"
           }
         },
         "fr" : {
@@ -20324,7 +20562,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "px"
           }
         },
         "pt-BR" : {
@@ -20606,7 +20844,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Relaxed"
           }
         },
         "de" : {
@@ -20624,7 +20862,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Relaxed"
           }
         },
         "fr" : {
@@ -20654,7 +20892,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Relaxed"
           }
         },
         "pt-BR" : {
@@ -21182,7 +21420,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Restart to complete"
           }
         },
         "de" : {
@@ -21595,7 +21833,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Right Screen"
           }
         },
         "de" : {
@@ -21613,7 +21851,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Right Screen"
           }
         },
         "fr" : {
@@ -21637,13 +21875,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Right Screen"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Right Screen"
           }
         },
         "pt-BR" : {
@@ -21761,7 +21999,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Right Three Fourths"
           }
         },
         "de" : {
@@ -21779,7 +22017,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Right Three Fourths"
           }
         },
         "fr" : {
@@ -21803,13 +22041,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Right Three Fourths"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Right Three Fourths"
           }
         },
         "pt-BR" : {
@@ -21945,7 +22183,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "s"
           }
         },
         "fr" : {
@@ -21969,13 +22207,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "s"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "s"
           }
         },
         "pt-BR" : {
@@ -22092,7 +22330,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Search…"
           }
         },
         "de" : {
@@ -22110,7 +22348,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Search…"
           }
         },
         "fr" : {
@@ -22175,7 +22413,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Second Fourth"
           }
         },
         "de" : {
@@ -22193,7 +22431,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Second Fourth"
           }
         },
         "fr" : {
@@ -22217,13 +22455,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Second Fourth"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Second Fourth"
           }
         },
         "pt-BR" : {
@@ -22257,7 +22495,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Select a keybinds file"
           }
         },
         "de" : {
@@ -22275,7 +22513,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Select a keybinds file"
           }
         },
         "fr" : {
@@ -22305,7 +22543,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Select a keybinds file"
           }
         },
         "pt-BR" : {
@@ -23571,7 +23809,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shift focus when stashed"
           }
         },
         "de" : {
@@ -23589,7 +23827,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shift focus when stashed"
           }
         },
         "fr" : {
@@ -23613,13 +23851,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shift focus when stashed"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shift focus when stashed"
           }
         },
         "pt-BR" : {
@@ -23818,7 +24056,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink"
           }
         },
         "de" : {
@@ -23836,7 +24074,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink"
           }
         },
         "fr" : {
@@ -23866,7 +24104,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink"
           }
         },
         "pt-BR" : {
@@ -23984,7 +24222,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink Horizontally"
           }
         },
         "de" : {
@@ -24002,7 +24240,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink Horizontally"
           }
         },
         "fr" : {
@@ -24026,13 +24264,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink Horizontally"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink Horizontally"
           }
         },
         "pt-BR" : {
@@ -24316,7 +24554,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink Vertically"
           }
         },
         "de" : {
@@ -24334,7 +24572,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink Vertically"
           }
         },
         "fr" : {
@@ -24358,13 +24596,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink Vertically"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Shrink Vertically"
           }
         },
         "pt-BR" : {
@@ -24416,7 +24654,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Simple"
           }
         },
         "fr" : {
@@ -24563,7 +24801,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Size Adjustment"
           }
         },
         "de" : {
@@ -24581,7 +24819,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Size Adjustment"
           }
         },
         "fr" : {
@@ -24611,7 +24849,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Size Adjustment"
           }
         },
         "pt-BR" : {
@@ -24811,7 +25049,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Snappy"
           }
         },
         "de" : {
@@ -24829,7 +25067,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Snappy"
           }
         },
         "fr" : {
@@ -24859,7 +25097,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Snappy"
           }
         },
         "pt-BR" : {
@@ -25025,7 +25263,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Stage Manager"
           }
         },
         "pt-BR" : {
@@ -25142,7 +25380,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Stash"
           }
         },
         "de" : {
@@ -25160,7 +25398,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Stash"
           }
         },
         "fr" : {
@@ -25184,13 +25422,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Stash"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Stash"
           }
         },
         "pt-BR" : {
@@ -25225,7 +25463,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Supports macOS Tahoe’s Liquid Glass effects"
           }
         },
         "de" : {
@@ -25243,7 +25481,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Supports macOS Tahoe’s Liquid Glass effects"
           }
         },
         "fr" : {
@@ -25267,13 +25505,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Supports macOS Tahoe’s Liquid Glass effects"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Supports macOS Tahoe’s Liquid Glass effects"
           }
         },
         "pt-BR" : {
@@ -25308,7 +25546,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Suppress Mission Control"
           }
         },
         "de" : {
@@ -25326,7 +25564,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Suppress Mission Control"
           }
         },
         "fr" : {
@@ -25350,13 +25588,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Suppress Mission Control"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Suppress Mission Control"
           }
         },
         "pt-BR" : {
@@ -25719,7 +25957,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "That keybind is already being used by another stash keybind."
           }
         },
         "de" : {
@@ -25737,7 +25975,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "That keybind is already being used by another stash keybind."
           }
         },
         "fr" : {
@@ -25761,13 +25999,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "That keybind is already being used by another stash keybind."
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "That keybind is already being used by another stash keybind."
           }
         },
         "pt-BR" : {
@@ -25883,7 +26121,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "There are other keybinds that conflict with this key combination."
           }
         },
         "de" : {
@@ -25901,7 +26139,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "There are other keybinds that conflict with this key combination."
           }
         },
         "fr" : {
@@ -25931,7 +26169,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "There are other keybinds that conflict with this key combination."
           }
         },
         "pt-BR" : {
@@ -26048,7 +26286,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Third Fourth"
           }
         },
         "de" : {
@@ -26066,7 +26304,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Third Fourth"
           }
         },
         "fr" : {
@@ -26090,13 +26328,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Third Fourth"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Third Fourth"
           }
         },
         "pt-BR" : {
@@ -26130,7 +26368,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "To save power, window animations are\nunavailable in Low Power Mode."
           }
         },
         "de" : {
@@ -26148,7 +26386,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "To save power, window animations are\nunavailable in Low Power Mode."
           }
         },
         "fr" : {
@@ -26172,13 +26410,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "To save power, window animations are\nunavailable in Low Power Mode."
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "To save power, window animations are\nunavailable in Low Power Mode."
           }
         },
         "pt-BR" : {
@@ -26261,7 +26499,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Top"
           }
         },
         "pt-BR" : {
@@ -26627,7 +26865,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Top Screen"
           }
         },
         "de" : {
@@ -26645,7 +26883,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Top Screen"
           }
         },
         "fr" : {
@@ -26669,13 +26907,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Top Screen"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Top Screen"
           }
         },
         "pt-BR" : {
@@ -26876,7 +27114,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Treat left and right keys differently"
           }
         },
         "de" : {
@@ -26894,7 +27132,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Treat left and right keys differently"
           }
         },
         "fr" : {
@@ -26918,13 +27156,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Treat left and right keys differently"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Treat left and right keys differently"
           }
         },
         "pt-BR" : {
@@ -27207,7 +27445,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Unstash"
           }
         },
         "de" : {
@@ -27225,7 +27463,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Unstash"
           }
         },
         "fr" : {
@@ -27249,13 +27487,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Unstash"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Unstash"
           }
         },
         "pt-BR" : {
@@ -27289,7 +27527,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Unstashed Size"
           }
         },
         "de" : {
@@ -27307,7 +27545,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Unstashed Size"
           }
         },
         "fr" : {
@@ -27331,13 +27569,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Unstashed Size"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Unstashed Size"
           }
         },
         "pt-BR" : {
@@ -27453,7 +27691,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Updates are disabled"
           }
         },
         "de" : {
@@ -27471,7 +27709,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Updates are disabled"
           }
         },
         "fr" : {
@@ -27501,7 +27739,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Updates are disabled"
           }
         },
         "pt-BR" : {
@@ -27700,7 +27938,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Use macOS window manager when available"
           }
         },
         "de" : {
@@ -27718,7 +27956,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Use macOS window manager when available"
           }
         },
         "fr" : {
@@ -27748,7 +27986,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Use macOS window manager when available"
           }
         },
         "pt-BR" : {
@@ -27946,7 +28184,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Version %1$@ (%2$lld)"
           }
         },
         "de" : {
@@ -28029,7 +28267,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Vertical Center Half"
           }
         },
         "de" : {
@@ -28047,7 +28285,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Vertical Center Half"
           }
         },
         "fr" : {
@@ -28077,7 +28315,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Vertical Center Half"
           }
         },
         "pt-BR" : {
@@ -28296,7 +28534,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Wallpaper"
           }
         },
         "fr" : {
@@ -28361,7 +28599,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Whether to allow Mission Control to open when windows\nare dragged to the top of the screen."
           }
         },
         "de" : {
@@ -28379,7 +28617,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Whether to allow Mission Control to open when windows\nare dragged to the top of the screen."
           }
         },
         "fr" : {
@@ -28403,13 +28641,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Whether to allow Mission Control to open when windows\nare dragged to the top of the screen."
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Whether to allow Mission Control to open when windows\nare dragged to the top of the screen."
           }
         },
         "pt-BR" : {
@@ -28692,7 +28930,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Window Snapping"
           }
         },
         "de" : {
@@ -28710,7 +28948,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Window Snapping"
           }
         },
         "fr" : {
@@ -28734,13 +28972,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Window Snapping"
           }
         },
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Window Snapping"
           }
         },
         "pt-BR" : {
@@ -28875,7 +29113,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "X"
           }
         },
         "fr" : {
@@ -28905,7 +29143,7 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "X"
           }
         },
         "pt-BR" : {
@@ -28958,7 +29196,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : ""
+            "value" : "Y"
           }
         },
         "fr" : {
@@ -29429,5 +29667,5 @@
       }
     }
   },
-  "version" : "1.1"
+  "version" : "1.0"
 }
