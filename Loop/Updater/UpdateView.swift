@@ -82,7 +82,7 @@ struct UpdateView: View {
                                             .shadow(color: tintColor, radius: 1)
                                     }
                                 }
-                                .padding(.horizontal, 4)
+                                .padding(.horizontal, 12)
                         }
 
                         let tenSpaces = "          " // This helps with alignment for the animation once the update finishes
