@@ -5,8 +5,6 @@
 //  Created by Kai Azim on 2025-11-01.
 //
 
-/// To compile, run this: `swiftc -O ./.github/LocalizationSorter.swift -o ./.github/LocalizationSorter`
-
 import Foundation
 
 /// Crowdin's Localizable.xcstrings file includes null comments.
