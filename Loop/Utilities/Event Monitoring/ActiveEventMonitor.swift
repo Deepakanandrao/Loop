@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import Scribe
 
 /// Active event monitor that can process and alter events when needed.
 @MainActor
@@ -80,7 +81,7 @@ final class ActiveEventMonitor: BaseEventTapMonitor {
         ) {
             setupRunLoopSource(eventTap: eventTap, runLoop: CFRunLoopGetCurrent())
         } else {
-            super.logger.info("Failed to create event tap")
+            Log.info("Failed to create event tap", category: .activeEventMonitor)
         }
     }
 

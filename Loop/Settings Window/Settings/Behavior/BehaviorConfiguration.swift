@@ -7,13 +7,12 @@
 
 import Defaults
 import Luminare
-import OSLog
+import Scribe
 import ServiceManagement
 import SwiftUI
 
 struct BehaviorConfigurationView: View {
     @Environment(\.luminareAnimation) private var luminareAnimation
-    private static let logger = Logger(category: "BehaviorConfigurationView")
 
     @Default(.launchAtLogin) var launchAtLogin
     @Default(.hideMenuBarIcon) var hideMenuBarIcon
@@ -65,7 +64,7 @@ struct BehaviorConfigurationView: View {
                             try SMAppService().unregister()
                         }
                     } catch {
-                        Self.logger.error("Failed to \(launchAtLogin ? "register" : "unregister") login item: \(error.localizedDescription)")
+                        Log.error("Failed to \(launchAtLogin ? "register" : "unregister") login item: \(error.localizedDescription)", category: .behaviorConfigurationView)
                     }
                 }
 
