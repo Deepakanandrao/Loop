@@ -68,7 +68,7 @@ jobs:
 
       - name: 🎨 Format Localizable.xcstrings
         run: |
-          swift ./.github/LocalizationSorter.swift Loop/Localizable.xcstrings Loop/Localizable.xcstrings
+          ./.github/LocalizationSorter Loop/Localizable.xcstrings Loop/Localizable.xcstrings
 
       - name: ⚙️ Commit & Create Pull Request
         run: |
