@@ -181,7 +181,7 @@ struct AdvancedConfigurationView: View {
                                 Button {
                                     openURL(url)
                                 } label: {
-                                    Image(.shareUpRight)
+                                    Image(systemName: "arrow.up.forward")
                                         .foregroundStyle(.secondary)
                                         .padding(4)
                                 }
@@ -213,7 +213,7 @@ struct AdvancedConfigurationView: View {
 
     private var keybindsSection: some View {
         LuminareSection(String(localized: "Keybinds", comment: "Section header shown in settings")) {
-            HStack(spacing: 2) {
+            HStack(spacing: 4) {
                 Button(action: model.importPrompt) {
                     HStack {
                         Text("Import")
@@ -225,6 +225,7 @@ struct AdvancedConfigurationView: View {
                         }
                     }
                 }
+                .luminareRoundingBehavior(leading: true)
 
                 Button(action: model.exportPrompt) {
                     HStack {
@@ -249,7 +250,7 @@ struct AdvancedConfigurationView: View {
                         }
                     }
                 }
-                .buttonStyle(.luminareProminent)
+                .luminareRoundingBehavior(trailing: true)
             }
         }
     }
@@ -262,25 +263,20 @@ struct AdvancedConfigurationView: View {
     }
 
     private func accessibilityComponent() -> some View {
-        LuminareCompose {
-            Button {
-                AccessibilityManager.requestAccess()
-            } label: {
-                Text("Request…", comment: "Button to request accessibility access")
-            }
-            .buttonStyle(.luminareCompact)
-            .luminareComposeIgnoreSafeArea(edges: .trailing)
-            .disabled(model.isAccessibilityAccessGranted)
-        } label: {
+        LuminareButton {
             HStack {
                 if model.isAccessibilityAccessGranted {
-                    Image(.badgeCheck2)
+                    Image(systemName: "checkmark.seal.fill")
                         .foregroundStyle(tint)
                 }
 
                 Text("Accessibility access")
             }
+        } content: {
+            Text("Request…", comment: "Button to request accessibility access")
+        } action: {
+            AccessibilityManager.requestAccess()
         }
-        .luminareComposeStyle(.inline)
+        .disabled(model.isAccessibilityAccessGranted)
     }
 }

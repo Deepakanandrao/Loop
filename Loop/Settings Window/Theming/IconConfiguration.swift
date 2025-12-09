@@ -130,7 +130,7 @@ struct IconConfigurationView: View {
                         )
                     }
             }
-            .luminarePickerRoundedCorner(.always)
+            .luminareRoundingBehavior(top: true, bottom: true)
         }
 
         LuminareSection(String(localized: "Options", comment: "Section header shown in settings")) {
@@ -218,7 +218,7 @@ struct IconVew: View {
         VStack(alignment: .center) {
             Spacer()
 
-            Image(.lock)
+            Image(systemName: "lock")
                 .foregroundStyle(.secondary)
 
             Text(nextUnlockCount == icon.unlockTime ?
