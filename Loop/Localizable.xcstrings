@@ -1236,7 +1236,6 @@
       }
     },
     "Apply padding" : {
-      "comment" : "",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -2899,8 +2898,8 @@
         },
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Configure…"
+            "state" : "translated",
+            "value" : "Konfigurieren…"
           }
         },
         "en" : {
@@ -2923,8 +2922,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Configure…"
+            "state" : "translated",
+            "value" : "Configura…"
           }
         },
         "ja" : {
@@ -5640,7 +5639,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Focus vers le bas"
+            "value" : "Focaliser vers le bas"
           }
         },
         "it" : {
@@ -5777,7 +5776,87 @@
       }
     },
     "Focus Next In Stack" : {
-      "comment" : "Window action"
+      "comment" : "Window action",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Focaliser sur la pile suivante"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "次のスタックにフォーカス"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "nl-BE" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Focus Next In Stack"
+          }
+        }
+      }
     },
     "Focus Right" : {
       "comment" : "Window action",
@@ -15012,7 +15091,6 @@
       }
     },
     "Move window to cursor's screen" : {
-      "comment" : "",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
