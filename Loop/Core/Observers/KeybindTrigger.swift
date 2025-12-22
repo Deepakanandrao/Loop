@@ -23,6 +23,10 @@ final class KeybindTrigger {
     private var lastKeyReleaseTime: Date = .now
     private var eventMonitor: ActiveEventMonitor?
 
+    private var systemKeybindCache: Set<Set<CGKeyCode>> = []
+    private var keybindCacheUpdatedAt: ContinuousClock.Instant?
+    private let keybindCacheLifetime: ContinuousClock.Duration = .seconds(30)
+
     // Special events only contain the globe key, as it can also be used as an emoji key.
     private let specialEvents: [CGKeyCode] = [.kVK_Globe_Emoji]
     var canPassthroughSpecialEvents = true // If mouse has been moved
@@ -81,11 +85,11 @@ final class KeybindTrigger {
             LoopManager.shared.isShiftKeyPressed = event.flags.contains(.maskShift)
 
             var filteredFlags = event.flags
-
             if keyCode.isFnSpecialKey, !previousEventFlags.contains(.maskSecondaryFn) {
                 filteredFlags.remove(.maskSecondaryFn)
             }
 
+            let isLoopOpen = checkIfLoopOpen()
             previousEventFlags = filteredFlags
 
             if event.type == .keyUp {
@@ -103,7 +107,8 @@ final class KeybindTrigger {
             let result = performKeybind(
                 type: event.type,
                 isARepeat: event.getIntegerValueField(.keyboardEventAutorepeat) == 1,
-                flags: filteredFlags
+                flags: filteredFlags,
+                isLoopOpen: isLoopOpen
             )
 
             if result == .consume {
@@ -112,7 +117,8 @@ final class KeybindTrigger {
 
             // If this shouldn't consume the event, and Loop isn't in the process of opening (possibly due to trigger delays),
             // check if it was a system keybind (ex. screenshot), and in that case, passthrough and force-close Loop
-            if result != .opening, event.type == .keyDown, CGKeyCode.systemKeybinds.contains(pressedKeys) {
+            refreshSystemKeybindCacheIfNeeded()
+            if result != .opening, event.type == .keyDown, systemKeybindCache.contains(pressedKeys) {
                 closeLoop(forceClose: true)
             }
 
@@ -143,14 +149,15 @@ final class KeybindTrigger {
     ///   - type: the type of this event.
     ///   - isARepeat: whether this event is a repeat event.
     ///   - flags: modifier flags associated with this event.
+    ///   - isLoopOpen: whether Loop is currently open.
     /// - Returns: whether this event was processed by Loop.
-    private func performKeybind(type: CGEventType, isARepeat: Bool, flags: CGEventFlags) -> PerformKeybindResult {
+    private func performKeybind(type: CGEventType, isARepeat: Bool, flags: CGEventFlags, isLoopOpen: Bool) -> PerformKeybindResult {
         let flagKeys = sideDependentTriggerKey ? flags.keyCodes : flags.keyCodes.baseModifiers
         let allPressedKeys: Set<CGKeyCode> = pressedKeys.union(flagKeys)
         let actionKeys: Set<CGKeyCode> = allPressedKeys.subtracting(triggerKey)
         let containsTrigger = allPressedKeys.isSuperset(of: triggerKey)
 
-        if checkIfLoopOpen() {
+        if isLoopOpen {
             if pressedKeys.contains(.kVK_Escape) {
                 closeLoop(forceClose: true)
                 return .consume
@@ -237,5 +244,20 @@ final class KeybindTrigger {
             // No active timer, create one with the provided startingAction.
             triggerDelayTimer.handleTrigger(startingAction: startingAction)
         }
+    }
+
+    private func refreshSystemKeybindCacheIfNeeded() {
+        let shouldRefresh: Bool = if let keybindCacheUpdatedAt {
+            keybindCacheUpdatedAt.duration(to: .now) > keybindCacheLifetime
+        } else {
+            true
+        }
+
+        guard shouldRefresh else {
+            return
+        }
+
+        systemKeybindCache = CGKeyCode.systemKeybinds
+        keybindCacheUpdatedAt = .now
     }
 }
