@@ -81,7 +81,6 @@ jobs:
           
       - name: 🛠️ Build Loop
         run: |
-          export IDEBuildOperationMaxNumberOfConcurrentCompileTasks=$(sysctl -n hw.ncpu)
           set -o pipefail && xcodebuild \
             archive \
             -project Loop.xcodeproj/ \
