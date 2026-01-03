@@ -64,11 +64,11 @@ struct KeybindItemView: View {
 
             Group {
                 if action.direction.isCustomizable {
-                    Button(action: {
+                    Button {
                         isConfiguringCustom = true
-                    }, label: {
+                    } label: {
                         Image(systemName: "slider.horizontal.3")
-                    })
+                    }
                     .buttonStyle(.plain)
                     .luminareModalWithPredefinedSheetStyle(isPresented: $isConfiguringCustom, isCompact: false) {
                         if action.direction == .custom {
@@ -79,21 +79,21 @@ struct KeybindItemView: View {
                                 .frame(width: 400)
                         }
                     }
-                    .help("Customize this keybind's custom frame.")
+                    .help("Customize this action's custom frame.")
                 }
 
                 if action.direction == .cycle {
-                    Button(action: {
+                    Button {
                         isConfiguringCycle = true
-                    }, label: {
+                    } label: {
                         Image(systemName: "repeat")
-                    })
+                    }
                     .buttonStyle(.plain)
                     .luminareModalWithPredefinedSheetStyle(isPresented: $isConfiguringCycle, isCompact: false) {
                         CycleActionConfigurationView(action: $action, isPresented: $isConfiguringCycle)
                             .frame(width: 400)
                     }
-                    .help("Customize what this keybind cycles through.")
+                    .help("Customize what this action cycles through.")
                 }
             }
             .font(.title3)
@@ -164,10 +164,7 @@ struct KeybindItemView: View {
             }
             .padding(.horizontal, 4)
         }
-        .luminareContentSize(
-            contentMode: .fit,
-            hasFixedHeight: true
-        )
+        .luminareContentSize(contentMode: .fit, hasFixedHeight: true)
         .luminareRoundingBehavior(top: true, bottom: true)
         .luminareFilledStates([.hovering, .pressed])
         .luminareBorderedStates(.hovering)

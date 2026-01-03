@@ -5,6 +5,7 @@
 //  Created by Kai Azim on 2025-10-18.
 //
 
+import Defaults
 import Luminare
 import SwiftUI
 
@@ -14,6 +15,7 @@ struct SettingsContentView: View {
 
     @Environment(\.luminareAnimation) private var animation
     @Environment(\.luminareTitleBarHeight) private var titleBarHeight
+    @Default(.enableRadialMenuCustomization) var enableRadialMenuCustomization
 
     var body: some View {
         LuminareDividedStack {
@@ -51,18 +53,21 @@ struct SettingsContentView: View {
 
             if model.showInspector {
                 ZStack {
-                    if model.showPreview {
-                        LuminarePreviewView()
-                    }
+                    LuminarePreviewView()
+                        .allowsHitTesting(false)
 
                     if model.showRadialMenu {
-                        VStack {
-                            RadialMenuView(viewModel: model.radialMenuViewModel)
+                        RadialMenuView(viewModel: model.radialMenuViewModel)
+                            .allowsHitTesting(false)
+
+                        if enableRadialMenuCustomization, model.currentTab == .radialMenu {
+                            RadialMenuActionsGuide()
                         }
-                        .frame(maxHeight: .infinity, alignment: .center)
                     }
                 }
+                .compositingGroup()
                 .animation(animation, value: [model.showRadialMenu, model.showPreview])
+                .padding(12)
                 .frame(width: 520)
             }
         }
@@ -74,5 +79,6 @@ struct SettingsContentView: View {
         }
         .luminareTint(overridingWith: accentColorController.color1)
         .ignoresSafeArea()
+        .environmentObject(model)
     }
 }

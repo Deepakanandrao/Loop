@@ -12,11 +12,10 @@ import SwiftUI
 struct LuminarePreviewView: View {
     @Environment(\.luminareAnimation) private var luminareAnimation
     @Environment(\.appearsActive) private var appearsActive
-    @ObservedObject var model: SettingsWindowManager = .shared
+    @EnvironmentObject private var windowModel: SettingsWindowManager
     @ObservedObject private var accentColorController: AccentColorController = .shared
 
     @State var actionRect: CGRect = .zero
-    @State private var scale: CGFloat = 1
 
     @Default(.previewPadding) var previewPadding
     @Default(.padding) var padding
@@ -52,23 +51,32 @@ struct LuminarePreviewView: View {
             .padding(previewPadding + previewBorderThickness / 2)
             .frame(width: actionRect.width, height: actionRect.height)
             .offset(x: actionRect.minX, y: actionRect.minY)
-            .scaleEffect(CGSize(width: scale, height: scale))
-            .onAppear {
-                actionRect = model.previewedAction.getFrame(window: nil, bounds: .init(origin: .zero, size: geo.size), isPreview: true)
-
-                withAnimation(
-                    .interpolatingSpring(
-                        duration: 0.2,
-                        bounce: 0.1,
-                        initialVelocity: 1 / 2
+            .opacity(actionRect.size.area == .zero ? 0 : 1)
+            .onChange(
+                of: windowModel.previewedAction,
+                initial: true
+            ) { newAction in
+                let newActionRect: CGRect = if newAction.willManipulateExistingWindowFrame {
+                    .zero
+                } else {
+                    newAction.getFrame(
+                        window: nil,
+                        bounds: .init(origin: .zero, size: geo.size),
+                        isPreview: true
                     )
-                ) {
-                    scale = 1
                 }
-            }
-            .onChange(of: model.previewedAction) { _ in
+
                 withAnimation(animationConfiguration.previewTimingFunctionSwiftUI) {
-                    actionRect = model.previewedAction.getFrame(window: nil, bounds: .init(origin: .zero, size: geo.size))
+                    if newActionRect.size.area == .zero {
+                        actionRect = .init(
+                            x: geo.size.width / 2,
+                            y: geo.size.height / 2,
+                            width: 0,
+                            height: 0
+                        )
+                    } else {
+                        actionRect = newActionRect
+                    }
                 }
             }
         }

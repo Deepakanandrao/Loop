@@ -23,9 +23,7 @@ final class StashedWindowsStore {
         didSet { persistStashedWindows() }
     }
 
-    var revealed: Set<CGWindowID> = [] {
-        didSet { persistRevealedWindows() }
-    }
+    private(set) var revealed: Set<CGWindowID> = []
 
     /// Hold data from `Defaults[.stashManagerStashedWindows]` for windows that failed to be restored.
     private var failedToRestore: [CGWindowID: WindowAction] = [:]
@@ -34,7 +32,6 @@ final class StashedWindowsStore {
     // MARK: - Public methods
 
     func restore() {
-        restoreRevealedWindows()
         restoreStashedWindows()
     }
 
@@ -53,7 +50,7 @@ final class StashedWindowsStore {
     /// Return the stashed window that match the given `action` and `screen`
     func stashedWindow(for action: WindowAction, on screen: NSScreen) -> StashedWindow? {
         for stashedWindow in stashed.values {
-            if stashedWindow.action.isSameManipulation(as: action), stashedWindow.screen.isSameScreen(screen) {
+            if stashedWindow.action.id == action.id, stashedWindow.screen.isSameScreen(screen) {
                 return stashedWindow
             }
         }
@@ -61,10 +58,6 @@ final class StashedWindowsStore {
     }
 
     // MARK: Private methods
-
-    func restoreRevealedWindows() {
-        revealed = Defaults[.stashManagerRevealedWindows]
-    }
 
     func restoreStashedWindows() {
         let windows = WindowUtility.windowList()
@@ -128,10 +121,6 @@ final class StashedWindowsStore {
         guard let screen = ScreenUtility.screenContaining(window) ?? NSScreen.main else { return nil }
 
         return StashedWindow(window: window, screen: screen, action: action)
-    }
-
-    func persistRevealedWindows() {
-        Defaults[.stashManagerRevealedWindows] = revealed
     }
 
     func persistStashedWindows() {

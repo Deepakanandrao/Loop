@@ -70,7 +70,7 @@ struct RadialMenuView: View {
         .shadow(radius: 10)
         .padding(20)
         .fixedSize()
-        .scaleEffect(viewModel.radialMenuScale)
+        .scaleEffect(viewModel.shouldFillRadialMenu ? 0.85 : 1.0)
         .animation(animationConfiguration.radialMenuSize, value: viewModel.currentAction)
         .animation(luminareAnimation, value: [accentColorController.color1, accentColorController.color2])
     }
@@ -79,24 +79,24 @@ struct RadialMenuView: View {
         ZStack {
             if viewModel.shouldFillRadialMenu {
                 Color.white
-            }
-
-            ZStack {
-                if radialMenuCornerRadius >= radialMenuSize / 2 - 2 {
-                    DirectionSelectorCircleSegment(
-                        angle: viewModel.angle,
-                        radialMenuSize: radialMenuSize
-                    )
-                } else {
-                    DirectionSelectorSquareSegment(
-                        angle: viewModel.angle,
-                        radialMenuCornerRadius: radialMenuCornerRadius,
-                        radialMenuThickness: radialMenuThickness
-                    )
+            } else {
+                ZStack {
+                    if radialMenuCornerRadius >= radialMenuSize / 2 - 2 {
+                        DirectionSelectorCircleSegment(
+                            angle: viewModel.angle,
+                            radialMenuSize: radialMenuSize
+                        )
+                    } else {
+                        DirectionSelectorSquareSegment(
+                            angle: viewModel.angle,
+                            radialMenuCornerRadius: radialMenuCornerRadius,
+                            radialMenuThickness: radialMenuThickness
+                        )
+                    }
                 }
+                .compositingGroup()
+                .opacity(viewModel.shouldHideDirectionSelector ? 0 : 1)
             }
-            .compositingGroup()
-            .opacity(viewModel.shouldHideDirectionSelector ? 0 : 1)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

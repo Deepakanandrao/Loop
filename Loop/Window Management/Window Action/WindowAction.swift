@@ -13,7 +13,8 @@ import SwiftUI
 ///
 /// Common actions, such as right half, or bottom right quarter, are represented by `WindowDirection` enum, while user-made actions, such as custom frames and cycles are speciied by this struct.
 struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serializable {
-    private(set) var id: UUID = .init()
+    private(set) var id: UUID
+    private static var sharedNoSelectionId: UUID = .init()
 
     /// Initializes a `WindowAction` with the specified parameters. Only to be used when decoding from JSON.
     /// - Parameters:
@@ -61,6 +62,12 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
     /// Initializes a `WindowAction` with the specified direction and an empty keybind.
     /// - Parameter direction: the direction of the window action.
     init(_ direction: WindowDirection, keybind: Set<CGKeyCode> = []) {
+        if direction == .noSelection {
+            self.id = Self.sharedNoSelectionId
+        } else {
+            self.id = UUID()
+        }
+
         self.direction = direction
         self.keybind = keybind
     }
@@ -71,6 +78,7 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
     ///   - cycle: the cycle of window actions. This is an array of `WindowAction` that will be cycled through when the action is triggered.
     ///   - keybind: the keybinds associated with this action.
     init(_ name: String? = nil, cycle: [WindowAction], keybind: Set<CGKeyCode> = []) {
+        self.id = UUID()
         self.direction = .cycle
         self.name = name
         self.cycle = cycle
@@ -103,32 +111,6 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
 
     // MARK: - Methods
 
-    /// Determines if one action is equivalent to another, ignore all properties that are not related to resizing or moving the window.
-    /// - Parameter other: the other `WindowAction` to compare against.
-    /// - Returns: `true` if the two actions are equivalent in terms of resizing or moving the window, otherwise `false`.
-    func isSameManipulation(as other: WindowAction) -> Bool {
-        let commonID = UUID()
-
-        /// Removes ID, keybind and name. This is useful when checking for equality between an otherwise identical keybind and radial menu action.
-        func stripNonResizingProperties(of action: WindowAction) -> WindowAction {
-            var strippedAction = action
-            strippedAction.id = commonID
-            strippedAction.keybind = []
-            strippedAction.name = nil
-
-            if let cycle = action.cycle {
-                strippedAction.cycle = cycle.map { stripNonResizingProperties(of: $0) }
-            }
-
-            return strippedAction
-        }
-
-        let modifiedSelf = stripNonResizingProperties(of: self)
-        let modifiedOther = stripNonResizingProperties(of: other)
-
-        return modifiedSelf == modifiedOther
-    }
-
     /// Retrieves the name of the action, either from the `name` property or from the `direction` enum.
     /// - Returns: the name of the action.
     func getName() -> String {
@@ -138,7 +120,7 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
             result = if let name, !name.isEmpty {
                 name
             } else {
-                .init(localized: .init("Custom Keybind", defaultValue: "Custom Keybind"))
+                .init(localized: .init("Custom Action", defaultValue: "Custom Action"))
             }
         } else if direction == .stash {
             result = if let name, !name.isEmpty {
@@ -216,7 +198,7 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
         let frame = CGRect(origin: .zero, size: .init(width: 1, height: 1))
         let targetWindowFrame = getFrame(window: window, bounds: frame, disablePadding: true)
         let angle = frame.center.angle(to: targetWindowFrame.center)
-        let result: Angle = .radians(angle) * -1
+        let result: Angle = angle * -1
 
         return result.normalized()
     }
@@ -230,7 +212,7 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
     ///   - isPreview: ensures that when manipulating the preview window, the last target frame does not affect the actual resizing of the window.
     /// - Returns: the calculated frame for the specified window action.
     func getFrame(window: Window?, bounds: CGRect, disablePadding: Bool = false, screen: NSScreen? = nil, isPreview: Bool = false) -> CGRect {
-        let noFrameActions: [WindowDirection] = [.noAction, .cycle, .minimize, .hide]
+        let noFrameActions: [WindowDirection] = [.noAction, .noSelection, .cycle, .minimize, .hide]
         guard !noFrameActions.contains(direction), !direction.willFocusWindow else {
             return NSRect(origin: bounds.center, size: .zero)
         }
@@ -609,7 +591,6 @@ extension WindowAction {
     /// - Returns: the adjusted frame after applying the size adjustment based on the direction and bounds.
     private func calculateSizeAdjustment(_ frameToResizeFrom: CGRect, _ bounds: CGRect) -> CGRect {
         var result = frameToResizeFrom
-        let totalBounds: Edge.Set = [.top, .bottom, .leading, .trailing]
         let step = Defaults[.sizeIncrement] * ((direction == .larger || direction.willGrow) ? -1 : 1)
 
         let padding = PaddingSettings.padding
@@ -621,20 +602,24 @@ extension WindowAction {
 
         if LoopManager.sidesToAdjust == nil {
             let edgesTouchingBounds = frameToResizeFrom.getEdgesTouchingBounds(bounds)
-            LoopManager.sidesToAdjust = totalBounds.subtracting(edgesTouchingBounds)
+            LoopManager.sidesToAdjust = .all.subtracting(edgesTouchingBounds)
         }
 
         if let edgesToInset = LoopManager.sidesToAdjust {
-            if edgesToInset.isEmpty || edgesToInset.contains(totalBounds) {
-                result = result.inset(
-                    by: step,
-                    minSize: .init(
-                        width: minWidth,
-                        height: minHeight
+            if edgesToInset.isEmpty || edgesToInset.contains(.all) {
+                result = result
+                    .inset(
+                        by: step,
+                        minSize: .init(
+                            width: minWidth,
+                            height: minHeight
+                        )
                     )
-                )
+                    .intersection(bounds)
             } else {
-                result = result.padding(edgesToInset, step)
+                result = result
+                    .padding(edgesToInset, step)
+                    .intersection(bounds)
 
                 if result.width < minWidth {
                     result.size.width = minWidth

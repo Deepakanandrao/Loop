@@ -11,9 +11,9 @@ import Scribe
 
 enum DataPatcher {
     static func run() {
-        let initialPatches = Defaults[.patchesApplied]
+        let initialPatches: Patches = Defaults[.patchesApplied]
 
-        if !initialPatches.contains(.accentColorMode) {
+        runPatch(patch: .changeToAccentColorMode, initial: initialPatches) {
             // Migrate to accent color mode
             // We need to migrate `useSystemAccentColor` and `processWallpaper` over to `accentColorMode`
             let useSystemAccentColor: Bool = Defaults[.useSystemAccentColor]
@@ -27,14 +27,28 @@ enum DataPatcher {
                 Defaults[.accentColorMode] = .custom
             }
 
-            Defaults[.patchesApplied].formUnion(.accentColorMode)
-            Log.info("Ran patch accentColorMode", category: .dataPatcher)
+            Defaults.reset(.useSystemAccentColor)
+            Defaults.reset(.processWallpaper)
+        }
+
+        runPatch(patch: .removeRevealedStashedWindows, initial: initialPatches) {
+            Defaults.reset(.stashManagerRevealedWindows)
         }
     }
 
-    struct Patch: OptionSet, Defaults.Serializable {
+    private static func runPatch(patch: Patches, initial: Patches, with callback: () -> ()) {
+        if !initial.contains(patch) {
+            callback()
+
+            Defaults[.patchesApplied].formUnion(patch)
+            Log.info("Ran patch \(patch)", category: .dataPatcher)
+        }
+    }
+
+    struct Patches: OptionSet, Defaults.Serializable {
         let rawValue: Int
 
-        static let accentColorMode = Self(rawValue: 1 << 0)
+        static let changeToAccentColorMode = Self(rawValue: 1 << 0)
+        static let removeRevealedStashedWindows = Self(rawValue: 1 << 1)
     }
 }
