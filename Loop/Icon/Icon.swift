@@ -52,7 +52,7 @@ struct Icon: Hashable, LuminareSelectionData {
             .master
         ]
 
-        static let `default` = Icon.developer
+        static let `default` = Icon.classic
     #else
         static let all: [Icon] = [
             .developer,
@@ -71,7 +71,7 @@ struct Icon: Hashable, LuminareSelectionData {
             .master
         ]
 
-        static let `default` = Icon.classic
+        static let `default` = Icon.developer
     #endif
 }
 
