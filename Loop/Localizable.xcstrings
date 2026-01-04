@@ -11143,6 +11143,9 @@
         }
       }
     },
+    "Larger (Proportional)" : {
+      "comment" : "Window action"
+    },
     "Launch at login" : {
       "localizations" : {
         "ar" : {
@@ -23739,12 +23742,6 @@
         }
       }
     },
-    "Scale Down" : {
-      "comment" : "Window action"
-    },
-    "Scale Up" : {
-      "comment" : "Window action"
-    },
     "Screen Switching" : {
       "comment" : "Section header in the action picker of the Keybinds tab",
       "localizations" : {
@@ -26545,6 +26542,9 @@
           }
         }
       }
+    },
+    "Smaller (Proportional)" : {
+      "comment" : "Window action"
     },
     "Snappy" : {
       "comment" : "Animation speed setting",
