@@ -78,6 +78,7 @@ struct AccentColorConfigurationView: View {
                 }
             }
             .luminareSheetClosesOnDefocus()
+            .animation(luminareAnimation, value: useGradient)
         }
     }
 

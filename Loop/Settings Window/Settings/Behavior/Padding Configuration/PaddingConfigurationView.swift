@@ -25,7 +25,6 @@ struct PaddingConfigurationView: View {
                 PaddingPreviewView($paddingModel)
             }
             .disabled(!enablePadding)
-            .animation(luminareAnimationFast, value: enablePadding)
 
             LuminareSection {
                 LuminareToggle("Apply padding", isOn: $enablePadding)
@@ -49,7 +48,6 @@ struct PaddingConfigurationView: View {
                 }
             }
             .disabled(!enablePadding)
-            .animation(luminareAnimationFast, value: enablePadding)
 
             Button {
                 isPresented = false

@@ -23,7 +23,7 @@ struct RadialMenuConfigurationView: View {
         LuminareSection {
             LuminareToggle("Radial menu", isOn: $radialMenuVisibility)
 
-            if radialMenuVisibility {
+            Group {
                 LuminareSlider(
                     "Corner radius",
                     value: $radialMenuCornerRadius.doubleBinding,
@@ -54,8 +54,8 @@ struct RadialMenuConfigurationView: View {
                     }
                 }
             }
+            .disabled(!radialMenuVisibility)
         }
-        .animation(.smooth(duration: 0.25), value: radialMenuVisibility)
 
         if enableRadialMenuCustomization {
             LuminareSection(
@@ -107,6 +107,7 @@ struct RadialMenuConfigurationView: View {
                     windowModel.isPreviewingUserSelection = false
                 }
             }
+            .disabled(!radialMenuVisibility)
         }
     }
 
