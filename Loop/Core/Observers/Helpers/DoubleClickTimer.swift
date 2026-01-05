@@ -15,7 +15,9 @@ import Defaults
 final class DoubleClickTimer {
     private var lastTriggerKeyReleaseTime: Date?
     private let openCallback: (WindowAction) -> ()
-    private var doubleClickInterval: TimeInterval = 0.5
+    private var doubleClickInterval: TimeInterval {
+        min(NSEvent.doubleClickInterval, 0.4) // never slower than 0.4 s
+    }
 
     /// Creates a new `DoubleClickTimer` instance with the specified callback to invoke on a double-press event.
     /// - Parameter openCallback: A closure called when a double-press is detected. Receives the associated `WindowAction`.
