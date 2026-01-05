@@ -5,20 +5,16 @@
 //  Created by Kai Azim on 2025-08-29.
 //
 
+import AppKit
 import Defaults
-import Foundation
 
 enum PaddingSettings {
-    static var enablePadding: Bool {
+    static func configuredPadding(for screen: NSScreen?) -> PaddingModel {
         if #available(macOS 15, *), Defaults[.useSystemWindowManagerWhenAvailable] {
-            SystemWindowManager.MoveAndResize.enablePadding
-        } else {
-            Defaults[.enablePadding]
-        }
-    }
+            guard SystemWindowManager.MoveAndResize.enablePadding else {
+                return .zero
+            }
 
-    static var padding: PaddingModel {
-        if #available(macOS 15, *), Defaults[.useSystemWindowManagerWhenAvailable] {
             let padding = SystemWindowManager.MoveAndResize.padding
 
             return PaddingModel(
@@ -31,7 +27,14 @@ enum PaddingSettings {
                 configureScreenPadding: false
             )
         } else {
-            return Defaults[.padding]
+            let respectsPaddingThreshold = if let screen {
+                Defaults[.paddingMinimumScreenSize] == 0 || screen.diagonalSize > Defaults[.paddingMinimumScreenSize]
+            } else {
+                true
+            }
+            let enablePadding = Defaults[.enablePadding] && respectsPaddingThreshold
+
+            return enablePadding ? Defaults[.padding] : .zero
         }
     }
 }
