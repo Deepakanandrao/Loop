@@ -163,6 +163,10 @@ jobs:
                 {
                     "title": "## 🐞 Bug Fixes",
                     "labels": ["Bug"]
+                },
+                {
+                    "title": "## 🌏 Localization",
+                    "labels": ["Localization"]
                 }
               ],
               "empty_template": "- ❌ No changes found"
