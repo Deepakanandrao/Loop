@@ -660,7 +660,7 @@
       }
     },
     "Actions" : {
-      "comment" : "Section header shown in settings",
+      "comment" : "Header for radial menu section shown in settings",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -694,8 +694,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Actions"
+            "state" : "translated",
+            "value" : "Azioni"
           }
         },
         "ja" : {
@@ -718,8 +718,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Actions"
+            "state" : "translated",
+            "value" : "Ações"
           }
         },
         "ru" : {
@@ -860,8 +860,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Allow radial menu customization"
+            "state" : "translated",
+            "value" : "Consenti personalizzazione del menu radiale"
           }
         },
         "ja" : {
@@ -884,8 +884,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Allow radial menu customization"
+            "state" : "translated",
+            "value" : "Permitir customização do menu radial"
           }
         },
         "ru" : {
@@ -2510,8 +2510,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Cancel"
+            "state" : "translated",
+            "value" : "Annulla"
           }
         },
         "ja" : {
@@ -2534,8 +2534,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Cancel"
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         },
         "ru" : {
@@ -2864,8 +2864,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Check for Updates…"
+            "state" : "translated",
+            "value" : "Procurar por Atualizações…"
           }
         },
         "ru" : {
@@ -3055,7 +3055,6 @@
       }
     },
     "Configure padding…" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3196,8 +3195,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Configure…"
+            "state" : "translated",
+            "value" : "Configurar…"
           }
         },
         "ru" : {
@@ -3526,8 +3525,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Corner Radius"
+            "state" : "translated",
+            "value" : "Raio do canto"
           }
         },
         "ru" : {
@@ -3834,8 +3833,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Custom Action"
+            "state" : "translated",
+            "value" : "Azione personalizzata"
           }
         },
         "ja" : {
@@ -3858,8 +3857,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Custom Action"
+            "state" : "translated",
+            "value" : "Customizar Ação"
           }
         },
         "ru" : {
@@ -3965,7 +3964,6 @@
       }
     },
     "Custom Keybind" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -4082,8 +4080,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Customize this action's custom frame."
+            "state" : "translated",
+            "value" : "Personalizza la finestra di questa azione."
           }
         },
         "ja" : {
@@ -4106,8 +4104,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Customize this action's custom frame."
+            "state" : "translated",
+            "value" : "Personalize o quadro desta ação."
           }
         },
         "ru" : {
@@ -4213,7 +4211,6 @@
       }
     },
     "Customize this keybind's custom frame." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -4330,8 +4327,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Customize what this action cycles through."
+            "state" : "translated",
+            "value" : "Personalizza il ciclo di questa azione."
           }
         },
         "ja" : {
@@ -4354,8 +4351,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Customize what this action cycles through."
+            "state" : "translated",
+            "value" : "Personalize o que esta ação percorre."
           }
         },
         "ru" : {
@@ -4379,7 +4376,6 @@
       }
     },
     "Customize what this keybind cycles through." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -4414,7 +4410,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Personalizza il ciclo questa scorciatoia."
+            "value" : "Personalizza il ciclo di questa scorciatoia."
           }
         },
         "ja" : {
@@ -4850,8 +4846,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Default corner radius"
+            "state" : "translated",
+            "value" : "Raio de canto padrão"
           }
         },
         "ru" : {
@@ -5897,8 +5893,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Failed to resolve linked keybind"
+            "state" : "translated",
+            "value" : "Impossibile trovare la scorciatoia collegata"
           }
         },
         "ja" : {
@@ -5921,8 +5917,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Failed to resolve linked keybind"
+            "state" : "translated",
+            "value" : "Falha ao resolver tecla vinculada"
           }
         },
         "ru" : {
@@ -6419,8 +6415,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Focus Next In Stack"
+            "state" : "translated",
+            "value" : "Focar no próximo da pilha"
           }
         },
         "ru" : {
@@ -7141,7 +7137,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espansione"
+            "value" : "Ingrandisci"
           }
         },
         "ja" : {
@@ -7307,7 +7303,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espandi orizzontale"
+            "value" : "Ingrandisci orizzontale"
           }
         },
         "ja" : {
@@ -7639,7 +7635,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espandi verticale"
+            "value" : "Ingrandisci verticale"
           }
         },
         "ja" : {
@@ -11144,7 +11140,87 @@
       }
     },
     "Larger (Proportional)" : {
-      "comment" : "Window action"
+      "comment" : "Window action",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Larger (Proportional)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Larger (Proportional)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Larger (Proportional)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Larger (Proportional)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agrandir proportionnellement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingrandisci (proporzionale)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拡大する"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Larger (Proportional)"
+          }
+        },
+        "nl-BE" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Larger (Proportional)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior (Proporcional)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Larger (Proportional)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Larger (Proportional)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Larger (Proportional)"
+          }
+        }
+      }
     },
     "Launch at login" : {
       "localizations" : {
@@ -11843,8 +11919,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Left-click to step through cycle actions."
+            "state" : "translated",
+            "value" : "Usa il click sinistro per ciclare tra le azioni."
           }
         },
         "ja" : {
@@ -11867,8 +11943,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Left-click to step through cycle actions."
+            "state" : "translated",
+            "value" : "Clique com o botão esquerdo do mouse para avançar pelas ações de ciclo."
           }
         },
         "ru" : {
@@ -16291,8 +16367,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "No radial menu actions"
+            "state" : "translated",
+            "value" : "Nessuna azione presente"
           }
         },
         "ja" : {
@@ -16315,8 +16391,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "No radial menu actions"
+            "state" : "translated",
+            "value" : "Nenhuma ação no menu radial"
           }
         },
         "ru" : {
@@ -21215,8 +21291,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Press \"Add\" to add an action"
+            "state" : "translated",
+            "value" : "Premi \"Aggiungi\" per aggiungere un'azione"
           }
         },
         "ja" : {
@@ -21239,8 +21315,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Press \"Add\" to add an action"
+            "state" : "translated",
+            "value" : "Pressione “Adicionar” para incluir uma ação"
           }
         },
         "ru" : {
@@ -21569,8 +21645,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Prioritize selected window’s corner radius"
+            "state" : "translated",
+            "value" : "Priorizar raio de canto da janela selecionada"
           }
         },
         "ru" : {
@@ -21760,7 +21836,6 @@
       }
     },
     "Quit" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -21901,8 +21976,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Quit %@"
+            "state" : "translated",
+            "value" : "Sair %@"
           }
         },
         "ru" : {
@@ -22042,8 +22117,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Radial Menu"
+            "state" : "translated",
+            "value" : "Menu radiale"
           }
         },
         "ja" : {
@@ -22066,8 +22141,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Radial Menu"
+            "state" : "translated",
+            "value" : "Menu Radial"
           }
         },
         "ru" : {
@@ -22538,8 +22613,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset keybinds?"
+            "state" : "translated",
+            "value" : "Ripristinare le scorciatoie?"
           }
         },
         "ja" : {
@@ -22562,8 +22637,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset keybinds?"
+            "state" : "translated",
+            "value" : "Redefinir teclas de atalho?"
           }
         },
         "ru" : {
@@ -22621,8 +22696,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset radial menu actions"
+            "state" : "translated",
+            "value" : "Ripristina le azioni del menu radiale"
           }
         },
         "ja" : {
@@ -22645,8 +22720,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset radial menu actions"
+            "state" : "translated",
+            "value" : "Redefinir ações do menu radial"
           }
         },
         "ru" : {
@@ -22703,8 +22778,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset radial menu actions?"
+            "state" : "translated",
+            "value" : "Ripristinare le azioni del menu radiale?"
           }
         },
         "ja" : {
@@ -22727,8 +22802,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset radial menu actions?"
+            "state" : "translated",
+            "value" : "Redefinir ações do menu radial?"
           }
         },
         "ru" : {
@@ -26544,7 +26619,87 @@
       }
     },
     "Smaller (Proportional)" : {
-      "comment" : "Window action"
+      "comment" : "Window action",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Smaller (Proportional)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Smaller (Proportional)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smaller (Proportional)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Smaller (Proportional)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réduire proportionnellement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riduci (proporzionale)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "縮小する"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Smaller (Proportional)"
+          }
+        },
+        "nl-BE" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Smaller (Proportional)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menor (Proporcional)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Smaller (Proportional)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Smaller (Proportional)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Smaller (Proportional)"
+          }
+        }
+      }
     },
     "Snappy" : {
       "comment" : "Animation speed setting",
@@ -27901,8 +28056,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This action is linked to a keybind. Changes made to this action will affect both."
+            "state" : "translated",
+            "value" : "Questa azione è collegata ad una scorciatoia. Modificandola si cambieranno entrambe."
           }
         },
         "ja" : {
@@ -27925,8 +28080,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This action is linked to a keybind. Changes made to this action will affect both."
+            "state" : "translated",
+            "value" : "Esta ação está vinculada a uma tecla de atalho. Alterações nesta ação afetarão ambas."
           }
         },
         "ru" : {
@@ -27984,8 +28139,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This will reset all keybinds to their original defaults."
+            "state" : "translated",
+            "value" : "Questo ripristinerà tutte le scorciatoie ai loro valori di default."
           }
         },
         "ja" : {
@@ -28008,8 +28163,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This will reset all keybinds to their original defaults."
+            "state" : "translated",
+            "value" : "Isso irá redefinir todas as teclas de atalho para os padrões originais."
           }
         },
         "ru" : {
@@ -28067,8 +28222,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This will reset all radial menu actions to their default configuration."
+            "state" : "translated",
+            "value" : "Questo ripristinerà tutte le azioni ai loro valori di default."
           }
         },
         "ja" : {
@@ -28091,8 +28246,8 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This will reset all radial menu actions to their default configuration."
+            "state" : "translated",
+            "value" : "Isso irá redefinir todas as ações do menu radial para a configuração padrão."
           }
         },
         "ru" : {
@@ -31421,5 +31576,5 @@
       }
     }
   },
-  "version" : "1.1"
+  "version" : "1.0"
 }
