@@ -515,6 +515,10 @@ extension LoopManager {
         }
 
         screenToResizeOn = targetScreen
+
+        // If a screen was previously not selected, then the preview needs to be opened.
+        openWindows(startingAction: action, window: targetWindow)
+
         return targetScreen
     }
 }
