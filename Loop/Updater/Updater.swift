@@ -16,8 +16,9 @@ final class Updater: ObservableObject {
     @Published private(set) var targetRelease: Release?
     @Published private(set) var progressBar: Double = 0
     @Published private(set) var updateState: UpdateAvailability = .notChecked
-    @Published private(set) var changelog: [(title: String, body: [ChangelogNote])] = .init()
     @Published private(set) var updatesEnabled: Bool = Updater.checkIfUpdatesEnabled()
+    @Published private(set) var changelog: [(title: String, body: [ChangelogNote])] = .init()
+    @Published var expandedChangelogSections: Set<String> = [] // By title
 
     private var windowController: NSWindowController?
     private var includeDevelopmentVersions: Bool { Defaults[.includeDevelopmentVersions] }
@@ -207,6 +208,24 @@ final class Updater: ObservableObject {
                 isUpdateAvailable = versionBuild > currentBuild
             }
 
+            // If the update's tag and build number passes the checks above, check the minimum macOS version
+            if isUpdateAvailable {
+                let lines = release.body
+                    .split(whereSeparator: \.isNewline)
+                    .reversed()
+
+                for line in lines {
+                    if let minimumMacOSVersion = extractMinimumMacOSVersion(from: String(line)) {
+                        if !ProcessInfo.processInfo.isOperatingSystemAtLeast(minimumMacOSVersion) {
+                            Log.warn("Minimum macOS version requirement for next update not met (required: \(minimumMacOSVersion))", category: .updater)
+                            isUpdateAvailable = false
+                        } else {
+                            Log.success("Minimum macOS version requirement for next update is met", category: .updater)
+                        }
+                    }
+                }
+            }
+
             updateState = isUpdateAvailable ? .available : .unavailable
 
             if isUpdateAvailable {
@@ -214,8 +233,29 @@ final class Updater: ObservableObject {
 
                 targetRelease = release
                 processChangelog(release.body)
+            } else {
+                Log.info("No update available.", category: .updater)
             }
         }
+    }
+
+    func extractMinimumMacOSVersion(from changelog: String) -> OperatingSystemVersion? {
+        let regex = /Minimum macOS version:\s*(?<major>\d+)(?:\.(?<minor>\d+))?(?:\.(?<patch>\d+))?/
+
+        guard let match = changelog.firstMatch(of: regex.ignoresCase()),
+              let major = Int(match.major)
+        else {
+            return nil
+        }
+
+        let minor = match.minor.flatMap { Int($0) } ?? 0
+        let patch = match.patch.flatMap { Int($0) } ?? 0
+
+        return OperatingSystemVersion(
+            majorVersion: major,
+            minorVersion: minor,
+            patchVersion: patch
+        )
     }
 
     private func processChangelog(_ body: String) {
@@ -278,6 +318,10 @@ final class Updater: ObservableObject {
                     reference: reference
                 ))
             }
+        }
+
+        if let firstSection = changelog.first {
+            expandedChangelogSections = [firstSection.title]
         }
     }
 
