@@ -26,7 +26,7 @@ body:
     validations:
       required: false
 
-  - type: textarea
+  - type: input
     attributes:
       label: Preferred Social Media Handle
       description: Provide a social media link to be credited in the contribution list. If left blank, your GitHub account associated with this issue will be used instead.
