@@ -90,7 +90,7 @@ body:
   - type: input
     attributes:
       label: Loop Version
-      description: You can find this in Loop’s About window
+      description: You can find this in Loop’s About tab in the settings window
       placeholder: Version 1.4.0 (1581)
     validations:
       required: true
@@ -98,7 +98,7 @@ body:
   - type: dropdown
     attributes:
       label: Did You Try the Development Build?
-      description: In About, enable “Include development version,” then click “Check for updates.”
+      description: In the About tab of Loop's settings, enable “Include development version,” then click “Check for updates.”
       options:
         - "Yes"
         - "No"
