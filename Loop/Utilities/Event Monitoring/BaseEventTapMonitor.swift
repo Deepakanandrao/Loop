@@ -35,7 +35,10 @@ class BaseEventTapMonitor: Identifiable, Equatable {
         }
     }
 
-    func setupRunLoopSource(eventTap: CFMachPort, runLoop: CFRunLoop) {
+    func setupRunLoopSource(eventTap: CFMachPort) {
+        /// Runloop is already running here. In the future, we can investigate running the mach port on another thread.
+        let runLoop = CFRunLoopGetMain()
+
         if let runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0) {
             self.eventTap = eventTap
             self.runLoop = runLoop
@@ -47,8 +50,7 @@ class BaseEventTapMonitor: Identifiable, Equatable {
     func start() {
         guard let eventTap else { return }
 
-        // swiftformat:disable:next redundantSelf
-        Log.info("Starting BaseEventTapMonitor with ID \(self.id)", category: .baseEventTapMonitor)
+        Log.info("Starting BaseEventTapMonitor with ID \(id)", category: .baseEventTapMonitor)
 
         CGEvent.tapEnable(tap: eventTap, enable: true)
         isEnabled = true
@@ -57,8 +59,7 @@ class BaseEventTapMonitor: Identifiable, Equatable {
     func stop() {
         guard let eventTap else { return }
 
-        // swiftformat:disable:next redundantSelf
-        Log.info("Stopping BaseEventTapMonitor with ID \(self.id)", category: .baseEventTapMonitor)
+        Log.info("Stopping BaseEventTapMonitor with ID \(id)", category: .baseEventTapMonitor)
 
         CGEvent.tapEnable(tap: eventTap, enable: false)
         isEnabled = false
