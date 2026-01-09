@@ -181,16 +181,16 @@ extension LoopManager {
                     targetWindow,
                     to: currentAction,
                     on: screenToResizeOn
-                )
+                ) {
+                    LoopManager.sidesToAdjust = nil
+                    LoopManager.lastTargetFrame = .zero
+                }
             }
 
             // Icon stuff
             Defaults[.timesLooped] += 1
             IconManager.checkIfUnlockedNewIcon()
         }
-
-        LoopManager.sidesToAdjust = nil
-        LoopManager.lastTargetFrame = .zero
 
         Task {
             if updater.shouldAutoPresentUpdateWindow {

@@ -16,10 +16,12 @@ enum WindowEngine {
     ///   - window: Window to be resized
     ///   - action: WindowAction to resize the window to
     ///   - screen: Screen the window should be resized on
+    ///   - completion: A completion handler. To be removed once we add proper Swift Concurrency support to LoopManager.
     static func resize(
         _ window: Window,
         to action: WindowAction,
-        on screen: NSScreen
+        on screen: NSScreen,
+        completion: @escaping () -> Void = {}
     ) {
         Task.detached(priority: .userInitiated) {
             await resize(
@@ -27,6 +29,8 @@ enum WindowEngine {
                 to: action,
                 on: screen
             )
+            
+            completion()
         }
     }
 
