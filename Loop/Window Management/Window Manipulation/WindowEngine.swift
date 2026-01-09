@@ -21,7 +21,7 @@ enum WindowEngine {
         _ window: Window,
         to action: WindowAction,
         on screen: NSScreen,
-        completion: @escaping () -> Void = {}
+        completion: @escaping () -> () = {}
     ) {
         Task.detached(priority: .userInitiated) {
             await resize(
@@ -29,7 +29,7 @@ enum WindowEngine {
                 to: action,
                 on: screen
             )
-            
+
             completion()
         }
     }
