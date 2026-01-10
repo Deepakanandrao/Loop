@@ -112,8 +112,7 @@ struct PreviewConfigurationView: View {
                 step: 0.1,
                 format: .percent.precision(.fractionLength(0...0)),
                 clampsUpper: true,
-                clampsLower: true,
-                suffix: Text("%", comment: "Unit symbol: percentage")
+                clampsLower: true
             )
         }
     }
