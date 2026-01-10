@@ -106,7 +106,7 @@ struct PreviewConfigurationView: View {
             LuminareToggle("Enable blur", isOn: $previewBackgroundEnableBlur)
 
             LuminareSlider(
-                "Tint opacity",
+                "Accent opacity",
                 value: $previewBackgroundAccentOpacity.doubleBinding,
                 in: 0...1,
                 step: 0.1,
