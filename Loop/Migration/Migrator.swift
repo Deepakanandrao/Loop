@@ -177,12 +177,7 @@ private extension Migrator {
         savePanel.canCreateDirectories = true
         savePanel.showsTagField = false
 
-        let result = await withCheckedContinuation { continuation in
-            DispatchQueue.main.async {
-                let response = savePanel.runModal()
-                continuation.resume(returning: response)
-            }
-        }
+        let result = await savePanel.begin()
 
         guard result == .OK, let selectedFileURL = savePanel.url else {
             throw MigratorError.directorySelectionCancelled
@@ -308,12 +303,7 @@ private extension Migrator {
         openPanel.canChooseDirectories = false
         openPanel.allowsMultipleSelection = false
 
-        let result = await withCheckedContinuation { continuation in
-            DispatchQueue.main.async {
-                let response = openPanel.runModal()
-                continuation.resume(returning: response)
-            }
-        }
+        let result = await openPanel.begin()
 
         guard result == .OK, let selectedFileURL = openPanel.url else {
             throw MigratorError.fileSelectionCancelled
