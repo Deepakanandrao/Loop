@@ -27,16 +27,16 @@ enum CustomWindowActionUnit: Int, Codable, CaseIterable, Identifiable {
         case .pixels:
             .fractionLength(0)
         case .percentage:
-            .fractionLength(2)
+            .fractionLength(1...3)
         }
     }
 
     func roundIfNeeded(_ value: Double) -> Double {
         switch self {
         case .pixels:
-            value.rounded()
+            value.rounded(.towardZero)
         case .percentage:
-            (value * 100.0).rounded() / 100.0
+            (value * 1000.0).rounded(.towardZero) / 1000.0
         }
     }
 }
