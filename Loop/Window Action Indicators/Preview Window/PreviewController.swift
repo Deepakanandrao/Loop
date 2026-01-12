@@ -46,6 +46,7 @@ final class PreviewController {
         panel.level = NSWindow.Level(NSWindow.Level.screenSaver.rawValue - 1)
         panel.contentView = NSHostingView(rootView: PreviewView(viewModel: viewModel))
         panel.collectionBehavior = .canJoinAllSpaces
+        panel.hasShadow = false
         panel.ignoresMouseEvents = true
         panel.orderFrontRegardless()
         controller = .init(window: panel)

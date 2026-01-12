@@ -12,6 +12,7 @@ import SwiftUI
 struct RadialMenuView: View {
     @Environment(\.luminareAnimation) private var luminareAnimation
     @Environment(\.appearsActive) private var appearsActive
+    @Environment(\.colorScheme) private var colorScheme
     @ObservedObject private var accentColorController: AccentColorController = .shared
     @ObservedObject private var viewModel: RadialMenuViewModel
     private let radialMenuSize: CGFloat = 100
@@ -53,24 +54,44 @@ struct RadialMenuView: View {
         /// but for now, we have disabled the materialization Liquid Glass transition.
         ZStack {
             if viewModel.isShown {
-                radialMenuFill()
-                    .mask(directionSelectorMask)
-                    .mask(radialMenuMask)
-                    .glassEffect(
-                        .regular.tint(accentColorController.color1.opacity(0.025)),
-                        in: .rect(cornerRadius: radialMenuCornerRadius)
-                            .inset(by: radialMenuThickness / 2)
-                            .stroke(lineWidth: radialMenuThickness)
-                    )
-                    .transition(.scale(scale: 1.25).combined(with: .opacity))
+                ZStack {
+                    radialMenuFill()
+                        .mask(directionSelectorMask)
+                        .glassEffect(
+                            .regular.tint(accentColorController.color1.opacity(0.025)),
+                            in: .rect(cornerRadius: radialMenuCornerRadius) // Using the radial menu thickness here causes a seam in the middle
+                        )
+                        .mask(radialMenuMask)
+
+                    if appearsActive {
+                        let borderColor: Color = colorScheme == .dark ? .white.opacity(0.25).mix(with: accentColorController.color1, by: 0.25) : .white
+
+                        // Since the glass is just masked to the radial menu shape, it will be missing its inner border.
+                        // This emulates a liquid glass inner border.
+                        let innerBorderThickness: CGFloat = 0.5
+                        RoundedRectangle(cornerRadius: radialMenuCornerRadius)
+                            .inset(by: radialMenuThickness - innerBorderThickness)
+                            .strokeBorder(lineWidth: innerBorderThickness)
+                            .foregroundStyle(borderColor)
+                            .mask {
+                                LinearGradient(
+                                    colors: [
+                                        .white,
+                                        .clear,
+                                        .white
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            }
+                    }
+
+                    overlayImage()
+                }
+                .transition(.scale(scale: 1.25).combined(with: .opacity))
             }
         }
-        .overlay {
-            if viewModel.isShown {
-                overlayImage()
-                    .transition(.scale(scale: 1.25).combined(with: .opacity))
-            }
-        }
+        .compositingGroup()
         .frame(width: radialMenuSize, height: radialMenuSize)
         .shadow(color: .black.opacity(viewModel.isShadowShown ? 0.2 : 0), radius: 10)
         .scaleEffect(viewModel.shouldFillRadialMenu ? 0.85 : 1.0)
@@ -103,8 +124,8 @@ struct RadialMenuView: View {
                 LinearGradient(
                     gradient: Gradient(
                         colors: [
-                            shouldAppearActive ? accentColorController.color1 : .systemGray,
-                            shouldAppearActive ? accentColorController.color2 : .systemGray
+                            accentColorController.color1,
+                            accentColorController.color2
                         ]
                     ),
                     startPoint: .topLeading,
