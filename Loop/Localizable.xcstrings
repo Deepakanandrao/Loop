@@ -531,8 +531,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Accent opacity"
+            "state" : "translated",
+            "value" : "Opacità colore dettagli"
           }
         },
         "ja" : {
@@ -1766,8 +1766,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Background"
+            "state" : "translated",
+            "value" : "Sfondo"
           }
         },
         "ja" : {
@@ -5320,8 +5320,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enable blur"
+            "state" : "translated",
+            "value" : "Abilita sfocatura"
           }
         },
         "ja" : {
@@ -5980,8 +5980,8 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Fill Available Space"
+            "state" : "translated",
+            "value" : "Riempi spazio disponibile"
           }
         },
         "ja" : {
@@ -22205,7 +22205,7 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Riavvia per completare"
           }
         },
