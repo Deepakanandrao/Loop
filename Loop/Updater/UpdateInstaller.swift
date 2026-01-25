@@ -147,7 +147,7 @@ actor UpdateInstaller {
     private func askUserForRelocation() async -> Bool {
         let alert = NSAlert()
         alert.messageText = String(localized: "Move to Applications Folder?")
-        alert.informativeText = String(localized: "Loop is not in your Applications folder. Would you like to install the update to your Applications folder instead?")
+        alert.informativeText = String(localized: "\(Bundle.main.appName) is not in your Applications folder. Would you like to install the update to your Applications folder instead?")
         alert.alertStyle = .informational
         alert.addButton(withTitle: String(localized: "Install to Applications"))
         alert.addButton(withTitle: String(localized: "Keep in Current Location"))
