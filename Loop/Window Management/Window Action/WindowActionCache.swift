@@ -13,6 +13,7 @@ import Scribe
 /// This is called from `KeybindObserver`, to retrieve the user's actions in an efficient manner.
 final class WindowActionCache {
     private(set) var actionsByKeybind: [Set<CGKeyCode>: WindowAction] = [:]
+    private(set) var bypassedActionsByKeybind: [Set<CGKeyCode>: WindowAction] = [:]
     private(set) var actionsByIdentifier: [UUID: WindowAction] = [:]
 
     private var observationTask: Task<(), Never>?
@@ -45,26 +46,35 @@ final class WindowActionCache {
 
         regenerateActionsByKeybind(from: keybinds)
         regenerateActionsByIdentifier(from: keybinds)
+
+        Log.info("Regenerated cache; normal: \(actionsByKeybind.count), bypassed: \(bypassedActionsByKeybind.count)", category: .windowActionCache)
     }
 
     private func regenerateActionsByKeybind(from keybinds: [WindowAction]) {
         let cycleBackwardsOnShiftPressed: Bool = Defaults[.cycleBackwardsOnShiftPressed]
 
+        let normalActions = keybinds.filter { $0.bypassTriggerKey != true }
+        let bypassedActions = keybinds.filter { $0.bypassTriggerKey == true }
+
+        // Normal actions: keybind is action-key only (without trigger key)
         actionsByKeybind = Dictionary(
-            keybinds.map { ($0.keybind, $0) },
+            normalActions.map { ($0.keybind, $0) },
             uniquingKeysWith: { first, _ in first }
         )
 
         if cycleBackwardsOnShiftPressed {
             actionsByKeybind.merge(
-                keybinds
+                normalActions
                     .filter { $0.direction == .cycle }
                     .map { ($0.keybind.union([.kVK_Shift]), $0) },
                 uniquingKeysWith: { first, _ in first }
             )
         }
 
-        Log.info("Finished regenerating actionsByKeybind", category: .windowActionCache)
+        bypassedActionsByKeybind = Dictionary(
+            bypassedActions.map { ($0.keybind, $0) },
+            uniquingKeysWith: { first, _ in first }
+        )
     }
 
     private func regenerateActionsByIdentifier(from keybinds: [WindowAction]) {
@@ -72,7 +82,5 @@ final class WindowActionCache {
             keybinds.map { ($0.id, $0) },
             uniquingKeysWith: { first, _ in first }
         )
-
-        Log.info("Finished regenerating actionsByIdentifier", category: .windowActionCache)
     }
 }
