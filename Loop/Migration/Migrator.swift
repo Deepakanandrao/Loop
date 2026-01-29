@@ -107,7 +107,8 @@ enum MigratorError: LocalizedError {
     }
 }
 
-// Adds functionality for saving, loading, and managing window actions.
+/// Adds functionality for saving, loading, and managing window actions.
+@Loggable(style: .static)
 enum Migrator {
     private static var documentsDirectory: URL? {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
@@ -190,9 +191,7 @@ private extension Migrator {
     }
 
     /// Saves the keybinds in the specified directory URL.
-    static func saveKeybinds(_: SavedKeybindsFormat, in directoryURL: URL) async throws {
-        let keybinds = SavedKeybindsFormat.generateFromDefaults()
-
+    private static func saveKeybinds(_ keybinds: SavedKeybindsFormat, in directoryURL: URL) async throws {
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
 
@@ -316,36 +315,36 @@ private extension Migrator {
     }
 
     /// Imports keybinds from a JSON string.
-    static func importKeybinds(from jsonString: String, onSuccess: () -> ()) async throws {
+    private static func importKeybinds(from jsonString: String, onSuccess: () -> ()) async throws {
         guard let data = jsonString.data(using: .utf8) else {
             throw MigratorError.failedToReadFile
         }
 
-        /// First, try to import the general Loop keybinds format.
+        // First, try to import the general Loop keybinds format.
         do {
-            let savedData = try await importLoopKeybinds(from: data)
+            let savedData = try importLoopKeybinds(from: data)
             await updateDefaults(with: savedData, onSuccess: onSuccess)
             return
         } catch {
-            Log.error("Error importing Loop keybinds: \(error)", category: .migrator)
+            log.error("Error importing Loop keybinds: \(error)")
         }
 
-        /// If that fails, try to import the old Loop (pre 1.2.0) keybinds format.
+        // If that fails, try to import the old Loop (pre 1.2.0) keybinds format.
         do {
-            let savedData = try await importLoopLegacyKeybinds(from: data)
+            let savedData = try importLoopLegacyKeybinds(from: data)
             await updateDefaults(with: savedData, onSuccess: onSuccess)
             return
         } catch {
-            Log.error("Error importing Loop (pre 1.2.0) keybinds: \(error)", category: .migrator)
+            log.error("Error importing Loop (pre 1.2.0) keybinds: \(error)")
         }
 
-        /// If that fails, try to import the Rectangle keybinds format.
+        // If that fails, try to import the Rectangle keybinds format.
         do {
-            let savedData = try await importRectangleKeybinds(from: data)
+            let savedData = try importRectangleKeybinds(from: data)
             await updateDefaults(with: savedData, onSuccess: onSuccess)
             return
         } catch {
-            Log.error("Error importing Rectangle keybinds: \(error)", category: .migrator)
+            log.error("Error importing Rectangle keybinds: \(error)")
         }
 
         // If all attempts fail, show an error alert.
@@ -353,21 +352,21 @@ private extension Migrator {
     }
 
     /// Tries to import Loop's keybinds format.
-    static func importLoopKeybinds(from data: Data) async throws -> SavedKeybindsFormat {
+    static func importLoopKeybinds(from data: Data) throws -> SavedKeybindsFormat {
         let decoder = JSONDecoder()
         let keybinds = try decoder.decode(SavedKeybindsFormat.self, from: data)
         return keybinds
     }
 
     /// Tries to import Loop's old (pre 1.2.0) keybinds format.
-    static func importLoopLegacyKeybinds(from data: Data) async throws -> SavedKeybindsFormat {
+    static func importLoopLegacyKeybinds(from data: Data) throws -> SavedKeybindsFormat {
         let decoder = JSONDecoder()
         let keybinds = try decoder.decode([SavedWindowActionFormat].self, from: data)
         return SavedKeybindsFormat(version: nil, triggerKey: nil, actions: keybinds)
     }
 
     /// Tries to import Rectangle's keybinds format.
-    static func importRectangleKeybinds(from data: Data) async throws -> SavedKeybindsFormat {
+    static func importRectangleKeybinds(from data: Data) throws -> SavedKeybindsFormat {
         let keybinds = try RectangleTranslationLayer.importKeybinds(from: data)
         return SavedKeybindsFormat(version: nil, triggerKey: nil, actions: keybinds)
     }

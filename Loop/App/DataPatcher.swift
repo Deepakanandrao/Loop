@@ -5,15 +5,16 @@
 //  Created by Kai Azim on 2025-09-07.
 //
 
+import AppKit
 import Defaults
-import Foundation
 import Scribe
 
+@Loggable(style: .static)
 enum DataPatcher {
     static func run() {
         let initialPatches: Patches = Defaults[.patchesApplied]
 
-        runPatch(patch: .changeToAccentColorMode, initial: initialPatches) {
+        runPatchIfNeeded(patch: .changeToAccentColorMode, initialPatches: initialPatches) {
             // Migrate to accent color mode
             // We need to migrate `useSystemAccentColor` and `processWallpaper` over to `accentColorMode`
             let useSystemAccentColor: Bool = Defaults[.useSystemAccentColor]
@@ -31,24 +32,50 @@ enum DataPatcher {
             Defaults.reset(.processWallpaper)
         }
 
-        runPatch(patch: .removeRevealedStashedWindows, initial: initialPatches) {
+        runPatchIfNeeded(patch: .removeRevealedStashedWindows, initialPatches: initialPatches) {
             Defaults.reset(.stashManagerRevealedWindows)
+        }
+
+        runPatchIfNeeded(patch: .changeTohideOnNoSelection, initialPatches: initialPatches) {
+            Defaults[.hideOnNoSelection] = Defaults[.hideUntilDirectionIsChosen]
+            Defaults.reset(.hideUntilDirectionIsChosen)
         }
     }
 
-    private static func runPatch(patch: Patches, initial: Patches, with callback: () -> ()) {
-        if !initial.contains(patch) {
+    private static func runPatchIfNeeded(patch: Patches, initialPatches: Patches, with callback: () -> ()) {
+        if !initialPatches.contains(patch) {
             callback()
 
             Defaults[.patchesApplied].formUnion(patch)
-            Log.info("Ran patch \(patch)", category: .dataPatcher)
+            log.info("Ran patch \(patch)")
         }
     }
 
     struct Patches: OptionSet, Defaults.Serializable {
         let rawValue: Int
 
+        /// Changed accent color configuration from multiple bools to an enum
         static let changeToAccentColorMode = Self(rawValue: 1 << 0)
+
+        /// Revealed statshed windows are no longer persisted across Loop lifecycles
         static let removeRevealedStashedWindows = Self(rawValue: 1 << 1)
+
+        /// Key was renamed from `hideUntilDirectionIsChosen` to `hideOnNoSelection` with slightly different behavior
+        static let changeTohideOnNoSelection = Self(rawValue: 1 << 2)
     }
+}
+
+// MARK: - Migrated keys (private)
+
+// swiftformat:disable docComments
+private extension Defaults.Keys {
+    // StashManager
+    static let stashManagerRevealedWindows = Key<Set<CGWindowID>>("stashManagerRevealed", default: Set<CGWindowID>())
+
+    // AccentColorController
+    static let useSystemAccentColor = Key<Bool>("useSystemAccentColor", default: true)
+    static let processWallpaper = Key<Bool>("processWallpaper", default: false)
+
+    // IndicatorService
+    static let hideUntilDirectionIsChosen = Key<Bool>("hideUntilDirectionIsChosen", default: false)
 }

@@ -10,6 +10,7 @@ import Scribe
 import SwiftUI
 import UserNotifications
 
+@Loggable
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let urlCommandHandler = URLCommandHandler()
 
@@ -30,11 +31,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             await Defaults.iCloud.waitForSyncCompletion()
         }
 
-        // Wait for other instances to terminate before proceeding with TCC operations
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            AccessibilityManager.requestAccess()
-        }
-
         if !launchedAsLoginItem {
             SettingsWindowManager.shared.show()
         } else {
@@ -44,6 +40,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         DataPatcher.run()
         IconManager.refreshCurrentAppIcon()
+        LaunchAtLoginManager.shared.start()
         LoopManager.shared.start()
         WindowDragManager.shared.addObservers()
         StashManager.shared.start()
@@ -58,6 +55,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         UNUserNotificationCenter.current().delegate = self
         AppDelegate.requestNotificationAuthorization()
+
+        Task {
+            try? await Task.sleep(for: .seconds(1.5))
+            AccessibilityManager.requestAccess()
+        }
 
         // Register for URL handling
         NSAppleEventManager.shared().setEventHandler(
@@ -79,14 +81,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         guard !otherLoopInstances.isEmpty else {
-            Log.info("No other Loop instances found", category: .appDelegate)
+            log.info("No other Loop instances found")
             return
         }
 
-        Log.info("Found \(otherLoopInstances.count) other Loop instance(s), terminating them to prevent accessibility conflicts. TCC operations will be delayed.", category: .appDelegate)
+        log.info("Found \(otherLoopInstances.count) other Loop instance(s), terminating them to prevent accessibility conflicts. TCC operations will be delayed.")
 
         for instance in otherLoopInstances {
-            Log.info("Terminating Loop instance (PID: \(instance.processIdentifier))", category: .appDelegate)
+            log.info("Terminating Loop instance (PID: \(instance.processIdentifier))")
             instance.terminate()
 
             // If the instance doesn't terminate within 2 seconds, force terminate
@@ -94,7 +96,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 try? await Task.sleep(for: .seconds(2))
 
                 if instance.isTerminated == false {
-                    Log.warn("Force terminating Loop instance (PID: \(instance.processIdentifier))", category: .appDelegate)
+                    log.warn("Force terminating Loop instance (PID: \(instance.processIdentifier))")
                     instance.forceTerminate()
                 }
             }
@@ -112,10 +114,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func handleGetURLEvent(_ event: NSAppleEventDescriptor, withReplyEvent _: NSAppleEventDescriptor) {
         guard let urlString = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue,
               let url = URL(string: urlString) else {
-            Log.info("Failed to get URL from event", category: .appDelegate)
+            log.info("Failed to get URL from event")
             return
         }
-        Log.info("Received URL: \(url)", category: .appDelegate)
+
+        log.info("Received URL: \(url)")
         urlCommandHandler.handle(url)
     }
 

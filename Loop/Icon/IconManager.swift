@@ -11,6 +11,7 @@ import Scribe
 import SwiftUI
 import UserNotifications
 
+@Loggable(style: .static)
 enum IconManager {
     static func returnUnlockedIcons() -> [Icon] {
         var returnValue: [Icon] = []
@@ -32,12 +33,12 @@ enum IconManager {
         }
     }
 
-    // This function is run at startup to set the current icon to the user's set icon.
+    /// This function is run at startup to set the current icon to the user's set icon.
     static func refreshCurrentAppIcon() {
         let iconName = Defaults[.currentIcon]
 
         guard let image = NSImage(named: iconName) else {
-            Log.error("Failed to load icon: \(iconName)", category: .iconManager)
+            log.error("Failed to load icon: \(iconName)")
             return
         }
 
@@ -53,7 +54,7 @@ enum IconManager {
             NSApp.applicationIconImage = image
         }
 
-        Log.info("Set app icon to: \(iconName)", category: .iconManager)
+        log.info("Set app icon to: \(iconName)")
     }
 
     static func checkIfUnlockedNewIcon() {

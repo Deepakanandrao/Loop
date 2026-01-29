@@ -7,9 +7,11 @@
 
 import Cocoa
 import Defaults
+import Scribe
 
 /// Monitors `keyDown`, `keyUp`, and `flagsChanged` events using an ActiveEventMonitor, invoking Loop’s open and close callbacks as needed.
 /// Additionally, this class manages keybind action retrieval and updates Loop based on those actions.
+@Loggable
 final class KeybindTrigger {
     // Parameters
     private let windowActionCache: WindowActionCache
@@ -19,17 +21,17 @@ final class KeybindTrigger {
 
     // State-tracking
     private var pressedKeys: Set<CGKeyCode> = []
-    private var previousEventFlags: CGEventFlags = []
+    private(set) var effectiveEventFlags: CGEventFlags = []
     private var eventMonitor: ActiveEventMonitor?
 
     private var systemKeybindCache: Set<Set<CGKeyCode>> = []
     private var keybindCacheUpdatedAt: ContinuousClock.Instant?
     private let keybindCacheLifetime: ContinuousClock.Duration = .seconds(30)
 
-    // Special events only contain the globe key, as it can also be used as an emoji key.
+    /// Special events only contain the globe key, as it can also be used as an emoji key.
     private let specialEventKeys: [CGKeyCode] = [.kVK_Globe_Emoji]
 
-    // Will be set to `false` if the mouse has been moved by LoopManager.
+    /// Will be set to `false` if the mouse has been moved by LoopManager.
     var canPassthroughNextSpecialEvent = true
 
     private var useTriggerDelay: Bool { Defaults[.triggerDelay] > 0.1 }
@@ -69,8 +71,8 @@ final class KeybindTrigger {
         self.checkIfLoopOpen = checkIfLoopOpen
     }
 
-    func start() {
-        guard AccessibilityManager.shared.isGranted else {
+    func start() async {
+        guard await AccessibilityManager.shared.isGranted else {
             return
         }
 
@@ -82,15 +84,13 @@ final class KeybindTrigger {
             let keyCode = CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode))
                 .baseKey(flags: .init(rawValue: UInt(event.flags.rawValue)))
 
-            LoopManager.shared.isShiftKeyPressed = event.flags.contains(.maskShift)
-
             var filteredFlags = event.flags
-            if keyCode.isFnSpecialKey, !previousEventFlags.contains(.maskSecondaryFn) {
+            if keyCode.isFnSpecialKey, !effectiveEventFlags.contains(.maskSecondaryFn) {
                 filteredFlags.remove(.maskSecondaryFn)
             }
 
             let isLoopOpen = checkIfLoopOpen()
-            previousEventFlags = filteredFlags
+            effectiveEventFlags = filteredFlags
 
             if event.type == .keyUp {
                 pressedKeys.remove(keyCode)
@@ -114,6 +114,7 @@ final class KeybindTrigger {
             )
 
             if result == .consume {
+                log.debug("Blocked event")
                 return .ignore
             }
 
@@ -173,7 +174,7 @@ final class KeybindTrigger {
 
             if type != .keyDown, !containsTrigger {
                 closeLoop(forceClose: false)
-                return .consume
+                return .forward
             }
         }
 
@@ -186,8 +187,8 @@ final class KeybindTrigger {
                         openLoop(startingAction: action, overrideExistingTriggerDelayTimerAction: true)
                     }
 
-                    /// Only consume the event if the last command actually opened Loop.
-                    /// The main reason Loop *wouldn't* open after an `openLoop` call would be because the user has enabled a trigger delay.
+                    // Only consume the event if the last command actually opened Loop.
+                    // The main reason Loop *wouldn't* open after an `openLoop` call would be because the user has enabled a trigger delay.
                     return isLoopOpen ? .consume : .opening
                 }
 

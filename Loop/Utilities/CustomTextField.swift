@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Custom TextField that will allow for auto-focus to happen correctly when the popover is shown.
+/// Custom TextField that will allow for auto-focus to happen correctly when the popover is shown.
 struct CustomTextField: NSViewRepresentable {
     @Binding var text: String
     let placeholder: String
@@ -30,10 +30,6 @@ struct CustomTextField: NSViewRepresentable {
 
         // Set the target-action for text changes
         textField.delegate = context.coordinator
-
-        DispatchQueue.main.async {
-            textField.becomeFirstResponder()
-        }
 
         return textField
     }

@@ -26,7 +26,7 @@ struct RadialMenuView: View {
     }
 
     private var shouldAppearActive: Bool {
-        !viewModel.previewMode || (viewModel.previewMode && appearsActive)
+        !viewModel.isSettingsPreview || (viewModel.isSettingsPreview && appearsActive)
     }
 
     var body: some View {
@@ -42,16 +42,16 @@ struct RadialMenuView: View {
         .animation(animationConfiguration.radialMenuSize, value: viewModel.currentAction)
         .animation(luminareAnimation, value: [accentColorController.color1, accentColorController.color2])
         .onAppear {
-            viewModel.setIsShown(true, animationDuration: viewModel.previewMode ? 0.0 : 0.1)
+            viewModel.setIsShown(true, animationDuration: viewModel.isSettingsPreview ? 0.0 : 0.1)
         }
     }
 
     @available(macOS 26.0, *)
     private func postTahoeView() -> some View {
-        /// GlassEffectContainer w/ the materialize glass effect transition causes an exception:
-        ///   "The window has been marked as needing another Update Constraints..."
-        /// This bug can be reproduced on macOS 26.0.0 and 26.0.1. We have yet to find the macOS version where it starts working correctly and reliably,
-        /// but for now, we have disabled the materialization Liquid Glass transition.
+        // GlassEffectContainer with the materialize glass effect transition causes an exception:
+        //   "The window has been marked as needing another Update Constraints..."
+        // This bug can be reproduced on macOS 26.0.0 and 26.0.1. We have yet to find the macOS version where it starts working correctly and reliably,
+        // but for now, we have disabled the materialization Liquid Glass transition.
         ZStack {
             if viewModel.isShown {
                 ZStack {
@@ -160,7 +160,6 @@ struct RadialMenuView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
-    @ViewBuilder
     private func radialMenuBorder() -> some View {
         ZStack {
             if radialMenuCornerRadius >= radialMenuSize / 2 - 2 {
@@ -181,7 +180,6 @@ struct RadialMenuView: View {
         }
     }
 
-    @ViewBuilder
     private func radialMenuMask() -> some View {
         ZStack {
             if radialMenuCornerRadius >= radialMenuSize / 2 - 2 {
@@ -194,12 +192,20 @@ struct RadialMenuView: View {
         }
     }
 
-    @ViewBuilder
     private func overlayImage() -> some View {
-        if let image = viewModel.radialMenuImage {
-            image
-                .foregroundStyle(accentColorController.color1)
-                .font(.system(size: 20, weight: .bold))
+        ZStack {
+            if let image = viewModel.radialMenuImage {
+                if #available(macOS 26.0, *) {
+                    image
+                        .transition(.symbolEffect(.drawOn, options: .speed(2)))
+                        .contentTransition(.symbolEffect(.replace, options: .speed(2)))
+                } else {
+                    image
+                }
+            }
         }
+        .foregroundStyle(accentColorController.color1)
+        .font(.system(size: 20, weight: .bold))
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

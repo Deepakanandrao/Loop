@@ -44,6 +44,7 @@ enum WallpaperProcessorError: LocalizedError {
 /// Processes desktop wallpapers to extract colors for theming Loop.
 /// This class provides methods to capture the current desktop wallpaper and extract
 /// vibrant, visually appealing colors that can be used as accent colors in the UI.
+@Loggable
 final class WallpaperProcessor {
     private var lastProcessedDate: Date = .distantPast
     private var lastResult: (primary: Color, secondary: Color) = (.black, .black)
@@ -80,6 +81,7 @@ final class WallpaperProcessor {
     /// a cohesive theme that matches the user's desktop environment.
     ///
     /// Note that you shouldn't call this method directly, but rather, call ``AccentColorController.refresh``.
+    @concurrent
     private func fetchLatestWallpaperColors() async -> (primary: Color, secondary: Color)? {
         do {
             // Attempt to process the current wallpaper to get the dominant colors.
@@ -96,12 +98,12 @@ final class WallpaperProcessor {
             // Use the second dominant color if possible, otherwise return the primary color.
             let secondaryColor = colors.count > 1 ? Color(colors[1]) : primaryColor
 
-            Log.success("Successfully calculated dominant colors from wallpaper", category: .wallpaperProcessor)
+            log.success("Successfully calculated dominant colors from wallpaper")
 
             return (primaryColor, secondaryColor)
         } catch {
             // If an error occurs, print the error description.
-            Log.error("Failed to fetch wallpaper colors: \(error.localizedDescription)", category: .wallpaperProcessor)
+            log.error("Failed to fetch wallpaper colors: \(error.localizedDescription)")
             return nil
         }
     }
@@ -146,8 +148,7 @@ final class WallpaperProcessor {
 /// - Incorporates intelligent filtering to avoid colors that would make poor UI accents
 ///
 /// The algorithm is optimized for performance while maintaining high-quality color results.
-
-// The real beans here (I don't like beans)
+/// The real beans here (I don't like beans)
 extension NSImage {
     /// Calculates the dominant colors of the image asynchronously.
     /// - Returns: An array of NSColor representing the dominant colors, or nil if an error occurs.
@@ -174,7 +175,7 @@ extension NSImage {
             let dataProvider = resizedCGImage.dataProvider,
             let data = CFDataGetBytePtr(dataProvider.data)
         else {
-            Log.error("Error: \(WallpaperProcessorError.imageResizeFailed)", category: .wallpaperProcessor)
+            Log.error("Error: \(WallpaperProcessorError.imageResizeFailed)", category: WallpaperProcessor.logCategory)
             return nil
         }
 
@@ -292,19 +293,31 @@ extension NSImage {
     /// - Returns: The resized NSImage or nil if the operation fails.
     func resized(to newSize: NSSize) -> NSImage? {
         guard let bitmapRep = NSBitmapImageRep(
-            bitmapDataPlanes: nil, pixelsWide: Int(newSize.width),
-            pixelsHigh: Int(newSize.height), bitsPerSample: 8,
-            samplesPerPixel: 4, hasAlpha: true, isPlanar: false,
-            colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0
+            bitmapDataPlanes: nil,
+            pixelsWide: Int(newSize.width),
+            pixelsHigh: Int(newSize.height),
+            bitsPerSample: 8,
+            samplesPerPixel: 4,
+            hasAlpha: true,
+            isPlanar: false,
+            colorSpaceName: .deviceRGB,
+            bytesPerRow: 0,
+            bitsPerPixel: 0
         ) else {
-            Log.error("Error: \(WallpaperProcessorError.bitmapCreationFailed)", category: .wallpaperProcessor)
+            Log.error("Error: \(WallpaperProcessorError.bitmapCreationFailed)", category: WallpaperProcessor.logCategory)
             return nil
         }
         bitmapRep.size = newSize
         NSGraphicsContext.saveGraphicsState()
         NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmapRep)
-        draw(in: NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height),
-             from: NSRect.zero, operation: .copy, fraction: 1.0, respectFlipped: true, hints: [NSImageRep.HintKey.interpolation: NSNumber(value: NSImageInterpolation.high.rawValue)])
+        draw(
+            in: NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height),
+            from: NSRect.zero,
+            operation: .copy,
+            fraction: 1.0,
+            respectFlipped: true,
+            hints: [NSImageRep.HintKey.interpolation: NSNumber(value: NSImageInterpolation.high.rawValue)]
+        )
         NSGraphicsContext.restoreGraphicsState()
         let resizedImage = NSImage(size: newSize)
         resizedImage.addRepresentation(bitmapRep)

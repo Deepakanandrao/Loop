@@ -10,9 +10,10 @@ import SwiftUI
 
 /// This class is in charge of managing the state of the radial menu, including the current action, angle, and colors.
 /// By keeping the state separate, we are able to use the same `RadialMenuView` both in the app's settings, as well as in actual usage.
+@MainActor
 final class RadialMenuViewModel: ObservableObject {
     @Published private(set) var angle: Double
-    @Published private(set) var currentAction: WindowAction
+    @Published private(set) var currentAction: WindowAction = .init(.noSelection)
 
     /// If a cycling action is chosen, this will represent the enclosing cycle action
     @Published private(set) var parentAction: WindowAction?
@@ -21,23 +22,13 @@ final class RadialMenuViewModel: ObservableObject {
     @Published private(set) var isShadowShown: Bool = false
 
     private var previousAction: WindowAction?
+    private var context: ResizeContext?
     private var window: Window?
-    let previewMode: Bool
+    let isSettingsPreview: Bool
 
-    init(
-        startingAction: WindowAction,
-        window: Window?,
-        previewMode: Bool
-    ) {
-        self.currentAction = startingAction
-        self.previousAction = startingAction
-        self.window = window
-        self.previewMode = previewMode
-
-        // Auto-set properties
+    init(isSettingsPreview: Bool) {
+        self.isSettingsPreview = isSettingsPreview
         self.angle = .zero
-
-        recomputeAngle()
     }
 
     private var effectiveWindowAction: WindowAction {
@@ -81,13 +72,12 @@ final class RadialMenuViewModel: ObservableObject {
     }
 
     var radialMenuImage: Image? {
-        if window == nil, !previewMode {
-            return Image(systemName: "exclamationmark.triangle")
+        if window == nil, !isSettingsPreview {
+            Image(systemName: "exclamationmark.triangle")
         } else if let image = currentAction.image {
-            let image = image.withSymbolConfiguration(.init(pointSize: 20, weight: .bold)) ?? image
-            return Image(nsImage: image)
+            image.image
         } else {
-            return nil
+            nil
         }
     }
 
@@ -111,20 +101,20 @@ final class RadialMenuViewModel: ObservableObject {
         }
     }
 
-    func setWindow(to newWindow: Window) {
-        window = newWindow
-    }
+    func updateContext(with context: ResizeContext) {
+        window = context.window
 
-    func setAction(to action: WindowAction, parent: WindowAction? = nil) {
         previousAction = currentAction
-        currentAction = action
-        parentAction = parent
+        currentAction = context.action
+        parentAction = context.parentAction
 
-        recomputeAngle()
+        recomputeAngle(context: context)
     }
 
-    func recomputeAngle() {
-        guard let targetAngle = calculateTargetAngle() else { return }
+    private func recomputeAngle(context: ResizeContext) {
+        guard let targetAngle = calculateTargetAngle(context: context) else {
+            return
+        }
 
         let closestAngle = Angle.degrees(angle).angleDifference(to: targetAngle)
         let shouldAnimate = shouldAnimateTransition(closestAngle: closestAngle)
@@ -135,7 +125,7 @@ final class RadialMenuViewModel: ObservableObject {
         }
     }
 
-    private func calculateTargetAngle() -> Angle? {
+    private func calculateTargetAngle(context: ResizeContext) -> Angle? {
         // Check directional radial menu actions first
         if let index = directionalRadialMenuActions.firstIndex(where: { $0.associatedActionId == effectiveWindowAction.id }) {
             let actionAngleSpan = 360.0 / CGFloat(directionalRadialMenuActions.count)
@@ -143,7 +133,7 @@ final class RadialMenuViewModel: ObservableObject {
         }
 
         // Otherwise, default to the current action's radial menu angle
-        return currentAction.radialMenuAngle(window: window)
+        return currentAction.radialMenuAngle(context: context)
     }
 
     private func shouldAnimateTransition(closestAngle: Angle) -> Bool {

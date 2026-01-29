@@ -9,12 +9,12 @@ import Defaults
 import SwiftUI
 
 /// Stores and manages the accessibility permission state for Loop.
+@MainActor
 final class AccessibilityManager {
     static let shared: AccessibilityManager = .init()
 
     private var permissionCheckerTask: Task<(), Never>!
 
-    @MainActor
     private var continuations: [UUID: AsyncStream<Bool>.Continuation] = [:]
     private(set) var isGranted: Bool
 
@@ -28,13 +28,13 @@ final class AccessibilityManager {
                 .notifications(named: .AXPermissionsChanged)
 
             for await _ in notifications {
-                /// It seems like the notification is sent immediately after a state change, sometimes before the actual
-                /// reading from `AXIsProcessTrustedWithOptions` is updated.
-                /// So sleep for 250 milliseconds (this is generous, but just to ensure that the reading will be correct).
+                // It seems like the notification is sent immediately after a state change, sometimes before the actual
+                // reading from `AXIsProcessTrustedWithOptions` is updated.
+                // So sleep for 250 milliseconds (this is generous, but just to ensure that the reading will be correct).
                 try? await Task.sleep(for: .milliseconds(250))
 
                 let status = Self.getStatus()
-                await self.yield(status)
+                self.yield(status)
             }
         }
     }
@@ -55,7 +55,6 @@ final class AccessibilityManager {
     /// Stream new changes to Loop's accessibility permissions.
     /// - Parameter initial: whether to send an initial value corresponding to Loop's current permissions
     /// - Returns: an AsyncStream.
-    @MainActor
     func stream(initial: Bool = true) -> AsyncStream<Bool> {
         AsyncStream<Bool> { continuation in
             let id = UUID()
@@ -66,8 +65,9 @@ final class AccessibilityManager {
             }
 
             continuation.onTermination = { [weak self] _ in
+                guard let self else { return }
+
                 Task { @MainActor in
-                    guard let self else { return }
                     self.continuations[id] = nil
                 }
             }

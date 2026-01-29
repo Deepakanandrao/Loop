@@ -7,8 +7,6 @@
 
 import Defaults
 import Luminare
-import Scribe
-import ServiceManagement
 import SwiftUI
 
 struct BehaviorConfigurationView: View {
@@ -56,17 +54,6 @@ struct BehaviorConfigurationView: View {
     private var generalSection: some View {
         LuminareSection(String(localized: "General", comment: "Section header shown in settings")) {
             LuminareToggle("Launch at login", isOn: $launchAtLogin)
-                .onChange(of: launchAtLogin) { _ in
-                    do {
-                        if launchAtLogin {
-                            try SMAppService().register()
-                        } else {
-                            try SMAppService().unregister()
-                        }
-                    } catch {
-                        Log.error("Failed to \(launchAtLogin ? "register" : "unregister") login item: \(error.localizedDescription)", category: .behaviorConfigurationView)
-                    }
-                }
 
             LuminareToggle("Hide menu bar icon", isOn: $hideMenuBarIcon)
 

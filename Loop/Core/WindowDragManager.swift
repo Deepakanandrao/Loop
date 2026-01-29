@@ -9,19 +9,16 @@ import Defaults
 import Scribe
 import SwiftUI
 
+@Loggable
 @MainActor
 final class WindowDragManager {
     static let shared = WindowDragManager()
     private init() {}
 
-    private var initialMousePosition: CGPoint?
-    private var didPassDragDistanceThreshold: Bool = false
-    private var dragDistanceThreshold: CGFloat = 5
-
-    private var draggingWindow: Window?
+    private var resizeContext: ResizeContext?
     private var initialWindowFrame: CGRect?
-    private var direction: WindowDirection = .noAction
-    // Avoid repeated window resolution attempts during a non-window drag (e.g. in games).
+
+    /// This is to avoid repeated window resolution attempts during a non-window drag (e.g. in games).
     private var didFailToResolveDraggedWindow: Bool = false
 
     private let previewController = PreviewController()
@@ -36,7 +33,7 @@ final class WindowDragManager {
         NSEvent.mouseLocation.flipY(screen: NSScreen.screens[0])
     }
 
-    // Avoid running global drag logic unless a feature actually depends on it.
+    /// This is to avoid running global drag logic unless a feature actually depends on it.
     private var shouldMonitorDragActions: Bool {
         Defaults[.windowSnapping] ||
             Defaults[.restoreWindowFrameOnDrag] ||
@@ -91,25 +88,14 @@ final class WindowDragManager {
         }
 
         Task {
-            guard let initialMousePosition else {
-                initialMousePosition = currentMousePosition
-                return
-            }
-
-            if !didPassDragDistanceThreshold {
-                didPassDragDistanceThreshold = currentMousePosition.distance(to: initialMousePosition) > dragDistanceThreshold
-
-                guard didPassDragDistanceThreshold else {
-                    return
-                }
-            }
-
             // Process window (only ONCE during a window drag)
-            if draggingWindow == nil, !didFailToResolveDraggedWindow {
+            if resizeContext == nil, !didFailToResolveDraggedWindow {
                 setCurrentDraggingWindow()
             }
 
-            if let window = draggingWindow, let initialFrame = initialWindowFrame, hasWindowResized(window.frame, initialFrame) {
+            if let window = resizeContext?.window,
+               let initialFrame = initialWindowFrame,
+               hasWindowResized(window.frame, initialFrame) {
                 if hasWindowMoved(window.frame, initialFrame) {
                     if Defaults[.restoreWindowFrameOnDrag] {
                         restoreInitialWindowSize(window)
@@ -129,7 +115,7 @@ final class WindowDragManager {
                     }
                 }
 
-                StashManager.shared.onWindowDragged(window.cgWindowID)
+                StashManager.shared.onWindowManipulated(window.cgWindowID)
                 WindowRecords.eraseRecords(for: window)
             }
         }
@@ -143,14 +129,18 @@ final class WindowDragManager {
         Task {
             previewController.close()
 
-            if let window = draggingWindow,
-               let screen = NSScreen.screenWithMouse,
+            if let context = resizeContext,
+               !context.action.direction.isNoOp,
+               let window = context.window,
                let initialFrame = initialWindowFrame,
                hasWindowMoved(window.frame, initialFrame) {
-                WindowEngine.resize(window, to: .init(direction), on: screen)
+                do {
+                    _ = try await WindowActionEngine.shared.apply(context: context)
+                } catch {
+                    log.error("Failed to snap window: \(error.localizedDescription)")
+                }
             }
 
-            draggingWindow = nil
             resetDragState()
         }
     }
@@ -165,27 +155,27 @@ final class WindowDragManager {
                 determineDraggedWindowTask = nil
             }
 
-            guard let draggingWindow = try? WindowUtility.windowAtPosition(currentMousePosition),
-                  !draggingWindow.isAppExcluded
+            guard let window = WindowUtility.windowAtPosition(currentMousePosition),
+                  !window.isAppExcluded
             else {
                 didFailToResolveDraggedWindow = true
                 return
             }
 
-            self.draggingWindow = draggingWindow
-            initialWindowFrame = draggingWindow.frame
-            didFailToResolveDraggedWindow = false
+            initialWindowFrame = window.frame
+            resizeContext = ResizeContext(
+                window: window,
+                initialMousePosition: currentMousePosition
+            )
 
-            Log.info("Determined window being dragged: \(draggingWindow.description)", category: .windowDragManager)
+            log.info("Determined window being dragged: \(window.description)")
         }
     }
 
     private func resetDragState() {
-        initialMousePosition = nil
-        didPassDragDistanceThreshold = false
+        resizeContext = nil
         didFailToResolveDraggedWindow = false
         initialWindowFrame = nil
-        direction = .noAction
         determineDraggedWindowTask?.cancel()
         determineDraggedWindowTask = nil
     }
@@ -245,8 +235,6 @@ final class WindowDragManager {
         let mainScreen = NSScreen.screens[0]
         let screenFrame = screen.frame.flipY(screen: mainScreen)
 
-        previewController.setScreen(to: screen)
-
         let inset = Defaults[.snapThreshold]
         let topInset = max(screen.menubarHeight / 2, inset)
         var ignoredFrame = screenFrame
@@ -256,7 +244,7 @@ final class WindowDragManager {
         ignoredFrame.origin.y += topInset
         ignoredFrame.size.height -= inset + topInset
 
-        let oldDirection = direction
+        let oldDirection = resizeContext?.action.direction ?? .noAction
 
         if !ignoredFrame.contains(currentMousePosition) {
             // Refresh accent colors in case user has enabled the wallpaper processor
@@ -273,19 +261,23 @@ final class WindowDragManager {
 
             // Only update if direction actually changed
             if newDirection != oldDirection {
-                direction = newDirection
+                log.info("Window snapping direction changed: \(newDirection.debugDescription)")
 
-                Log.info("Window snapping direction changed: \(newDirection.debugDescription)", category: .windowDragManager)
+                resizeContext?.setScreen(to: screen)
+                resizeContext?.setAction(to: .init(newDirection), parent: nil)
 
-                previewController.open(screen: screen, window: draggingWindow, startingAction: nil)
-                previewController.setAction(to: WindowAction(newDirection))
+                if let context = resizeContext {
+                    previewController.open(context: context)
+                }
 
+                // Haptic feedback
                 if newDirection != .noAction, Defaults[.hapticFeedback] {
                     NSHapticFeedbackManager.defaultPerformer.perform(.alignment, performanceTime: .now)
                 }
             }
-        } else if !(oldDirection == .noAction || oldDirection == .noSelection) {
-            direction = .noAction
+        } else if !oldDirection.isNoOp {
+            // Only close if we were showing something
+            resizeContext?.setAction(to: .init(.noAction), parent: nil)
             previewController.close()
         }
     }

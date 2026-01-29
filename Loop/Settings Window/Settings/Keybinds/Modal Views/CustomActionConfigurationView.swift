@@ -59,10 +59,10 @@ struct CustomActionConfigurationView: View {
                 GeometryReader { geo in
                     ZStack {
                         if action.sizeMode == .custom {
-                            let frame = action.getFrame(
+                            let frame = WindowFrameResolver.getFrame(
+                                for: action,
                                 window: nil,
-                                bounds: CGRect(origin: .zero, size: geo.size),
-                                disablePadding: true
+                                bounds: CGRect(origin: .zero, size: geo.size)
                             )
 
                             blurredWindow()
@@ -135,7 +135,6 @@ struct CustomActionConfigurationView: View {
         }
     }
 
-    @ViewBuilder
     private func tabPicker() -> some View {
         LuminarePicker(
             elements: Tab.allCases,
@@ -152,7 +151,6 @@ struct CustomActionConfigurationView: View {
         .luminareRoundingBehavior(top: true)
     }
 
-    @ViewBuilder
     private func unitToggle() -> some View {
         LuminareToggle("Use pixels", isOn: Binding(get: { action.unit == .pixels }, set: { action.unit = $0 ? .pixels : .percentage }))
             .onChange(of: actionUnit) { unit in
@@ -165,7 +163,6 @@ struct CustomActionConfigurationView: View {
             }
     }
 
-    @ViewBuilder
     private func actionButtons() -> some View {
         HStack(spacing: 8) {
             Button("Preview") {}
@@ -176,11 +173,9 @@ struct CustomActionConfigurationView: View {
                     pressing: { pressing in
                         if pressing {
                             guard let screen = NSScreen.main else { return }
-                            previewController.open(
-                                screen: screen,
-                                window: nil,
-                                startingAction: action
-                            )
+                            let context = ResizeContext(screen: screen)
+                            context.setAction(to: action, parent: nil)
+                            previewController.open(context: context)
                         } else {
                             previewController.close()
                         }
@@ -198,7 +193,6 @@ struct CustomActionConfigurationView: View {
         .luminareCornerRadius(8)
     }
 
-    @ViewBuilder
     private func positionConfiguration() -> some View {
         LuminareSection(outerPadding: 0) {
             LuminareToggle(
@@ -298,7 +292,6 @@ struct CustomActionConfigurationView: View {
         }
     }
 
-    @ViewBuilder
     private func sizeConfiguration() -> some View {
         LuminareSection(outerPadding: 0) {
             LuminarePicker(
@@ -364,7 +357,6 @@ struct CustomActionConfigurationView: View {
         }
     }
 
-    @ViewBuilder
     private func blurredWindow() -> some View {
         VisualEffectView(material: .hudWindow, blendingMode: .withinWindow)
             .overlay {

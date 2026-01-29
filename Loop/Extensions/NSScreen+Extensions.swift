@@ -9,8 +9,6 @@ import Defaults
 import SwiftUI
 
 extension NSScreen {
-    // Return the CGDirectDisplayID
-    // Used in to help calculate the size a window needs to be resized to
     var displayID: CGDirectDisplayID? {
         let key = NSDeviceDescriptionKey("NSScreenNumber")
         return deviceDescription[key] as? CGDirectDisplayID
@@ -30,36 +28,27 @@ extension NSScreen {
     static var screenWithMouse: NSScreen? {
         let mouseLocation = NSEvent.mouseLocation
         let screens = NSScreen.screens
-        let screenWithMouse = (screens.first { NSMouseInRect(mouseLocation, $0.frame, false) })
-
-        return screenWithMouse
+        return screens.first { $0.frame.contains(mouseLocation) }
     }
 
-    var safeScreenFrame: CGRect {
-        guard
-            let displayID
-        else {
-            NSLog("Error: Failed to get NSScreen.displayID in NSScreen.safeScreenFrame")
-            return frame.flipY(screen: self)
-        }
-
-        let screenFrame = CGDisplayBounds(displayID)
-        let visibleFrame = stageStripFreeFrame.flipY(screen: self)
+    var cgSafeScreenFrame: CGRect {
+        let cgbounds = displayBounds
+        let visibleFrame = safeScreenFrame.flipY(screen: NSScreen.screens[0])
 
         // By setting safeScreenFrame to visibleFrame, we won't need to adjust its size.
         var safeScreenFrame = visibleFrame
 
         // By using visibleFrame, coordinates of multiple displays won't
         // work correctly, so we instead use screenFrame's origin.
-        safeScreenFrame.origin = screenFrame.origin
+        safeScreenFrame.origin = cgbounds.origin
 
         safeScreenFrame.origin.y += menubarHeight
-        safeScreenFrame.origin.x -= screenFrame.minX - visibleFrame.minX
+        safeScreenFrame.origin.x -= cgbounds.minX - visibleFrame.minX
 
         return safeScreenFrame
     }
 
-    var stageStripFreeFrame: NSRect {
+    var safeScreenFrame: NSRect {
         var frame = visibleFrame
 
         if Defaults[.respectStageManager],
@@ -76,9 +65,7 @@ extension NSScreen {
     }
 
     var displayBounds: CGRect {
-        guard
-            let displayID
-        else {
+        guard let displayID else {
             NSLog("Error: Failed to get NSScreen.displayID in NSScreen.displayBounds")
             return frame.flipY(screen: self)
         }
@@ -93,12 +80,10 @@ extension NSScreen {
     func isSameScreen(_ other: NSScreen) -> Bool {
         displayID == other.displayID
     }
-}
 
-// MARK: - Calculate physical screen size
+    // MARK: - Calculate physical screen size
 
-extension NSScreen {
-    // Returns diagonal size in inches
+    /// Returns diagonal size in inches
     var diagonalSize: CGFloat {
         let unitsPerInch = unitsPerInch
         let screenSizeInInches = CGSize(
@@ -106,36 +91,36 @@ extension NSScreen {
             height: frame.height / unitsPerInch.height
         )
 
-        // Just the pythagorean theorem
-        let diagonalSize = sqrt(pow(screenSizeInInches.width, 2) + pow(screenSizeInInches.height, 2))
+        let diagonalSize = sqrt(
+            pow(screenSizeInInches.width, 2) + pow(screenSizeInInches.height, 2)
+        )
 
         return diagonalSize
     }
 
     private var unitsPerInch: CGSize {
-        // We need to convert from mm to inch because CGDisplayScreenSize returns units in mm.
-        let millimetersPerInch: CGFloat = 25.4
-
         let screenDescription = deviceDescription
-        if let displayUnitSize = (screenDescription[NSDeviceDescriptionKey.size] as? NSValue)?.sizeValue,
-           let screenNumber = (screenDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber)?.uint32Value {
-            let displayPhysicalSize = CGDisplayScreenSize(screenNumber)
 
-            return CGSize(
-                width: millimetersPerInch * displayUnitSize.width / displayPhysicalSize.width,
-                height: millimetersPerInch * displayUnitSize.height / displayPhysicalSize.height
-            )
-        } else {
-            // this is the same as what CoreGraphics assumes if no EDID data is available from the display device
-            // https://developer.apple.com/documentation/coregraphics/1456599-cgdisplayscreensize?language=objc
+        guard let displayID,
+              let displayUnitSize = (screenDescription[NSDeviceDescriptionKey.size] as? NSValue)?.sizeValue
+        else {
+            // This is the same as what CoreGraphics assumes if no EDID data is available from the display device
+            // https://developer.apple.com/documentation/coregraphics/cgdisplayscreensize(_:)
             return CGSize(width: 72.0, height: 72.0)
         }
+
+        // We need to convert from mm to inch because CGDisplayScreenSize returns units in mm.
+        let millimetersPerInch: CGFloat = 25.4
+        let displayPhysicalSize = CGDisplayScreenSize(displayID)
+
+        return CGSize(
+            width: millimetersPerInch * displayUnitSize.width / displayPhysicalSize.width,
+            height: millimetersPerInch * displayUnitSize.height / displayPhysicalSize.height
+        )
     }
-}
 
-// MARK: - Screen overlap
+    // MARK: - Screen overlap
 
-extension NSScreen {
     private func verticalOverlap(with other: NSScreen) -> CGFloat {
         let a = frame
         let b = other.frame

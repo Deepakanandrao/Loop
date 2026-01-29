@@ -11,6 +11,7 @@ import Luminare
 import Scribe
 import SwiftUI
 
+@Loggable
 @MainActor
 final class SettingsWindowManager: ObservableObject {
     static let shared = SettingsWindowManager()
@@ -23,8 +24,11 @@ final class SettingsWindowManager: ObservableObject {
 
     @Published private(set) var previewedParentAction: WindowAction? = nil
     @Published private(set) var previewedAction: WindowAction = .init(.noSelection) {
-        didSet { radialMenuViewModel.setAction(to: previewedAction, parent: previewedParentAction) }
+        didSet { updatePreviewContexts() }
     }
+
+    private(set) var previewBounds: CGRect = .zero
+    private(set) var didSetBounds: Bool = false
 
     @Published var showRadialMenu: Bool = true
     @Published var showPreview: Bool = true
@@ -55,15 +59,15 @@ final class SettingsWindowManager: ObservableObject {
     }
 
     let radialMenuViewModel: RadialMenuViewModel
+    let previewViewModel: PreviewViewModel
 
     var window: NSWindow? {
         controller?.window
     }
 
     private init() {
-        let startingAction: WindowAction = .init(.noAction)
-
-        self.radialMenuViewModel = .init(startingAction: startingAction, window: nil, previewMode: true)
+        self.radialMenuViewModel = .init(isSettingsPreview: true)
+        self.previewViewModel = .init(isSettingsPreview: true)
 
         if let firstAction = RadialMenuAction.userConfiguredActions.first?.resolved {
             setPreviewedAction(to: firstAction)
@@ -100,7 +104,7 @@ final class SettingsWindowManager: ObservableObject {
             NSApp.activate(ignoringOtherApps: true)
         }
 
-        Log.success("Settings window opened", category: .settingsWindowManager)
+        log.success("Settings window opened")
     }
 
     func close() {
@@ -108,7 +112,7 @@ final class SettingsWindowManager: ObservableObject {
             controller.close()
             self.controller = nil
 
-            Log.success("Settings window closed", category: .settingsWindowManager)
+            log.success("Settings window closed")
         }
 
         stopTimer()
@@ -129,7 +133,7 @@ final class SettingsWindowManager: ObservableObject {
             try await Task.sleep(for: .seconds(1))
 
             while !Task.isCancelled {
-                if controller?.window?.isKeyWindow == true {
+                if NSApp.isActive {
                     setNextPreviewedAction()
                 }
 
@@ -177,5 +181,23 @@ final class SettingsWindowManager: ObservableObject {
             previewedParentAction = nil
             previewedAction = newAction
         }
+    }
+
+    func setPreviewBounds(_ bounds: CGRect) {
+        previewBounds = bounds
+        didSetBounds = true
+
+        updatePreviewContexts()
+    }
+
+    private func updatePreviewContexts() {
+        guard didSetBounds else {
+            return
+        }
+
+        let context = ResizeContext(bounds: previewBounds)
+        context.setAction(to: previewedAction, parent: previewedParentAction)
+        radialMenuViewModel.updateContext(with: context)
+        previewViewModel.updateContext(with: context)
     }
 }

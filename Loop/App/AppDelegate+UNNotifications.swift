@@ -23,7 +23,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
     }
 
-    // Implementation is necessary to show notifications even when the app has focus!
+    /// Implementation is necessary to show notifications even when the app has focus!
     func userNotificationCenter(
         _: UNUserNotificationCenter,
         willPresent _: UNNotification,
@@ -37,11 +37,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             options: [.alert]
         ) { accepted, error in
             if !accepted {
-                Log.warn("Notification access denied.", category: .appDelegate)
+                Log.warn("Notification access denied.", category: AppDelegate.logCategory)
             }
 
             if let error {
-                Log.error("Failed to request notification authorization: \(error.localizedDescription)", category: .appDelegate)
+                Log.error("Failed to request notification authorization: \(error.localizedDescription)", category: AppDelegate.logCategory)
             }
         }
     }

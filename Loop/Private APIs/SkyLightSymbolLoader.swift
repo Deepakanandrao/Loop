@@ -9,12 +9,13 @@ import CoreGraphics
 import Darwin
 import Scribe
 
+@Loggable(style: .static)
 enum SkyLightSymbolLoader {
     private static let frameworkPath = "/System/Library/PrivateFrameworks/SkyLight.framework/SkyLight"
 
     private static let handle: UnsafeMutableRawPointer? = {
         guard let handle = dlopen(frameworkPath, RTLD_LAZY) else {
-            Log.error("failed to open \(frameworkPath)", category: .skyLightSymbolLoader)
+            log.error("failed to open \(frameworkPath)")
             return nil
         }
         return handle
@@ -22,7 +23,7 @@ enum SkyLightSymbolLoader {
 
     private static func loadSymbol<T>(_ name: StaticString) -> T? {
         guard let handle else {
-            Log.error("no handle; cannot load symbol \(name)", category: .skyLightSymbolLoader)
+            log.error("no handle; cannot load symbol \(name)")
             return nil
         }
 
@@ -31,9 +32,9 @@ enum SkyLightSymbolLoader {
 
         guard let sym = dlsym(handle, name.description) else {
             if let err = dlerror() {
-                Log.error("failed to load symbol \(name): \(String(cString: err))", category: .skyLightSymbolLoader)
+                log.error("failed to load symbol \(name): \(String(cString: err))")
             } else {
-                Log.error("failed to load symbol \(name)", category: .skyLightSymbolLoader)
+                log.error("failed to load symbol \(name)")
             }
             return nil
         }
@@ -113,13 +114,13 @@ struct SLSWindowCaptureOptions: OptionSet {
 
     static let ignoreGlobalClipShape = Self(rawValue: 1 << 11)
 
-    // On a retina display, this captures at 1 pt : 4 px
+    /// On a retina display, this captures at 1 pt : 4 px
     static let nominalResolution = Self(rawValue: 1 << 9)
 
-    // Captures at 1 pt : 1px
+    /// Captures at 1 pt : 1px
     static let bestResolution = Self(rawValue: 1 << 8)
 
-    // When Stage Manager is enabled, screenshots can become skewed. This param gets us full-size screenshots regardless
+    /// When Stage Manager is enabled, screenshots can become skewed. This param gets us full-size screenshots regardless
     static let fullSize = Self(rawValue: 1 << 19)
 }
 

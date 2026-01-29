@@ -11,6 +11,7 @@ import Scribe
 
 /// Caches the user's actions in a dictionary keyed by its keybind.
 /// This is called from `KeybindObserver`, to retrieve the user's actions in an efficient manner.
+@Loggable
 final class WindowActionCache {
     private(set) var actionsByKeybind: [Set<CGKeyCode>: WindowAction] = [:]
     private(set) var bypassedActionsByKeybind: [Set<CGKeyCode>: WindowAction] = [:]
@@ -47,7 +48,7 @@ final class WindowActionCache {
         regenerateActionsByKeybind(from: keybinds)
         regenerateActionsByIdentifier(from: keybinds)
 
-        Log.info("Regenerated cache; normal: \(actionsByKeybind.count), bypassed: \(bypassedActionsByKeybind.count)", category: .windowActionCache)
+        log.info("Regenerated cache; normal: \(actionsByKeybind.count), bypassed: \(bypassedActionsByKeybind.count)")
     }
 
     private func regenerateActionsByKeybind(from keybinds: [WindowAction]) {

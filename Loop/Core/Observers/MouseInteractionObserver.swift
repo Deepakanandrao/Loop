@@ -9,6 +9,7 @@ import Defaults
 import Scribe
 import SwiftUI
 
+@Loggable
 final class MouseInteractionObserver {
     private static let directionalActionDistance: CGFloat = 50
     private static let noActionDistance: CGFloat = 10
@@ -56,7 +57,7 @@ final class MouseInteractionObserver {
         screenBounds = NSScreen.screens.first(where: { $0.frame.contains(initialMousePosition) })?.frame
 
         if let screenBounds {
-            /// If the current mouse position isn't sufficient for accessing direcitonal actions due to being close to the screen's edge, then enable `shouldAccountForAbsoluteMousePosition`
+            // If the current mouse position isn't sufficient for accessing direcitonal actions due to being close to the screen's edge, then enable `shouldAccountForAbsoluteMousePosition`
             let closeToMinX = abs(initialMousePosition.x - screenBounds.minX) < Self.directionalActionDistance
             let closeToMaxX = abs(initialMousePosition.x - screenBounds.maxX) < Self.directionalActionDistance
             let closeToMinY = abs(initialMousePosition.y - screenBounds.minY) < Self.directionalActionDistance
@@ -87,7 +88,7 @@ final class MouseInteractionObserver {
         leftClickMonitor.start()
         self.leftClickMonitor = leftClickMonitor
 
-        Log.info("Started with initial mouse position: \(latestMousePosition.debugDescription)", category: .mouseInteractionObserver)
+        log.info("Started with initial mouse position: \(latestMousePosition.debugDescription)")
     }
 
     func stop() {
@@ -105,47 +106,47 @@ final class MouseInteractionObserver {
         initialMousePosition = .zero
         latestMousePosition = .zero
 
-        Log.success("Stopped, all stored states cleared.", category: .mouseInteractionObserver)
+        log.success("Stopped, all stored states cleared.")
     }
 
     private func processNewMouseLocation(_ event: CGEvent) {
         guard checkIfLoopOpen() else { return }
 
-        let currentMousePosition = computeLatestMousePosition(event)
-        let angleToMouse = initialMousePosition.angle(to: currentMousePosition) + .radians(.pi / 2)
-        let distanceToMouse = initialMousePosition.distance(to: currentMousePosition)
+        Task {
+            let currentMousePosition = computeLatestMousePosition(event)
+            let angleToMouse = initialMousePosition.angle(to: currentMousePosition) + .radians(.pi / 2)
+            let distanceToMouse = initialMousePosition.distance(to: currentMousePosition)
 
-        // Return if the mouse didn't move
-        guard
-            angleToMouse != previousAngleToMouse ||
-            distanceToMouse != previousDistanceToMouse
-        else {
-            return
-        }
-
-        // Get angle & distance to mouse
-        previousAngleToMouse = angleToMouse
-        previousDistanceToMouse = distanceToMouse
-
-        var newAction: RadialMenuAction? = nil
-
-        // If mouse over 50 points away, select half or quarter positions
-        if distanceToMouse > Self.directionalActionDistance - Defaults[.radialMenuThickness] {
-            guard radialMenuActions.count > 1 else {
-                newAction = radialMenuActions.first
+            // Return if the mouse didn't move
+            guard
+                angleToMouse != previousAngleToMouse ||
+                distanceToMouse != previousDistanceToMouse
+            else {
                 return
             }
 
-            let actions = radialMenuActions.dropLast()
-            let actionAngleSpan = 360.0 / CGFloat(actions.count)
-            let halfAngleSpan = actionAngleSpan / 2.0
-            let index = Int((angleToMouse.normalized().degrees + halfAngleSpan) / actionAngleSpan) % actions.count
-            newAction = actions[index]
-        } else if distanceToMouse > Self.noActionDistance {
-            newAction = radialMenuActions.last
-        }
+            // Get angle & distance to mouse
+            previousAngleToMouse = angleToMouse
+            previousDistanceToMouse = distanceToMouse
 
-        Task { @MainActor in
+            var newAction: RadialMenuAction? = nil
+
+            // If mouse over 50 points away, select half or quarter positions
+            if distanceToMouse > Self.directionalActionDistance - Defaults[.radialMenuThickness] {
+                guard radialMenuActions.count > 1 else {
+                    newAction = radialMenuActions.first
+                    return
+                }
+
+                let actions = radialMenuActions.dropLast()
+                let actionAngleSpan = 360.0 / CGFloat(actions.count)
+                let halfAngleSpan = actionAngleSpan / 2.0
+                let index = Int((angleToMouse.normalized().degrees + halfAngleSpan) / actionAngleSpan) % actions.count
+                newAction = actions[index]
+            } else if distanceToMouse > Self.noActionDistance {
+                newAction = radialMenuActions.last
+            }
+
             switch newAction?.type {
             case let .custom(windowAction):
                 changeAction(windowAction)
@@ -209,8 +210,8 @@ final class MouseInteractionObserver {
     }
 
     private func activateNextCycleAction(_ event: CGEvent) -> ActiveEventMonitor.EventHandling {
-        /// Ensure that the source originates from the HID state ID.
-        /// Otherwise, this event was likely sent from Loop to focus the frontmost click (see `Window.focus` which sends a `SLSEvent` to the window)
+        // Ensure that the source originates from the HID state ID.
+        // Otherwise, this event was likely sent from Loop to focus the frontmost click (see `Window.focus` which sends a `SLSEvent` to the window)
         let sourceID = CGEventSourceStateID(rawValue: Int32(event.getIntegerValueField(.eventSourceStateID)))
         guard sourceID == .hidSystemState else {
             return .forward

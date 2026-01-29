@@ -47,7 +47,7 @@ extension Defaults.Keys {
     static let suppressMissionControlOnTopDrag = Key<Bool>("suppressMissionControlOnTopDrag", default: true, iCloud: true)
     static let restoreWindowFrameOnDrag = Key<Bool>("restoreWindowFrameOnDrag", default: false, iCloud: true)
     static let enablePadding = Key<Bool>("enablePadding", default: false, iCloud: true)
-    static let padding = Key<PaddingModel>("padding", default: .zero, iCloud: true)
+    static let padding = Key<PaddingConfiguration>("padding", default: .zero, iCloud: true)
     static let useScreenWithCursor = Key<Bool>("useScreenWithCursor", default: true, iCloud: true)
     static let moveCursorWithWindow = Key<Bool>("moveCursorWithWindow", default: false, iCloud: true)
     static let resizeWindowUnderCursor = Key<Bool>("resizeWindowUnderCursor", default: false, iCloud: true)
@@ -74,19 +74,19 @@ extension Defaults.Keys {
     static let animateWindowResizes = Key<Bool>("animateWindowResizes", default: false, iCloud: true)
     static let disableCursorInteraction = Key<Bool>("disableCursorInteraction", default: false, iCloud: true)
     static let ignoreFullscreen = Key<Bool>("ignoreFullscreen", default: false, iCloud: true)
-    static let hideUntilDirectionIsChosen = Key<Bool>("hideUntilDirectionIsChosen", default: false, iCloud: true)
+    static let hideOnNoSelection = Key<Bool>("hideOnNoSelection", default: false, iCloud: true)
     static let hapticFeedback = Defaults.Key<Bool>("hapticFeedback", default: true, iCloud: true)
     static let enableRadialMenuCustomization = Defaults.Key<Bool>("enableRadialMenuCustomization", default: false, iCloud: true)
     static let sizeIncrement = Key<CGFloat>("sizeIncrement", default: 20, iCloud: true)
 
-    // Excluded apps
+    /// Excluded apps
     static let excludedApps = Key<[URL]>("excludedApps", default: [], iCloud: true)
 
     // About
     #if RELEASE
         static let includeDevelopmentVersions = Key<Bool>("includeDevelopmentVersions", default: false, iCloud: true)
     #else
-        // Development versions should check for development updates by default.
+        /// Development versions should check for development updates by default.
         static let includeDevelopmentVersions = Key<Bool>("includeDevelopmentVersions", default: true, iCloud: true)
     #endif
     static let automaticallyUpdate = Key<Bool>("automaticallyUpdate", default: false, iCloud: true)
@@ -119,10 +119,10 @@ extension Defaults.Keys {
     /// Reset with `defaults delete com.MrKai77.Loop previewStartingPosition`
     ///
     /// Available options:
-    /// - `screenCenter`: Center of the screen (default behavior)
+    /// - `screenCenter`: Center of the screen
     /// - `radialMenu`: Center of radial menu
     /// - `actionCenter`: Center of the selected action (e.g. for left half, it will grow from the center of that left half)
-    static let previewStartingPosition = Key<PreviewStartingPosition>("previewStartingPosition", default: .screenCenter, iCloud: true)
+    static let previewStartingPosition = Key<PreviewStartingPosition>("previewStartingPosition", default: .actionCenter, iCloud: true)
 
     /// Disable automatic updates with `defaults write com.MrKai77.Loop updatesEnabled -bool false`
     /// Reset with `defaults delete com.MrKai77.Loop updatesEnabled`
@@ -134,25 +134,16 @@ extension Defaults.Keys {
     /// Reset with `defaults delete com.MrKai77.Loop triggerKeyTimeout`
     static let triggerKeyTimeout = Key<Double>("triggerKeyTimeout", default: 0, iCloud: true)
 
-    // Migrator
+    /// Migrator
     static let lastMigratorURL = Key<URL?>("lastMigratorURL", default: nil)
 
-    // StashManager
+    /// StashManager
     static let stashManagerStashedWindows = Key<[CGWindowID: WindowAction]>("stashManagerStashed", default: [:])
-
-    @available(*, deprecated, message: "Revealed stash windows are no longer tracked.")
-    static let stashManagerRevealedWindows = Key<Set<CGWindowID>>("stashManagerRevealed", default: Set<CGWindowID>())
 
     // AccentColorController
     static let lastUsedAccentColor1 = Key<Color>("lastUsedAccentColor1", default: .black)
     static let lastUsedAccentColor2 = Key<Color>("lastUsedAccentColor2", default: .black)
 
-    @available(*, deprecated, renamed: "accentColorMode", message: "Use accentColorMode.system")
-    static let useSystemAccentColor = Key<Bool>("useSystemAccentColor", default: true, iCloud: true)
-
-    @available(*, deprecated, renamed: "accentColorMode", message: "Use accentColorMode.wallpaper")
-    static let processWallpaper = Key<Bool>("processWallpaper", default: false, iCloud: true)
-
-    // DataPatcher
+    /// DataPatcher
     static let patchesApplied = Key<DataPatcher.Patches>("patchesApplied", default: [], iCloud: true)
 }

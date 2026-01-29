@@ -87,6 +87,7 @@ import Scribe
 import SwiftUI
 
 /// Handles URL scheme commands for the Loop application
+@Loggable
 final class URLCommandHandler {
     // MARK: - Types
 
@@ -142,7 +143,7 @@ final class URLCommandHandler {
             cleanMessage.hasPrefix("Found") ||
             cleanMessage.hasPrefix("Window:") ||
             (cleanMessage.hasPrefix("Processing") && !cleanMessage.contains("command:")) {
-            Log.info(cleanMessage, category: .urlHandler)
+            log.info(cleanMessage)
             return
         }
 
@@ -150,9 +151,9 @@ final class URLCommandHandler {
         if currentCommand?.contains("/list") == true {
             outputBuffer.append(output)
         } else {
-            Log.info("\(output)", category: .urlHandler)
+            log.info("\(output)")
         }
-        Log.info(cleanMessage, category: .urlHandler)
+        log.info(cleanMessage)
     }
 
     /// Writes a titled list of items to output
@@ -171,8 +172,8 @@ final class URLCommandHandler {
             outputBuffer.append(title)
             outputBuffer.append(contentsOf: formattedItems)
         } else {
-            Log.info("\n\(title)", category: .urlHandler)
-            formattedItems.forEach { Log.info("\($0)", category: .urlHandler) }
+            log.info("\n\(title)")
+            formattedItems.forEach { log.info("\($0)") }
         }
     }
 
@@ -199,19 +200,21 @@ final class URLCommandHandler {
 
             // Schedule file deletion after a delay
             // We use a longer delay (60s) to ensure the user has time to read the content
-            DispatchQueue.main.asyncAfter(deadline: .now() + 60) { [tempFile] in
+            Task {
+                try? await Task.sleep(for: .seconds(60))
+
                 do {
                     try FileManager.default.removeItem(at: tempFile)
-                    Log.info("Cleaned up temporary file: \(tempFile.lastPathComponent)", category: .urlHandler)
+                    log.info("Cleaned up temporary file: \(tempFile.lastPathComponent)")
                 } catch {
-                    Log.error("Failed to clean up temporary file: \(error.localizedDescription)", category: .urlHandler)
+                    log.error("Failed to clean up temporary file: \(error.localizedDescription)")
                 }
             }
         } catch {
-            Log.error("Failed to write output: \(error.localizedDescription)", category: .urlHandler)
+            log.error("Failed to write output: \(error.localizedDescription)")
 
             // Fallback to direct console output if file operations fail
-            Log.info("\(outputBuffer.joined(separator: "\n"))", category: .urlHandler)
+            log.info("\(outputBuffer.joined(separator: "\n"))")
         }
 
         outputBuffer.removeAll()
@@ -252,8 +255,8 @@ final class URLCommandHandler {
     ///   - command: The command to process
     ///   - parameters: Array of command parameters
     private func processCommand(_ command: Command, _ parameters: [String]) {
-        Log.info(command.rawValue, category: .urlHandler)
-        Log.info(parameters.description, category: .urlHandler)
+        log.info(command.rawValue)
+        log.info(parameters.description)
 
         switch command {
         case .direction: handleDirectionCommand(parameters)
@@ -483,7 +486,13 @@ final class URLCommandHandler {
             writeToOutput("[URLHandler] Executing keybind: \(keybind.name ?? "unnamed")")
             if let window = WindowUtility.userDefinedTargetWindow(),
                let screen = NSScreen.main {
-                WindowEngine.resize(window, to: keybind, on: screen)
+                Task {
+                    _ = try await WindowActionEngine.shared.apply(
+                        keybind,
+                        window: window,
+                        screen: screen
+                    )
+                }
             }
         } else {
             writeToOutput("[URLHandler] Keybind not found: \(keybindName)")
@@ -648,10 +657,16 @@ final class URLCommandHandler {
             app.activate(options: .activateIgnoringOtherApps)
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            self?.writeToOutput("[URLHandler] Executing resize operation")
-            WindowEngine.resize(window, to: action, on: screen)
-            self?.writeToOutput("[URLHandler] New window frame: \(window.frame)")
+        Task {
+            try? await Task.sleep(for: .seconds(0.1))
+
+            writeToOutput("[URLHandler] Executing resize operation")
+            _ = try await WindowActionEngine.shared.apply(
+                action,
+                window: window,
+                screen: screen
+            )
+            writeToOutput("[URLHandler] New window frame: \(window.frame)")
         }
     }
 
@@ -662,8 +677,12 @@ final class URLCommandHandler {
            ScreenUtility.nextScreen(from: currentScreen) :
            ScreenUtility.previousScreen(from: currentScreen) {
             writeToOutput("[URLHandler] Moving window to screen: \(targetScreen.localizedName)")
-            DispatchQueue.main.async {
-                WindowEngine.resize(window, to: .init(direction), on: targetScreen)
+            Task {
+                _ = try await WindowActionEngine.shared.apply(
+                    .init(direction),
+                    window: window,
+                    screen: targetScreen
+                )
             }
         } else {
             writeToOutput("[URLHandler] Failed to find target screen")

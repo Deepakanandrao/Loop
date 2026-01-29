@@ -189,17 +189,6 @@ extension CGRect {
         return result
     }
 
-    /// Returns a new rectangle with integer values for the origin and size.
-    /// - Returns: A new rectangle with integer values for the origin and size.
-    func integerRect() -> CGRect {
-        CGRect(
-            x: floor(minX),
-            y: floor(minY),
-            width: floor(width),
-            height: floor(height)
-        )
-    }
-
     /// Returns true if the rectangle is finite, false otherwise.
     var isFinite: Bool {
         origin.x.isFinite &&

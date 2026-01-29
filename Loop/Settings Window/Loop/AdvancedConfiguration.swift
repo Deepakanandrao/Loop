@@ -11,6 +11,7 @@ import Luminare
 import Scribe
 import SwiftUI
 
+@Loggable
 @MainActor
 final class AdvancedConfigurationModel: ObservableObject {
     @Published private(set) var showResetRadialMenuActionsSuccessIndicator = false
@@ -72,7 +73,7 @@ final class AdvancedConfigurationModel: ObservableObject {
                     showSuccessIndicator(\.showImportKeybindsSuccessIndicator)
                 }
             } catch {
-                Log.error("Error importing keybinds: \(error)", category: .advancedConfigurationModel)
+                log.error("Error importing keybinds: \(error)")
             }
         }
     }
@@ -85,7 +86,7 @@ final class AdvancedConfigurationModel: ObservableObject {
                     showSuccessIndicator(\.showExportKeybindsSuccessIndicator)
                 }
             } catch {
-                Log.error("Error exporting keybinds: \(error)", category: .advancedConfigurationModel)
+                log.error("Error exporting keybinds: \(error)")
             }
         }
     }
@@ -126,7 +127,7 @@ struct AdvancedConfigurationView: View {
     @Default(.useSystemWindowManagerWhenAvailable) var useSystemWindowManagerWhenAvailable
     @Default(.ignoreLowPowerMode) var ignoreLowPowerMode
     @Default(.animateWindowResizes) var animateWindowResizes
-    @Default(.hideUntilDirectionIsChosen) var hideUntilDirectionIsChosen
+    @Default(.hideOnNoSelection) var hideOnNoSelection
     @Default(.disableCursorInteraction) var disableCursorInteraction
     @Default(.ignoreFullscreen) var ignoreFullscreen
     @Default(.hapticFeedback) var hapticFeedback
@@ -200,7 +201,7 @@ struct AdvancedConfigurationView: View {
 
     private var radialMenuSection: some View {
         LuminareSection(String(localized: "Radial Menu", comment: "Section header shown in settings")) {
-            LuminareToggle("Hide until direction is chosen", isOn: $hideUntilDirectionIsChosen)
+            LuminareToggle("Hide when no action is selected", isOn: $hideOnNoSelection)
 
             LuminareToggle(isOn: $enableRadialMenuCustomization) {
                 HStack {

@@ -43,7 +43,7 @@ final class PassiveEventMonitor: BaseEventTapMonitor {
             }
 
             // Call the callback but always pass the unmodified event through
-            observer.handleEvent(event: event)
+            observer.eventCallback(event)
             return Unmanaged.passUnretained(event)
         }
         let userInfo = Unmanaged.passUnretained(self).toOpaque()
@@ -58,13 +58,7 @@ final class PassiveEventMonitor: BaseEventTapMonitor {
         ) {
             setupRunLoopSource(eventTap: eventTap)
         } else {
-            Log.info("Failed to create event tap", category: .passiveEventMonitor)
-        }
-    }
-
-    private func handleEvent(event: CGEvent) {
-        Task {
-            eventCallback(event)
+            log.info("Failed to create event tap")
         }
     }
 }

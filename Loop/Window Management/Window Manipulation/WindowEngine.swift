@@ -9,88 +9,46 @@ import Defaults
 import Scribe
 import SwiftUI
 
-/// Handles execution of `WindowAction`s on windows within the user's workspace
+/// Handles the low-level resize operations for windows.
+/// Use `WindowActionEngine.apply()` as the main entry point for executing window actions.
+@Loggable(style: .static)
 enum WindowEngine {
-    static var currentTask: Task<(), any Error>?
-    /// Resize a Window
-    /// - Parameters:
-    ///   - window: Window to be resized
-    ///   - action: WindowAction to resize the window to
-    ///   - screen: Screen the window should be resized on
-    ///   - completion: A completion handler. To be removed once we add proper Swift Concurrency support to LoopManager.
-    static func resize(
-        _ window: Window,
-        to action: WindowAction,
-        on screen: NSScreen,
-        completion: @escaping () -> () = {}
-    ) {
-        currentTask?.cancel()
-        currentTask = Task.detached(priority: .userInitiated) {
-            await resize(
-                window,
-                to: action,
-                on: screen
-            )
-
-            try Task.checkCancellation()
-
-            completion()
-        }
-    }
-
-    /// Resize a Window asynchronously
-    /// - Parameters:
-    ///   - window: Window to resize
-    ///   - action: WindowAction describing the target layout
-    ///   - screen: Screen the window should be resized on
-    private static func resize(
-        _ window: Window,
-        to action: WindowAction,
-        on screen: NSScreen
-    ) async {
+    /// Performs the actual resize operation on a window.
+    /// This is an internal method - callers should use `WindowActionEngine.apply()` instead.
+    static func performResize(context: ResizeContext) async throws -> CGRect? {
         // Immediately return for no-op or focus-only actions
-        guard action.direction != .noAction,
-              action.direction != .noSelection,
-              !action.direction.willFocusWindow
-        else { return }
+        guard let window = context.window,
+              !context.action.direction.isNoOp,
+              !context.action.direction.willFocusWindow
+        else {
+            return nil
+        }
 
-        let willChangeScreens = ScreenUtility.screenContaining(window) != screen
-        Log.info("Resizing \(window) to \(action.direction) on \(screen.localizedName)", category: .windowEngine)
+        // Quick actions are handled by WindowActionEngine
+        let quickActions: [WindowDirection] = [.hide, .minimize, .fullscreen, .minimizeOthers]
+        guard !quickActions.contains(context.action.direction) else { return nil }
+
+        let willChangeScreens = ScreenUtility.screenContaining(window) != context.screen
+        let targetFrame = context.getTargetFrame().padded
+        log.info("Resizing \(window) to \(targetFrame)")
 
         // Record first frame if needed
         WindowRecords.recordFirstIfNeeded(for: window)
 
-        let storeAsFrame = WindowRecords.shouldStoreAsFinalFrame(action)
+        let storeAsFrame = WindowRecords.shouldStoreAsFinalFrame(context.action)
 
-        /// If this action doesn't require storage as a frame, then record it beforehand.
-        /// Otherwise, this action will be recorded *after* resizing, such that its final frame is considered if undoing.
+        // If this action doesn't require storage as a frame, then record it beforehand.
+        // Otherwise, this action will be recorded *after* resizing, such that its final frame is considered if undoing.
         if !storeAsFrame {
-            WindowRecords.record(window, action)
+            WindowRecords.record(window, context.action)
         }
 
         defer {
-            if action.direction == .undo {
+            if context.action.direction == .undo {
                 WindowRecords.removeLastAction(for: window)
             } else if storeAsFrame {
-                WindowRecords.record(window, action)
+                WindowRecords.record(window, context.action)
             }
-        }
-
-        // Handle quick actions off the main actor
-        switch action.direction {
-        case .hide:
-            window.toggleHidden()
-            return
-        case .minimize:
-            window.toggleMinimized()
-            return
-        case .fullscreen:
-            window.toggleFullscreen()
-            return
-        case .minimizeOthers:
-            minimizeOtherWindows(exceptWindow: window)
-            return
-        default: break
         }
 
         let useSystemWM: Bool = if #available(macOS 15, *) {
@@ -103,24 +61,18 @@ enum WindowEngine {
             await window.focus()
         }
 
+        var systemWMFrame: CGRect?
+
         // Attempt system window manager if possible
         if !willChangeScreens, useSystemWM,
            #available(macOS 15, *),
-           await resizeWithSystemWindowManager(window: window, to: action) {
+           await resizeWithSystemWindowManager(window: window, to: context.action) {
             if !Defaults[.previewVisibility] {
-                LoopManager.lastTargetFrame = window.frame
+                systemWMFrame = window.frame
             }
         } else {
             // Otherwise, we obviously need to disable fullscreen to resize the window
             window.fullscreen = false
-
-            let targetFrame = action.getFrame(
-                window: window,
-                bounds: screen.safeScreenFrame,
-                screen: screen
-            )
-
-            Log.info("Target window frame: \(targetFrame.debugDescription)", category: .windowEngine)
 
             if window.nsRunningApplication?.bundleIdentifier == Bundle.main.bundleIdentifier {
                 await resizeOwnWindow(targetFrame: targetFrame)
@@ -131,9 +83,9 @@ enum WindowEngine {
                     try await resizeWindow(
                         window,
                         targetFrame: targetFrame,
-                        screen: screen,
+                        bounds: context.bounds,
                         willChangeScreens: willChangeScreens,
-                        ignorePadding: action.direction.willMove,
+                        ignorePadding: context.action.direction.willMove,
                         animate: shouldAnimate
                     )
                 } catch {
@@ -146,11 +98,15 @@ enum WindowEngine {
             }
         }
 
-        StashManager.shared.onWindowResized(
-            action: action,
-            window: window,
-            screen: screen
-        )
+        if let screen = context.screen {
+            StashManager.shared.onWindowResized(
+                action: context.action,
+                window: window,
+                screen: screen
+            )
+        }
+
+        return systemWMFrame
     }
 
     // MARK: - System Window Manager
@@ -173,7 +129,7 @@ enum WindowEngine {
             let axMenuItem = try? systemAction.getItem(for: app),
             (try? axMenuItem.getValue(.enabled)) == true
         else {
-            Log.info("System action not available for \(action.direction.debugDescription) on \(window.title ?? "<unknown>")", category: .windowEngine)
+            log.info("System action not available for \(action.direction.debugDescription) on \(window.title ?? "<unknown>")")
             return false
         }
 
@@ -200,7 +156,7 @@ enum WindowEngine {
         guard let window = NSApp.keyWindow ?? NSApp.windows.first(where: {
             $0.level.rawValue <= NSWindow.Level.floating.rawValue
         }) else {
-            Log.info("Failed to get own main window to resize", category: .windowEngine)
+            log.info("Failed to get own main window to resize")
             return
         }
 
@@ -213,15 +169,11 @@ enum WindowEngine {
     private static func resizeWindow(
         _ window: Window,
         targetFrame: CGRect,
-        screen: NSScreen,
+        bounds: CGRect,
         willChangeScreens: Bool,
-        ignorePadding: Bool,
+        ignorePadding _: Bool,
         animate: Bool
     ) async throws {
-        let bounds = ignorePadding ? .zero :
-            PaddingSettings.configuredPadding(for: screen)
-            .apply(onScreenFrame: screen.safeScreenFrame)
-
         if animate {
             try await window.setFrameAnimated(targetFrame, bounds: bounds)
         } else {
@@ -247,20 +199,5 @@ enum WindowEngine {
         if windowFrame.maxY > bounds.maxY { windowFrame.origin.y = bounds.maxY - windowFrame.height }
 
         window.position = windowFrame.origin
-    }
-
-    // MARK: - Minimize Others
-
-    private static func minimizeOtherWindows(exceptWindow: Window) {
-        let allWindows = WindowUtility.windowList()
-        let windowsToMinimize = allWindows.filter {
-            $0.cgWindowID != exceptWindow.cgWindowID && !$0.minimized && !$0.isWindowHidden
-        }
-
-        Log.info("Minimizing \(windowsToMinimize.count) other windows", category: .windowEngine)
-
-        for window in windowsToMinimize {
-            window.minimized = true
-        }
     }
 }

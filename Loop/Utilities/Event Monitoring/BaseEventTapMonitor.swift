@@ -10,7 +10,8 @@ import Foundation
 import Scribe
 
 /// Base class to share common functionality. DO NOT USE DIRECTLY!
-class BaseEventTapMonitor: Identifiable, Equatable {
+@Loggable
+class BaseEventTapMonitor: EventMonitorProtocol, Identifiable, Equatable {
     let id = UUID()
 
     private var eventTap: CFMachPort?
@@ -36,7 +37,7 @@ class BaseEventTapMonitor: Identifiable, Equatable {
     }
 
     func setupRunLoopSource(eventTap: CFMachPort) {
-        /// Runloop is already running here. In the future, we can investigate running the mach port on another thread.
+        // Runloop is already running here. In the future, we can investigate running the mach port on another thread.
         let runLoop = CFRunLoopGetMain()
 
         if let runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0) {
@@ -50,7 +51,7 @@ class BaseEventTapMonitor: Identifiable, Equatable {
     func start() {
         guard let eventTap else { return }
 
-        Log.info("Starting BaseEventTapMonitor with ID \(id)", category: .baseEventTapMonitor)
+        log.info("Starting BaseEventTapMonitor with ID \(id)")
 
         CGEvent.tapEnable(tap: eventTap, enable: true)
         isEnabled = true
@@ -59,7 +60,7 @@ class BaseEventTapMonitor: Identifiable, Equatable {
     func stop() {
         guard let eventTap else { return }
 
-        Log.info("Stopping BaseEventTapMonitor with ID \(id)", category: .baseEventTapMonitor)
+        log.info("Stopping BaseEventTapMonitor with ID \(id)")
 
         CGEvent.tapEnable(tap: eventTap, enable: false)
         isEnabled = false

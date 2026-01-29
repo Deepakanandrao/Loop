@@ -8,7 +8,8 @@
 import Cocoa
 import Scribe
 
-final class LocalEventMonitor: Identifiable, Equatable {
+@Loggable
+final class LocalEventMonitor: EventMonitorProtocol, Identifiable, Equatable {
     let id = UUID()
 
     private var localEventMonitor: Any?
@@ -41,7 +42,7 @@ final class LocalEventMonitor: Identifiable, Equatable {
     func start() {
         guard !isEnabled else { return }
 
-        Log.info("Starting LocalEventMonitor with ID \(id)", category: .localEventMonitor)
+        log.info("Starting LocalEventMonitor with ID \(id)")
 
         localEventMonitor = NSEvent.addLocalMonitorForEvents(
             matching: eventTypeMask,
@@ -56,7 +57,7 @@ final class LocalEventMonitor: Identifiable, Equatable {
     func stop() {
         guard isEnabled else { return }
 
-        Log.info("Stopping LocalEventMonitor with ID \(id)", category: .localEventMonitor)
+        log.info("Stopping LocalEventMonitor with ID \(id)")
 
         if let localEventMonitor {
             NSEvent.removeMonitor(localEventMonitor)

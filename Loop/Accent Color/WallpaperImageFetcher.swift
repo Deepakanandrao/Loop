@@ -19,6 +19,7 @@ final class WallpaperImageFetcher {
     /// The direct wallpaper capture is preferred as it gets only the wallpaper without desktop icons,
     /// but requires accessibility permissions (this is accepted required for Loop, so it's fine).
     /// The fallback ensures we still get colors even if permissions aren't granted.
+    @concurrent
     func takeScreenshot() async throws -> NSImage? {
         let screen = NSScreen.screenWithMouse ?? NSScreen.main ?? NSScreen.screens[0]
         let screenFrame = screen.displayBounds

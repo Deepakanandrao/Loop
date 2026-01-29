@@ -56,10 +56,14 @@ struct SettingsContentView: View {
             .frame(width: 390)
 
             if model.showInspector {
-                ZStack {
+                // We use an overlay instead of a ZStack so the inspector’s contents
+                // don’t influence the layout of the surrounding views (mainly as a precaution)
+                Color.clear.overlay {
                     if model.showPreview || showRadialMenuGuide {
-                        LuminarePreviewView()
-                            .allowsHitTesting(false)
+                        PreviewView(viewModel: model.previewViewModel)
+                            .onGeometryChange(for: CGSize.self, of: \.size) {
+                                model.setPreviewBounds(CGRect(origin: .zero, size: $0))
+                            }
                     }
 
                     if model.showRadialMenu {
@@ -71,7 +75,6 @@ struct SettingsContentView: View {
                         RadialMenuActionsGuide()
                     }
                 }
-                .compositingGroup()
                 .animation(animation, value: [model.showRadialMenu, model.showPreview])
                 .padding(12)
                 .frame(width: 520)
