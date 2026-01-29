@@ -238,6 +238,7 @@ final class KeybindTrigger {
     private func closeLoop(forceClose: Bool) {
         triggerDelayTimer.cancel()
         closeCallback(forceClose)
+        pressedKeys = []
     }
 
     private func startTriggerDelayTimer(

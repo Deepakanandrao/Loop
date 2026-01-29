@@ -85,7 +85,6 @@ enum WindowEngine {
                         targetFrame: targetFrame,
                         bounds: context.bounds,
                         willChangeScreens: willChangeScreens,
-                        ignorePadding: context.action.direction.willMove,
                         animate: shouldAnimate
                     )
                 } catch {
@@ -171,7 +170,6 @@ enum WindowEngine {
         targetFrame: CGRect,
         bounds: CGRect,
         willChangeScreens: Bool,
-        ignorePadding _: Bool,
         animate: Bool
     ) async throws {
         if animate {
