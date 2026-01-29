@@ -41,8 +41,7 @@ enum WindowFrameResolver {
 
         let noFrameActions: [WindowDirection] = [.noAction, .noSelection, .cycle, .minimize, .hide]
         guard !noFrameActions.contains(direction), !direction.willFocusWindow else {
-            let zeroFrame = CGRect(origin: bounds.center, size: .zero)
-            return (zeroFrame, nil)
+            return (CGRect(origin: bounds.center, size: .zero), nil)
         }
 
         var sidesToAdjust: Edge.Set? = if action.willManipulateExistingWindowFrame {

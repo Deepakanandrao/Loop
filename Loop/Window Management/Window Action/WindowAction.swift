@@ -198,9 +198,8 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
             return nil
         }
 
-        let bounds = context.bounds
-        let targetFrame = context.getTargetFrame().raw
-        let angle = bounds.center.angle(to: targetFrame.center)
+        let targetFrame = context.getTargetFrame().normalized
+        let angle = CGPoint(x: 0.5, y: 0.5).angle(to: targetFrame.center)
         let result: Angle = angle * -1
 
         return result.normalized()

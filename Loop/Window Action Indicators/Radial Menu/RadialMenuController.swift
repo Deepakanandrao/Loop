@@ -18,8 +18,8 @@ final class RadialMenuController: WindowActionIndicator {
     func open(context: ResizeContext) {
         defer { viewModel.updateContext(with: context) }
 
-        if let windowController = controller {
-            windowController.window?.orderFrontRegardless()
+        if let window = controller?.window {
+            window.orderFrontRegardless()
             return
         }
 

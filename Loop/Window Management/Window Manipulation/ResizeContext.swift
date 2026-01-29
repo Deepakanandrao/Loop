@@ -49,7 +49,7 @@ final class ResizeContext {
         let padding = PaddingConfiguration.getConfiguredPadding(for: screen)
 
         self.window = window
-        self.cachedTargetFrame = ComputedFrame(raw: frame, padded: frame)
+        self.cachedTargetFrame = ComputedFrame(raw: frame, normalized: .zero, padded: frame)
         self.screen = screen
         self.bounds = bounds
         self.padding = padding
@@ -92,17 +92,27 @@ final class ResizeContext {
     private func recomputeTargetFrame() {
         let result = WindowFrameResolver.getFrame(resizeContext: self)
 
-        let rawFrame = result.frame
+        let normalized = CGRect(
+            x: (result.frame.minX - bounds.minX) / bounds.width,
+            y: (result.frame.minY - bounds.minY) / bounds.height,
+            width: result.frame.width / bounds.width,
+            height: result.frame.height / bounds.height
+        )
+
         let paddedFrame = padding.applyToWindow(
-            frame: rawFrame,
+            frame: result.frame,
             paddedBounds: paddedBounds,
             action: action,
             window: window
         )
 
-        cachedTargetFrame = ComputedFrame(raw: rawFrame, padded: paddedFrame)
+        cachedTargetFrame = ComputedFrame(
+            raw: result.frame,
+            normalized: normalized,
+            padded: paddedFrame
+        )
         needsRecompute = false
-        log.info("Computed target frame - padded: \(cachedTargetFrame.padded), raw: \(cachedTargetFrame.raw) for action: \(action)")
+        log.info("Computed target frame - raw: \(cachedTargetFrame.raw), normalized: \(cachedTargetFrame.normalized) padded: \(cachedTargetFrame.padded), for action: \(action)")
     }
 }
 
@@ -114,14 +124,18 @@ extension ResizeContext {
         /// The frame calculated without any padding applied.
         let raw: CGRect
 
+        /// The frame inside a 1x1 frame, used for radial menu angle calculations.
+        let normalized: CGRect
+
         /// The frame with padding applied (outer bounds padding + inner window padding).
         /// When no padding is configured, this equals `raw`.
         var padded: CGRect
 
-        static let zero = ComputedFrame(raw: .zero, padded: .zero)
+        static let zero = ComputedFrame(raw: .zero, normalized: .zero, padded: .zero)
 
-        init(raw: CGRect, padded: CGRect) {
+        init(raw: CGRect, normalized: CGRect, padded: CGRect) {
             self.raw = raw
+            self.normalized = normalized
             self.padded = padded
         }
     }

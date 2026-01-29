@@ -28,7 +28,7 @@ final class PreviewViewModel: ObservableObject {
         }
     }
 
-    func updateContext(with context: ResizeContext) {
+    func updateContext(with context: ResizeContext, isScreenSwitch: Bool) {
         if #available(macOS 26.0, *), let window = context.window {
             overrideCornerRadii = Self.getCornerRadius(for: window)
         } else {
@@ -61,14 +61,16 @@ final class PreviewViewModel: ObservableObject {
 
         // If the window is currently hidden, but it needs to be shown.
         else if isCurrentlyHidden, shouldBecomeVisible {
-            let startingFrame = computeStartingFrame(
-                for: Defaults[.previewStartingPosition],
-                targetFrame: paddedFrame,
-                context: context
-            )
+            if !isScreenSwitch {
+                let startingFrame = computeStartingFrame(
+                    for: Defaults[.previewStartingPosition],
+                    targetFrame: paddedFrame,
+                    context: context
+                )
 
-            // Set starting position without animation
-            computedFrame = startingFrame
+                // Set starting position without animation
+                computedFrame = startingFrame
+            }
 
             newShownState = true
             newComputedFrame = paddedFrame
@@ -79,9 +81,14 @@ final class PreviewViewModel: ObservableObject {
             newComputedFrame = paddedFrame
         }
 
-        withAnimation(Defaults[.animationConfiguration].previewWindow) {
+        if isScreenSwitch {
             computedFrame = newComputedFrame
             isShown = newShownState
+        } else {
+            withAnimation(Defaults[.animationConfiguration].previewWindow) {
+                computedFrame = newComputedFrame
+                isShown = newShownState
+            }
         }
 
         log.ui("Current previewed frame: \(computedFrame) for \(context.action)")
