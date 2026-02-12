@@ -58,6 +58,12 @@
             "value" : "%"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -135,6 +141,12 @@
           }
         },
         "nl-BE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@"
@@ -223,6 +235,12 @@
             "value" : "%1$@ %2$@"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -304,6 +322,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ staat niet in je Applications-folder. Wil je de update in je Applications-folder installeren?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ znajduje się poza folderem Aplikacje. Czy chcesz zainstalować aktualizację do folderu Aplikacje?"
           }
         },
         "pt-BR" : {
@@ -388,6 +412,12 @@
             "value" : "%@ plaatst vensters een beetje boven het center, wat dus meer ergonomisch kan zijn."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ustawia okna trochę powyżej środka, co może być uznane za bardziej ergonomiczne."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -465,6 +495,12 @@
           }
         },
         "nl-BE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -553,6 +589,12 @@
             "value" : "Een enkele %1$@-actie kan maar één venster volgen. Om meerdere vensters tijdelijk op te slaan, voeg extra %2$@-acties toe."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pojedyncza akcja %1$@ może śledzić tylko jedno okno. Aby użyć opcji Stash na więcej niż jednym oknie, dodaj dodatkowe %2$@ akcje."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -634,6 +676,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Accentdekking"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przezroczystość koloru akcentu"
           }
         },
         "pt-BR" : {
@@ -718,6 +766,12 @@
             "value" : "Toegankelijkheid"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozwolenie w sekcji Dostępność"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -800,6 +854,12 @@
             "value" : "Geef toegang om het grootte van vensters aan te passen."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udziel dostępu, aby móc zmieniać wielkość okien."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -880,6 +940,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Heeft toegankelijkheid toegang nodig"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Potrzebuje pozwolenia w sekcji Dostępność"
           }
         },
         "pt-BR" : {
@@ -965,6 +1031,12 @@
             "value" : "Acties"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akcje"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1046,6 +1118,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toevoegen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj"
           }
         },
         "pt-BR" : {
@@ -1131,6 +1209,12 @@
             "value" : "Radiaal menu aanpassen toestaan"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zezwalaj na dostosowywanie menu kołowego"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1212,6 +1296,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bijna maximaliseren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawie zmaksymalizowane"
           }
         },
         "pt-BR" : {
@@ -1296,6 +1386,12 @@
             "value" : "Start Cycli altijd vanaf de eerste actie"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zawsze rozpoczynaj cykl od pierwszej pozycji"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1376,6 +1472,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vergroting van vensters animeren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animuj zmianę wielkości okna"
           }
         },
         "pt-BR" : {
@@ -1460,6 +1562,12 @@
             "value" : "Geanimeerd"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animowane"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1540,6 +1648,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Animatie snelheid"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szybkość animacji"
           }
         },
         "pt-BR" : {
@@ -1624,6 +1738,12 @@
             "value" : "Vergrendeld"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zablokowane"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1706,6 +1826,12 @@
             "value" : "Padding bevatten"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zastosuj odstępy"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1784,8 +1910,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Apply trigger delay on middle-click"
+            "state" : "translated",
+            "value" : "Trigger-vertraging toevoegen aan middelklik"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zastosuj opóźnienie przy środkowym kliknięciu"
           }
         },
         "pt-BR" : {
@@ -1871,6 +2003,12 @@
             "value" : "Automatisch updates installeren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatycznie instaluj aktualizacje"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1954,6 +2092,12 @@
             "value" : "Achtergrond"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tło"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -2034,6 +2178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Randdikte"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grubość obramowania"
           }
         },
         "pt-BR" : {
@@ -2119,6 +2269,12 @@
             "value" : "Bodem"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dół"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2199,6 +2355,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bodem cyclus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolny cykl"
           }
         },
         "pt-BR" : {
@@ -2284,6 +2446,12 @@
             "value" : "Onderste helft"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolna połowa"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2365,6 +2533,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kwart linksonder"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolna lewa ćwiartka"
           }
         },
         "pt-BR" : {
@@ -2450,6 +2624,12 @@
             "value" : "Kwartier rechtsonder"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolna prawa ćwiartka"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2531,6 +2711,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Onderste scherm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolny ekran"
           }
         },
         "pt-BR" : {
@@ -2616,6 +2802,12 @@
             "value" : "Onderste derde"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolna jedna trzecia"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2699,6 +2891,12 @@
             "value" : "Onderste twee derden"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolne dwie trzecie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2778,8 +2976,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Brisk"
+            "state" : "translated",
+            "value" : "Levendig"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Żwawa"
           }
         },
         "pt-BR" : {
@@ -2862,6 +3066,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Loop gaat standaard in elk venster verder met de cyclus waar je gebleven was."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domyślnie Loop wznawia cykle z pozycji, w której ostatnio pozostało okno."
           }
         },
         "pt-BR" : {
@@ -2947,6 +3157,12 @@
             "value" : "Annuleren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3028,6 +3244,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Midden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Środek"
           }
         },
         "pt-BR" : {
@@ -3112,6 +3334,12 @@
             "value" : "Verandering"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3192,6 +3420,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Controleer voor updates…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdź, czy są dostępne nowe aktualizacje…"
           }
         },
         "pt-BR" : {
@@ -3277,6 +3511,12 @@
             "value" : "Controleren op updates…"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdź, czy są dostępne nowe aktualizacje…"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3357,6 +3597,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toetscombinatie wissen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyczyść skrót klawiszowy"
           }
         },
         "pt-BR" : {
@@ -3442,6 +3688,12 @@
             "value" : "Sluiten"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamknij"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3523,6 +3775,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kleur"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolor"
           }
         },
         "pt-BR" : {
@@ -3608,6 +3866,12 @@
             "value" : "Configureren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konfiguruj…"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3690,6 +3954,12 @@
             "value" : "Medewerkers op GitHub"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Współtwórcy na GitHub"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3770,6 +4040,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gekopiëerd!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skopiowano!"
           }
         },
         "pt-BR" : {
@@ -3855,6 +4131,12 @@
             "value" : "Hoekradius"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaokrąglenie rogów"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3938,6 +4220,12 @@
             "value" : "Hoekradius"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaokrąglenie rogów"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4017,8 +4305,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Credits"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorzy"
           }
         },
         "pt-BR" : {
@@ -4104,6 +4398,12 @@
             "value" : "Cursor"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kursor"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4187,6 +4487,12 @@
             "value" : "Aangepast"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Własny"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4266,8 +4572,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Custom Action"
+            "state" : "translated",
+            "value" : "Aangepaste actie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niestandardowa akcja"
           }
         },
         "pt-BR" : {
@@ -4352,6 +4664,12 @@
             "value" : "Aangepaste Cyclus"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niestandardowy cykl"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4431,8 +4749,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Customize this action's custom frame."
+            "state" : "translated",
+            "value" : "Pas het frame van de actie aan."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw niestandardową akcję tej ramki."
           }
         },
         "pt-BR" : {
@@ -4515,6 +4839,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pas deze toetscombinatie aan."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw akcję tego skrótu klawiszowego."
           }
         },
         "pt-BR" : {
@@ -4600,6 +4930,12 @@
             "value" : "Aanpassen door welke Cyclus deze actie gaat."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw elementy cyklu."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4681,6 +5017,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cyclus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl"
           }
         },
         "pt-BR" : {
@@ -4765,6 +5107,12 @@
             "value" : "Cyclus teruggaan met Shift"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przechodź przez cykl wstecz używając klawisza Shift"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4845,6 +5193,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cyclus toetscombinatie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skrót klawiszowy cyklu"
           }
         },
         "pt-BR" : {
@@ -4930,6 +5284,12 @@
             "value" : "Cycli"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykle"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5013,6 +5373,12 @@
             "value" : "Standaard hoekradius"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domyślne zaokrąglenie narożników"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5091,6 +5457,12 @@
           }
         },
         "nl-BE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Design"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Design"
@@ -5179,6 +5551,12 @@
             "value" : "Ontwikkeling"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Development"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5259,6 +5637,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cursor interactie uitschakelen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyłącz reakcję na kursor"
           }
         },
         "pt-BR" : {
@@ -5343,6 +5727,12 @@
             "value" : "Wil je bestaande toetscombinaties samenvoegen of wissen?"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chcesz scalić czy usunąć istniejące skróty klawiszowe?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5425,6 +5815,12 @@
             "value" : "Doneren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wesprzyj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5505,6 +5901,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dubbelklik om te activeren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kliknij dwukrotnie, aby uruchomić"
           }
         },
         "pt-BR" : {
@@ -5590,6 +5992,12 @@
             "value" : "Vervaging"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zastosuj rozmycie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -5671,6 +6079,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Venster"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Włącz przyciąganie okien"
           }
         },
         "pt-BR" : {
@@ -5755,6 +6169,12 @@
             "value" : "Controleer of het geselecteerde bestand het juiste formaat heeft."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upewnij się, że wybrany plik jest w poprawnym formacie."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5835,6 +6255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fout bij het lezen van toetscombinaties"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Błąd odczytu skrótów klawiszowych"
           }
         },
         "pt-BR" : {
@@ -5919,6 +6345,12 @@
             "value" : "Exporteer"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eksportuj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5999,6 +6431,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toetscombinaties exporteren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eksportuj skróty klawiszowe"
           }
         },
         "pt-BR" : {
@@ -6084,6 +6522,12 @@
             "value" : "Externe balk"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pasek zewnętrzny"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6165,6 +6609,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gelinkte toetscombinatie ophalen mislukt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się odnaleźć powiązanego skrótu klawiszowego"
           }
         },
         "pt-BR" : {
@@ -6250,6 +6700,12 @@
             "value" : "Beschikbare ruimte opvullen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wypełnij dostępną przestrzeń"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -6331,6 +6787,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eerste kwart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pierwsza część czwarta"
           }
         },
         "pt-BR" : {
@@ -6416,6 +6878,12 @@
             "value" : "Vloeiend"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Płynna"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6497,6 +6965,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Focus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przełącz okno"
           }
         },
         "pt-BR" : {
@@ -6582,6 +7056,12 @@
             "value" : "Focus beneden"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przełącz okno w dół"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6665,6 +7145,12 @@
             "value" : "Focus links"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przełącz okno w lewo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6744,8 +7230,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Focus Next In Stack"
+            "state" : "translated",
+            "value" : "Focussen op volgende in vensterstapel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przełącz na kolejny w stosie"
           }
         },
         "pt-BR" : {
@@ -6831,6 +7323,12 @@
             "value" : "Focus rechts"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przełącz okno w prawo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6914,6 +7412,12 @@
             "value" : "Focus omhoog"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przełącz okno w górę"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6994,6 +7498,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Op vergroting de venster in focus zetten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przełącz okno podczas zmiany rozmiaru"
           }
         },
         "pt-BR" : {
@@ -7079,6 +7589,12 @@
             "value" : "Vierde kwart"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czwarta część czwarta"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7160,6 +7676,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volledig scherm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pełny ekran"
           }
         },
         "pt-BR" : {
@@ -7245,6 +7767,12 @@
             "value" : "Algemeen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogólne"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7328,6 +7856,12 @@
             "value" : "Ga terug"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wróć"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7408,6 +7942,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verloop"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gradient"
           }
         },
         "pt-BR" : {
@@ -7493,6 +8033,12 @@
             "value" : "Groeien"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7574,6 +8120,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bodem laten groeien"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ w dół"
           }
         },
         "pt-BR" : {
@@ -7659,6 +8211,12 @@
             "value" : "Groei horizontaal"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ poziomo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7740,6 +8298,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Links groeien"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ w lewo"
           }
         },
         "pt-BR" : {
@@ -7825,6 +8389,12 @@
             "value" : "Rechts groeien"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ w prawo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7906,6 +8476,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Top Groeien"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ w górę"
           }
         },
         "pt-BR" : {
@@ -7991,6 +8567,12 @@
             "value" : "Groei verticaal"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ pionowo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8072,6 +8654,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Halven"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Połowy"
           }
         },
         "pt-BR" : {
@@ -8156,6 +8744,12 @@
             "value" : "Haptische feedback"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wibracja przy naciśnięciu"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8236,6 +8830,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hoogte"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wysokość"
           }
         },
         "pt-BR" : {
@@ -8321,6 +8921,12 @@
             "value" : "Verstoppen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schowaj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8401,6 +9007,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verstop de menu balk icoon"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukryj ikonę na pasku menu"
           }
         },
         "pt-BR" : {
@@ -8486,6 +9098,12 @@
             "value" : "Verbergen wanneer geen actie geselecteerd is"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukryj, kiedy nie wybrano akcji"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -8567,6 +9185,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Horizontaal halfmidden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Połowa wyśrodkowana w poziomie"
           }
         },
         "pt-BR" : {
@@ -8652,6 +9276,12 @@
             "value" : "Horizontaal Midden Derde"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jedna trzecia wyśrodkowana w poziomie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8733,6 +9363,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Horizontale vierdes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziome części czwarte"
           }
         },
         "pt-BR" : {
@@ -8818,6 +9454,12 @@
             "value" : "Horizontale Derdes"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziome części trzecie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8898,6 +9540,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terug"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czarna"
           }
         },
         "pt-BR" : {
@@ -8982,6 +9630,12 @@
             "value" : "Zwart gat"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czarna dziura"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9062,6 +9716,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klassiek"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klasyczna"
           }
         },
         "pt-BR" : {
@@ -9146,6 +9806,12 @@
             "value" : "Daglicht"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Światło dzienne"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9226,6 +9892,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ontwikkelaar"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer"
           }
         },
         "pt-BR" : {
@@ -9310,6 +9982,12 @@
             "value" : "Holo"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Holograficzna"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9390,6 +10068,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toetskap"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przycisk"
           }
         },
         "pt-BR" : {
@@ -9474,6 +10158,12 @@
             "value" : "Loop Meester"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistrz Loop"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9551,6 +10241,12 @@
           }
         },
         "nl-BE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meta Loop"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meta Loop"
@@ -9638,6 +10334,12 @@
             "value" : "Neon"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neonowa"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9718,6 +10420,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rosé Pine"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Różowa sosna"
           }
         },
         "pt-BR" : {
@@ -9802,6 +10510,12 @@
             "value" : "Zomer"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lato"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9882,6 +10596,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Synthwave Zonsondergang"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachód słońca Synthwave"
           }
         },
         "pt-BR" : {
@@ -9966,6 +10686,12 @@
             "value" : "Wit"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biała"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10046,6 +10772,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Je gaat nu een melding krijgen als je een nieuw icoon ontgrendelt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostaniesz powiadomiony o odblokowaniu nowej ikony."
           }
         },
         "pt-BR" : {
@@ -10131,6 +10863,12 @@
             "value" : "Je hebt deze icoon ontgrendelt: %@!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odblokowałeś nową ikonę: %@!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10212,6 +10950,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Je hebt al 25 keer geloopt! Als een cadeau krijg je deze icoon: %@. Blijf loopen voor meer icoontjes!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyłeś Loop 25 razy! Jako nagrodę otrzymujesz nową ikonę: %@. Kontynuuj używanie Loop, aby odblokować nowe ikony!"
           }
         },
         "pt-BR" : {
@@ -10297,6 +11041,12 @@
             "value" : "5000 Loops veroverd! Het universum is getuige van de geboorte van een Loop-meester! Geniet van je welverdiende cadeau: een nieuwe icoon!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opanowano 5000 użyć Loop! Wszechświat został właśnie świadkiem narodzin mistrza Loop! Ciesz się swoją godnie zasłużoną nagrodą: nową ikoną!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10377,6 +11127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volledig scherm-vensters negeren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ignoruj okna pełnoekranowe"
           }
         },
         "pt-BR" : {
@@ -10461,6 +11217,12 @@
             "value" : "Importeren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importuj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10541,6 +11303,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toetscombinaties importeren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importuj skróty klawiszowe"
           }
         },
         "pt-BR" : {
@@ -10625,6 +11393,12 @@
             "value" : "Annuleren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10705,6 +11479,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wissen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyczyść"
           }
         },
         "pt-BR" : {
@@ -10789,6 +11569,12 @@
             "value" : "Samenvoegen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scal"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10868,7 +11654,13 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ontwikkelingsversies bevatten"
+            "value" : "Ontwikkelversies meenemen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uwzględnij wersje developerskie"
           }
         },
         "pt-BR" : {
@@ -10954,6 +11746,12 @@
             "value" : "Initieel frame"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ramka początkowa"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11034,6 +11832,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Initiële grootte"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozmiar początkowy"
           }
         },
         "pt-BR" : {
@@ -11118,6 +11922,12 @@
             "value" : "Installeren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zainstaluj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11155,8 +11965,8 @@
         },
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Install failed"
+            "state" : "translated",
+            "value" : "Installation fehlgeschlagen"
           }
         },
         "en" : {
@@ -11199,6 +12009,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Installatie mislukt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalacja nie powiodła się"
           }
         },
         "pt-BR" : {
@@ -11284,6 +12100,12 @@
             "value" : "Installeren in je Applications-folder"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zainstaluj do folderu Aplikacje"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -11367,6 +12189,12 @@
             "value" : "Direct"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natychmiastowo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11447,6 +12275,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Word lid van onze Discord"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dołącz do Discord"
           }
         },
         "pt-BR" : {
@@ -11532,6 +12366,12 @@
             "value" : "In huidige locatie houden"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatrzymaj w obecnym położeniu"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -11612,7 +12452,13 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toetscombinaties"
+            "value" : "Sneltoetsen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skróty klawiszowe"
           }
         },
         "pt-BR" : {
@@ -11698,6 +12544,12 @@
             "value" : "Groter"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11781,6 +12633,12 @@
             "value" : "Groter (proportioneel)"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiększ (proporcjonalnie)"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11861,6 +12719,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Open op login"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uruchom podczas logowania"
           }
         },
         "pt-BR" : {
@@ -11946,6 +12810,12 @@
             "value" : "Links"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lewo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12025,7 +12895,13 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Links Cyclus"
+            "value" : "Linker Cyclus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl w lewo"
           }
         },
         "pt-BR" : {
@@ -12111,6 +12987,12 @@
             "value" : "Linker helft"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lewa połowa"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12192,6 +13074,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Linker scherm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lewy ekran"
           }
         },
         "pt-BR" : {
@@ -12277,6 +13165,12 @@
             "value" : "Links Derde"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lewa część trzecia"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12358,6 +13252,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Linker driekwart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trzy czwarte po lewej"
           }
         },
         "pt-BR" : {
@@ -12443,6 +13343,12 @@
             "value" : "Twee derde links"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dwie trzecie po lewej"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12526,6 +13432,12 @@
             "value" : "Klik met de linkermuisknop om door cycle-acties te stappen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj lewego przycisku myszy, aby przechodzić przez akcje cyklu."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12605,8 +13517,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Link Trigger Key"
+            "state" : "translated",
+            "value" : "Trigger-toets koppelen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przypisz klawisz aktywujący"
           }
         },
         "pt-BR" : {
@@ -12691,6 +13609,12 @@
             "value" : "Icoon Vergrendeld"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikona zablokowana"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12771,6 +13695,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Je hebt dat nog niet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeszcze tego nie masz!"
           }
         },
         "pt-BR" : {
@@ -12855,6 +13785,12 @@
             "value" : "Wie denk je wel dat je bent om toegang te krijgen tot deze topgeheime iconen?"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Za kogo ty się uważasz? Myślisz, że masz dostęp do tych tajnych ikon?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12935,6 +13871,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zwanst na nie!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cierpliwość jest cnotą, oraz kluczem do tej ikony."
           }
         },
         "pt-BR" : {
@@ -13019,6 +13961,12 @@
             "value" : "Dit icoon is vergrendeld, maar je potentieel niet!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie masz jeszcze tej ikony, w przeciwieństwie do twojego potencjału!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13099,6 +14047,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blijf Loopen en dit icoon zal snel van jou zijn."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj Loop, a tę ikonę dostaniesz w swoim czasie."
           }
         },
         "pt-BR" : {
@@ -13183,6 +14137,12 @@
             "value" : "Dit icoon is nog niet bekend, blijf kijken!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta ikona jest jeszcze w powijakach, wróć wkrótce!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13263,6 +14223,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sommige iconen zijn het wachten waard, vind je niet?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie uważasz, że te ikony są warte czekania?"
           }
         },
         "pt-BR" : {
@@ -13347,6 +14313,12 @@
             "value" : "Nog niet, maar je bent dichterbij dan gisteren!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeszcze nie, ale na pewno bliżej niż dalej!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13427,6 +14399,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Het ontgrendelen van dit pictogram is slechts een kwestie van tijd en Loops."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odblokowanie tej ikony jest tylko kwestią czasu i Loopowania."
           }
         },
         "pt-BR" : {
@@ -13511,6 +14489,12 @@
             "value" : "Dit icoon is als een goede wijn, het heeft meer tijd nodig."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta ikona jest jak wino, potrzebuje więcej czasu."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13591,6 +14575,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blijf nieuwsgierig en binnenkort ligt dit icoon binnen je bereik."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie powstrzymuj swojej ciekawości, a niedługo ta ikona będzie w zasięgu twoich rąk."
           }
         },
         "pt-BR" : {
@@ -13675,6 +14665,12 @@
             "value" : "Ga zo door en dit icoon zal je beloning zijn."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta ikona jest nagrodą za ciężką pracę, nie poddawaj się."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13755,6 +14751,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dit icoon is voorbehouden aan de meest toegewijde Loopers."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta ikona jest zarezerwowana dla najbardziej oddanych Looperów."
           }
         },
         "pt-BR" : {
@@ -13839,6 +14841,12 @@
             "value" : "Je reis is nog niet voltooid, dit icoon wacht aan het einde."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoja podróż nie dobiegła jeszcze końca, a ta ikona znajduje się na jej końcu."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13919,6 +14927,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Te zijner tijd zal deze icoon aan jullie worden onthuld."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W swoim czasie ta ikona zostanie ci objawiona."
           }
         },
         "pt-BR" : {
@@ -14003,6 +15017,12 @@
             "value" : "Geduld, jonge Looper, dit icoon is niet ver weg."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cierpliwości młody Looperze, ta ikona wcale nie jest Ci tak odległa."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14083,6 +15103,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De reis van duizend Loops begint met één enkele stap."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loop do Loopa, a zbierze się miarka."
           }
         },
         "pt-BR" : {
@@ -14167,6 +15193,12 @@
             "value" : "Elke Loop brengt je dichter bij de schat die wacht."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Każdy kolejny Loop zbliża cię do odkrycia skarbu."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14247,6 +15279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Met elke Loop wordt het slot op dit icoon zwakker."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z każdym Loopem, blokada na tej ikonie się osłabia."
           }
         },
         "pt-BR" : {
@@ -14331,6 +15369,12 @@
             "value" : "Loop na Loop, jouw toewijding vormt de sleutel tot succes."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loop za Loopem, twoja wytrwałość wykuwa klucz do sukcesu."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14411,6 +15455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De iconen worden niet zomaar ontgrendeld; ze worden verdiend, Loop voor Loop."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nic za darmo; ikonki zdobywa się Loop za Loopem."
           }
         },
         "pt-BR" : {
@@ -14495,6 +15545,12 @@
             "value" : "Naarmate de Loops zich opstapelen, groeit ook je verzameling iconen."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wraz z rosnącą liczbą Loopów rośnie też twoja kolekcja ikon."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14575,6 +15631,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zie elke Loop als een raadsel om het mysterie van het vergrendelde icoon op te lossen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traktuj każdy Loop jak zagadkę, która prowadzi do rozwiązania zagadki zablokowanej ikony."
           }
         },
         "pt-BR" : {
@@ -14659,6 +15721,12 @@
             "value" : "Je volharding in Looping is de hoofdsleutel tot alle iconen."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoja trwałość w Loopowaniu jest głównym kluczem do wszystkich ikon."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14739,6 +15807,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Loop om de obstakels heen; je beloning ligt net achter de obstakels."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Loop around the obstacles; your reward is just beyond them."
           }
         },
         "pt-BR" : {
@@ -14823,6 +15897,12 @@
             "value" : "Elke Loop die je voltooit, plant de zaadjes voor de iconen om te groeien."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Each Loop you complete plants the seeds for icons to grow."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14905,6 +15985,12 @@
             "value" : "Net als de fasen van de maan, zullen je iconen zich onthullen in een cyclus van Loops."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikony objawiają się po cyklach Loopa jak fazy księżyca w cyklach dni."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14985,6 +16071,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De iconen wachten, verborgen achter de sluier van Loops die nog gemaakt moeten worden."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "The icons await, hidden behind the veil of Loops yet to be made."
           }
         },
         "pt-BR" : {
@@ -15183,7 +16275,37 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld Loops links"
+                  "value" : "Nog %lld Loops"
+                }
+              }
+            }
+          }
+        },
+        "pl" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Pozostało %lld Loopów"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Pozostało %lld Loopów"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Pozostał %lld Loop"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Pozostałych Loopów: %lld"
                 }
               }
             }
@@ -15320,6 +16442,12 @@
             "value" : "macOS Centrum"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Środek według macOS"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15400,6 +16528,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MacOS' \"Sleep vensters naar de linker- of rechterrand van het scherm om te plaatsen\"-functie is actief, wat conflicteert met de vastgrijpfunctie van Loop"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funkcja macOS \"Dokuj okna, przeciągając je do lewej lub prawej krawędzi ekranu\" jest obecnie włączona, co będzie kolidowało z funkcją przyciągania okien Loop."
           }
         },
         "pt-BR" : {
@@ -15485,6 +16619,12 @@
             "value" : "Maximaliseer"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maksymalizuj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15566,6 +16706,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hoogte maximaliseren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maksymalna wysokość"
           }
         },
         "pt-BR" : {
@@ -15651,6 +16797,12 @@
             "value" : "Breedte maximaliseren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maksymalna szerokość"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15731,6 +16883,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Middelste knop om te activeren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj środkowego klawisza myszy, aby aktywować"
           }
         },
         "pt-BR" : {
@@ -15816,6 +16974,12 @@
             "value" : "Minimaliseer"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minimalizuj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15897,6 +17061,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Andere minimaliseren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minimalizuj inne"
           }
         },
         "pt-BR" : {
@@ -15982,6 +17152,12 @@
             "value" : "Meer"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Więcej"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16065,6 +17241,12 @@
             "value" : "Verplaatsen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przesuń"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16145,6 +17327,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beweeg de cursor met het venster"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przesuń kursor wraz z oknem"
           }
         },
         "pt-BR" : {
@@ -16230,6 +17418,12 @@
             "value" : "Omlaag"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przesuń w dół"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16311,6 +17505,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Naar links"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przesuń w lewo"
           }
         },
         "pt-BR" : {
@@ -16396,6 +17596,12 @@
             "value" : "Naar rechts"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przesuń w prawo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16477,6 +17683,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Naar Applications-folder verplaatsen?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przenieść do folderu Aplikacje?"
           }
         },
         "pt-BR" : {
@@ -16562,6 +17774,12 @@
             "value" : "Omhoog"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przesuń w górę"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16642,6 +17860,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scherm met cursor gebruiken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przenieś okno na ekran kursora"
           }
         },
         "pt-BR" : {
@@ -16727,6 +17951,12 @@
             "value" : "Volgende scherm"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Następny ekran"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16808,6 +18038,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geen Actie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak akcji"
           }
         },
         "pt-BR" : {
@@ -16892,6 +18128,12 @@
             "value" : "Geen uitgesloten apps"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak wykluczonych aplikacji"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16972,6 +18214,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geen toetscombinaties"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak skrótów klawiszowych"
           }
         },
         "pt-BR" : {
@@ -17057,6 +18305,12 @@
             "value" : "Er zijn geen toetscombinaties ingesteld"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie ustawiono żadnych skrótów klawiszowych"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17138,6 +18392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geen radiaalmenu-acties"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak akcji menu kołowego"
           }
         },
         "pt-BR" : {
@@ -17222,6 +18482,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wdrożono! ... tę samą wersję, bo ta jest najnowsza."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17302,6 +18568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta aplikacja jest aktualniejsza od wpisów w moim pamiętniku!"
           }
         },
         "pt-BR" : {
@@ -17386,6 +18658,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "You're in the clear, no updates in the atmosphere!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17466,6 +18744,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "The odds are ever in your favor, no updates today!"
           }
         },
         "pt-BR" : {
@@ -17550,6 +18834,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikacja jest na diecie elektronicznej. Prosimy nie dokarmiać nowym kodem."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17630,6 +18920,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nowa wersja? Jesteśmy zbyt przywiązani do aktualnej, wybacz."
           }
         },
         "pt-BR" : {
@@ -17714,6 +19010,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masz do czynienia z najLoopowszym Loopem kiedykolwiek, nie znaleziono aktualizacji!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17794,6 +19096,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cisnę, ile fabryka dała szefie! Brak aktualizacji!"
           }
         },
         "pt-BR" : {
@@ -17878,6 +19186,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W odległej galaktyce, dawno temu… nadal brak aktualizacji!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17958,6 +19272,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Je hebt al de top, geen updates nodig."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "You've got the precious, no updates needed!"
           }
         },
         "pt-BR" : {
@@ -18042,6 +19362,12 @@
             "value" : "Rijden op lichtsnelheid, geen updates in zicht!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Riding at warp speed, no updates in sight!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18122,6 +19448,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dit is niet de update waar je voor zoekt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "This is not the update you're looking for!"
           }
         },
         "pt-BR" : {
@@ -18206,6 +19538,12 @@
             "value" : "De update button staat op de verkeerde plaats. Oops!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "We've misplaced the 'Update' button. Oops!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18286,6 +19624,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ik zweer dat het hier ergens was... een seconde"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "I swear it was here somewhere… one sec"
           }
         },
         "pt-BR" : {
@@ -18370,6 +19714,12 @@
             "value" : "Een appel per dag houdt de... updates weg."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "An apple a day keeps the… updates away."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18450,6 +19800,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Moge de Force met je zijn... de volgende keer!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "May the Force be with you… next time!"
           }
         },
         "pt-BR" : {
@@ -18534,6 +19890,12 @@
             "value" : "De Force is sterk met deze versie!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "The Force is strong with this version!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18614,6 +19976,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gewoon een app voor een kleine stad, dezelfde oude versie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Just a small town app, same old version"
           }
         },
         "pt-BR" : {
@@ -18698,6 +20066,12 @@
             "value" : "De winter komt eraan. Updates zijn er nog niet."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Winter is coming. Updates aren't yet."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18778,6 +20152,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sweet dreams are made of… geen updates"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sweet dreams are made of… no updates"
           }
         },
         "pt-BR" : {
@@ -18862,6 +20242,12 @@
             "value" : "Je bent echt ongeduldig! Er zijn geen updates."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "The update fairy skipped us this week."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18942,6 +20328,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Stay sharp, more intel coming soon!"
           }
         },
         "pt-BR" : {
@@ -19026,6 +20418,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "You're cruising on the latest tech!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19106,6 +20504,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "We’ll be back. With updates… later"
           }
         },
         "pt-BR" : {
@@ -19190,6 +20594,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "A penny for your… lack of updates."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19270,6 +20680,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "You've already got the best Loop!"
           }
         },
         "pt-BR" : {
@@ -19354,6 +20770,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "One does not simply update Loop."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19434,6 +20856,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "All work and no… no updates…"
           }
         },
         "pt-BR" : {
@@ -19518,6 +20946,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "A watched pot never… updates."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19598,6 +21032,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "99 problems, updates ain't one."
           }
         },
         "pt-BR" : {
@@ -19682,6 +21122,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "I… uhh… one sec I lost it"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19762,6 +21208,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "You’ve leveled up to the max!"
           }
         },
         "pt-BR" : {
@@ -19846,6 +21298,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Beggars can't be… updaters."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19926,6 +21384,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Money can't buy… updates."
           }
         },
         "pt-BR" : {
@@ -20010,6 +21474,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No new intel, Commander."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20090,6 +21560,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No updates? Great Scott!"
           }
         },
         "pt-BR" : {
@@ -20174,6 +21650,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No updates, Mr. Anderson"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20254,6 +21736,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No updates in Ba Sing Se"
           }
         },
         "pt-BR" : {
@@ -20338,6 +21826,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizacje? Przy tej inflacji?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20418,6 +21912,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Check back next time!"
           }
         },
         "pt-BR" : {
@@ -20502,6 +22002,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Loop is in its prime!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20582,6 +22088,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "All systems are a-go!"
           }
         },
         "pt-BR" : {
@@ -20666,6 +22178,12 @@
             "value" : "-"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jesteś na bieżąco :)"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20746,6 +22264,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No updates yet!"
           }
         },
         "pt-BR" : {
@@ -20830,6 +22354,12 @@
             "value" : "Geen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20910,6 +22440,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Niks oom door te bladeren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Nothing to cycle through"
           }
         },
         "pt-BR" : {
@@ -20994,6 +22530,12 @@
             "value" : "%@’s melding toestemmingen zijn uitgeschakeld."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uprawnienia do powiadomień %@ są obecnie wyłączone."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21074,6 +22616,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Instellingen openen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz Ustawienia"
           }
         },
         "pt-BR" : {
@@ -21158,6 +22706,12 @@
             "value" : "Schakel ze in bij Systeeminstellingen."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Włącz je w ustawieniach systemowych."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21240,6 +22794,12 @@
             "value" : "Notificatie bij het ontgrendelen van nieuwe iconen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiadom o odblokowaniu nowych ikon"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21320,6 +22880,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ok"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
         "pt-BR" : {
@@ -21405,6 +22971,12 @@
             "value" : "Opties"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opcje"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21487,6 +23059,12 @@
             "value" : "Opvulling"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstęp"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21566,8 +23144,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Peek size"
+            "state" : "translated",
+            "value" : "Grootte bekijken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozmiar podglądu"
           }
         },
         "pt-BR" : {
@@ -21653,6 +23237,12 @@
             "value" : "Toestemmingen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uprawnienia"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21732,8 +23322,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Please include at least one modifier key."
+            "state" : "translated",
+            "value" : "Voeg ten minste één aanpassingstoets toe."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proszę podać co najmniej jeden klawisz."
           }
         },
         "pt-BR" : {
@@ -21818,6 +23414,12 @@
             "value" : "Positie"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Położenie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21898,6 +23500,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preserveer Grootte"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachowaj rozmiar"
           }
         },
         "pt-BR" : {
@@ -21982,6 +23590,12 @@
             "value" : "Druk op “Toevoegen” om een cyclusitem toe te voegen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naciśnij \"Dodaj\", aby dodać element cyklu"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22062,6 +23676,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Druk op “Toevoegen” om een toetscombinatie toe te voegen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naciśnij \"Dodaj\", aby dodać skrót klawiszowy"
           }
         },
         "pt-BR" : {
@@ -22147,6 +23767,12 @@
             "value" : "Klik op \"Toevoegen\" om een actie toe te voegen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naciśnij \"Dodaj\", aby dodać akcję"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22229,6 +23855,12 @@
             "value" : "Druk op “Toevoegen” om een applicatie toe te voegen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naciśnij \"Dodaj\", aby dodać aplikację"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22309,6 +23941,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voorbeeld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podgląd"
           }
         },
         "pt-BR" : {
@@ -22394,6 +24032,12 @@
             "value" : "Vorig scherm"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poprzedni ekran"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22477,6 +24121,12 @@
             "value" : "Hoekradius van geselecteerde venster prioriseren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prioritize selected window’s corner radius"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22555,6 +24205,12 @@
           }
         },
         "nl-BE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "px"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "px"
@@ -22643,6 +24299,12 @@
             "value" : "Kwartalen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ćwiartki"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22726,6 +24388,12 @@
             "value" : "Stop %@"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamknij %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22805,7 +24473,13 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radiaal menu"
+            "value" : "Radiaalmenu"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu kołowe"
           }
         },
         "pt-BR" : {
@@ -22891,6 +24565,12 @@
             "value" : "Radiaalmenu"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu kołowe"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22928,7 +24608,7 @@
         },
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Neustarten, um abzuschließen"
           }
         },
@@ -22972,6 +24652,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Herstarten om te voltooien"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uruchom ponownie, aby ukończyć"
           }
         },
         "pt-BR" : {
@@ -23053,8 +24739,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Relaxed"
+            "state" : "translated",
+            "value" : "Ontspannen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spokojna"
           }
         },
         "pt-BR" : {
@@ -23137,6 +24829,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Herinner me later"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przypomnij mi później"
           }
         },
         "pt-BR" : {
@@ -23222,6 +24920,12 @@
             "value" : "Verwijderen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -23303,6 +25007,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aanvraag…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poproś…"
           }
         },
         "pt-BR" : {
@@ -23387,6 +25097,12 @@
             "value" : "Opnieuw instellen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resetuj"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -23466,8 +25182,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset keybinds?"
+            "state" : "translated",
+            "value" : "Toetscombinatie herstellen?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zresetować skróty klawiszowe?"
           }
         },
         "pt-BR" : {
@@ -23553,6 +25275,12 @@
             "value" : "Radiaalmenu-acties resetten"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resetuj akcje menu kołowego"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -23631,8 +25359,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset radial menu actions?"
+            "state" : "translated",
+            "value" : "Acties van Radiaalmenu herstellen?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zresetować akcje menu kołowego?"
           }
         },
         "pt-BR" : {
@@ -23717,6 +25451,12 @@
             "value" : "Grootte van venster onder cursor wijzigen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień rozmiar okna pod kursorem"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -23799,6 +25539,12 @@
             "value" : "Stage Manager respecteren"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uwzględniaj Stage Manager"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -23879,6 +25625,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vensterframe herstellen bij slepen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przywróć układ okna po przeciągnięciu"
           }
         },
         "pt-BR" : {
@@ -23964,6 +25716,12 @@
             "value" : "Rechts"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z prawej"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24044,6 +25802,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechtse Cyclus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawy cykl"
           }
         },
         "pt-BR" : {
@@ -24129,6 +25893,12 @@
             "value" : "Rechterhelft"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawa połowa"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24210,6 +25980,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechter scherm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawy ekran"
           }
         },
         "pt-BR" : {
@@ -24295,6 +26071,12 @@
             "value" : "Rechts Derde"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawa część trzecia"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24374,8 +26156,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Right Three Fourths"
+            "state" : "translated",
+            "value" : "Rechter drievierde"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawe trzy czwarte"
           }
         },
         "pt-BR" : {
@@ -24461,6 +26249,12 @@
             "value" : "Rechts Twee Derde"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawe dwie trzecie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24540,7 +26334,13 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
+            "value" : "s"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "s"
           }
         },
@@ -24627,6 +26427,12 @@
             "value" : "Scherm wisselen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przełączanie ekranów"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24707,6 +26513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zoeken…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szukaj…"
           }
         },
         "pt-BR" : {
@@ -24792,6 +26604,12 @@
             "value" : "Tweede kwartier"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Druga część czwarta"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24872,6 +26690,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecteer een bestand met toetscombinaties"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz plik ze skrótami klawiszowymi"
           }
         },
         "pt-BR" : {
@@ -24956,6 +26780,12 @@
             "value" : "Feedback sturen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyślij opinię"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25036,6 +26866,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zet een activatie knop"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw klawisz aktywujący…"
           }
         },
         "pt-BR" : {
@@ -25121,6 +26957,12 @@
             "value" : "Zet icoon"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz własną ikonę"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25202,6 +27044,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Instellingen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia"
           }
         },
         "pt-BR" : {
@@ -25286,6 +27134,12 @@
             "value" : "Informatie"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O programie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25365,7 +27219,13 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Accent Kleur"
+            "value" : "Accentkleur"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolor akcentu"
           }
         },
         "pt-BR" : {
@@ -25450,6 +27310,12 @@
             "value" : "Geavanceerd"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaawansowane"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25530,6 +27396,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gedrag"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachowanie"
           }
         },
         "pt-BR" : {
@@ -25614,6 +27486,12 @@
             "value" : "Uitgesloten Apps"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykluczone aplikacje"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25694,6 +27572,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icoon"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikona"
           }
         },
         "pt-BR" : {
@@ -25778,6 +27662,12 @@
             "value" : "Toetscombinaties"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skróty klawiszowe"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25860,6 +27750,12 @@
             "value" : "Voorbeeld"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podgląd"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25939,7 +27835,13 @@
         "nl-BE" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radiaal menu"
+            "value" : "Radiaalmenu"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu kołowe"
           }
         },
         "pt-BR" : {
@@ -26024,6 +27926,12 @@
             "value" : "Instellingen…"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia…"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26106,6 +28014,12 @@
             "value" : "Deel feedback op onze GitHub-pagina, waar je ons bugs kunt laten weten, functies kunt voorstellen of andere waardevolle input kunt geven. We accepteren ook donaties als je vindt dat Loop je werkstroom heeft verbeterd :)"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podziel się opinią na naszym GitHub. Możesz tam poinformować nas o błędach, zasugerować nowe funkcje lub podzielić się innymi cennymi spostrzeżeniami. Akceptujemy również darowizny, jeśli uważasz, że Loop poprawił Twoją ergonomię pracy :)"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26184,8 +28098,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Shift focus when stashed"
+            "state" : "translated",
+            "value" : "Focus wisselen wanneer venster is opgeborgen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień ostrość, kiedy na stosie"
           }
         },
         "pt-BR" : {
@@ -26270,6 +28190,12 @@
             "value" : "Toon in dock"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatrzymaj w Docku"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26350,6 +28276,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voorbeeld laten zien als je Loopt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż podgląd podczas Loopowania"
           }
         },
         "pt-BR" : {
@@ -26435,6 +28367,12 @@
             "value" : "Krimpen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26516,6 +28454,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Krimp Bodem"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz w dół"
           }
         },
         "pt-BR" : {
@@ -26601,6 +28545,12 @@
             "value" : "Horizontaal krimpen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz poziomo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26682,6 +28632,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Krimp links"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz w lewo"
           }
         },
         "pt-BR" : {
@@ -26767,6 +28723,12 @@
             "value" : "Rechts krimpen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz w prawo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26848,6 +28810,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Krimp Top"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz w górę"
           }
         },
         "pt-BR" : {
@@ -26933,6 +28901,12 @@
             "value" : "Verticaal krimpen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz pionowo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27013,6 +28987,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simpel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prosty"
           }
         },
         "pt-BR" : {
@@ -27097,6 +29077,12 @@
             "value" : "Grootte"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozmiar"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27176,8 +29162,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Size Adjustment"
+            "state" : "translated",
+            "value" : "Aanpassing van grootte"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dostosowanie rozmiaru"
           }
         },
         "pt-BR" : {
@@ -27260,6 +29252,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grootte toename"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwiększenie rozmiaru"
           }
         },
         "pt-BR" : {
@@ -27345,6 +29343,12 @@
             "value" : "Kleiner"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27428,6 +29432,12 @@
             "value" : "Kleiner (proportioneel)"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz (proporcjonalnie)"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27507,8 +29517,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Snappy"
+            "state" : "translated",
+            "value" : "Pittig"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przyciągający"
           }
         },
         "pt-BR" : {
@@ -27594,6 +29610,12 @@
             "value" : "Enkele functies, ideeën en bugfixes"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niektóre funkcje, pomysły i poprawki błędów"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27675,6 +29697,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "State Manager"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stage Manager"
           }
         },
         "pt-BR" : {
@@ -27759,6 +29787,12 @@
             "value" : "Stage strook grootte"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Stage strip size"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27837,8 +29871,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Start hidden"
+            "state" : "translated",
+            "value" : "Start verborgen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uruchom jako ukryte"
           }
         },
         "pt-BR" : {
@@ -27920,8 +29960,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Stash"
+            "state" : "translated",
+            "value" : "Vensteropberging"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stos"
           }
         },
         "pt-BR" : {
@@ -28003,8 +30049,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Supports macOS Tahoe’s Liquid Glass effects"
+            "state" : "translated",
+            "value" : "Heeft ondersteuning voor \"MacOS Tahoe Liquid Glass\"-effecten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wspiera efekt Liquid Glass systemu macOS Tahoe"
           }
         },
         "pt-BR" : {
@@ -28090,6 +30142,12 @@
             "value" : "Mission Control onderdrukken"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Suppress Mission Control"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -28170,6 +30228,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Achtergrond synchroniseren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchronizuj tapetę"
           }
         },
         "pt-BR" : {
@@ -28255,6 +30319,12 @@
             "value" : "Systeem"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -28335,6 +30405,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Die toetscombinatie wordt al gebruikt door %@."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ten skrót klawiszowy jest już używany przez %@."
           }
         },
         "pt-BR" : {
@@ -28419,6 +30495,12 @@
             "value" : "Die toetscombinatie wordt al gebruikt door een andere aangepaste toetscombinatie."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ten skrót klawiszowy jest już używany przez inny skrót niestandardowy."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -28497,8 +30579,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "That keybind is already being used by another stash keybind."
+            "state" : "translated",
+            "value" : "Die toetscombinatie is al in gebruiker door een andere vensteropberg-toetscombinatie."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ten skrót klawiszowy jest już używany przez inny skrót stosu."
           }
         },
         "pt-BR" : {
@@ -28583,6 +30671,12 @@
             "value" : "Thema"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motyw"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -28661,8 +30755,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "There are other keybinds that conflict with this key combination."
+            "state" : "translated",
+            "value" : "Andere toetscombinaties conflicteren met deze toetscombinatie."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Istnieją skróty klawiszowe, które kolidują z tą kombinacją."
           }
         },
         "pt-BR" : {
@@ -28745,6 +30845,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dikte"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grubość"
           }
         },
         "pt-BR" : {
@@ -28830,6 +30936,12 @@
             "value" : "Derde kwartier"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trzy czwarte"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -28913,6 +31025,12 @@
             "value" : "Deze actie is gekoppeld aan een toets. Aanpassingen aan deze actie zal effect hebben op beide"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta akcja jest połączona ze skrótem klawiszowym. Zmiana będzie miała wpływ na obie czynności."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -28950,8 +31068,8 @@
         },
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This macOS version is no longer supported."
+            "state" : "translated",
+            "value" : "Diese macOS-Version wird nicht mehr unterstützt."
           }
         },
         "en" : {
@@ -28992,8 +31110,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This macOS version is no longer supported."
+            "state" : "translated",
+            "value" : "Deze versie van MacOS wordt niet meer ondersteund."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta wersja systemu macOS nie jest już wspierana."
           }
         },
         "pt-BR" : {
@@ -29075,8 +31199,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This will reset all keybinds to their original defaults."
+            "state" : "translated",
+            "value" : "Dit herstelt alle toetscombinaties naar hun originele standaard."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spowoduje to zresetowanie wszystkich skrótów klawiszowych do ich ustawień domyślnych."
           }
         },
         "pt-BR" : {
@@ -29162,6 +31292,12 @@
             "value" : "Dit zal alle radiaalmenu's resetten naar hun standaardinstellingen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spowoduje to zresetowanie wszystkich akcji menu kołowego do ich domyślnej konfiguracji."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29242,6 +31378,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Om energie te besparen zijn vensteranimaties in beschikbaar in de Low Power modus."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aby oszczędzać baterię, animacje są wyłączone w trybie niskiego zużycia energii."
           }
         },
         "pt-BR" : {
@@ -29327,6 +31469,12 @@
             "value" : "Boven"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Góra"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29407,6 +31555,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bovenste cyclus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Górny cykl"
           }
         },
         "pt-BR" : {
@@ -29492,6 +31646,12 @@
             "value" : "Bovenste helft"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Górna połowa"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29573,6 +31733,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kwartier linksboven"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Górna lewa ćwiartka"
           }
         },
         "pt-BR" : {
@@ -29658,6 +31824,12 @@
             "value" : "Kwartier rechtsboven"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Górna prawa ćwiartka"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29739,6 +31911,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bovenste scherm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Górny ekran"
           }
         },
         "pt-BR" : {
@@ -29824,6 +32002,12 @@
             "value" : "Top derde"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Górna część trzecia"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29905,6 +32089,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bovenste twee derden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Górne dwie trzecie"
           }
         },
         "pt-BR" : {
@@ -29990,6 +32180,12 @@
             "value" : "Behandel linker- en rechtertoetsen anders"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozróżniaj klawisze po prawej i lewej stronie klawiatury"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -30070,6 +32266,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Activatie vertraging"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opóźnienie aktywacji"
           }
         },
         "pt-BR" : {
@@ -30155,6 +32357,12 @@
             "value" : "Activatie Knop"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klawisz aktywacji"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -30236,6 +32444,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Probeer later nogmaals"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spróbuj ponownie później"
           }
         },
         "pt-BR" : {
@@ -30321,6 +32535,12 @@
             "value" : "Ongedaan maken"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cofnij"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -30400,8 +32620,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unlink Trigger Key"
+            "state" : "translated",
+            "value" : "Trigger-toets ontkoppelen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odłącz klawisz aktywacji"
           }
         },
         "pt-BR" : {
@@ -30483,8 +32709,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unstash"
+            "state" : "translated",
+            "value" : "Uit vensteropberging halen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zdejmij ze stosu"
           }
         },
         "pt-BR" : {
@@ -30565,8 +32797,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unstashed Size"
+            "state" : "translated",
+            "value" : "Grootte onopgeborgen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozmiar poza stosem"
           }
         },
         "pt-BR" : {
@@ -30652,6 +32890,12 @@
             "value" : "Update van: %@"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizacja z: %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -30735,6 +32979,12 @@
             "value" : "Updaten…"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizuj…"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -30815,6 +33065,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Updates zijn uitgeschakeld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizacje są wyłączone"
           }
         },
         "pt-BR" : {
@@ -30900,6 +33156,12 @@
             "value" : "Updates zullen worden geïnstalleerd wanneer %@ op de achtergrond is"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizacje zostaną zainstalowane tylko wtedy, gdy %@ jest w tle."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -30980,6 +33242,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gebruik coördinaten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj współrzędnych"
           }
         },
         "pt-BR" : {
@@ -31065,6 +33333,12 @@
             "value" : "Gebruik macOS centrum"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj środka według macOS"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -31145,6 +33419,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gebruik MacOS Window Manager als deze beschikbaar is"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj managera okien macOS, kiedy to możliwe"
           }
         },
         "pt-BR" : {
@@ -31229,6 +33509,12 @@
             "value" : "Gebruik pixels"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj wartości w pikselach"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -31309,6 +33595,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gebruik dit als je een eigen menubalk gebruikt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Use this if you are using a custom menubar."
           }
         },
         "pt-BR" : {
@@ -31394,6 +33686,12 @@
             "value" : "Versie %@"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wersja %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -31473,8 +33771,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Vertical Center Half"
+            "state" : "translated",
+            "value" : "Verticaal halfmidden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Połowa wyśrodkowana w pionie"
           }
         },
         "pt-BR" : {
@@ -31560,6 +33864,12 @@
             "value" : "Verticaal Midden Derde"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jedna trzecia wyśrodkowana w pionie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -31641,6 +33951,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verticale derden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pionowe części trzecie"
           }
         },
         "pt-BR" : {
@@ -31726,6 +34042,12 @@
             "value" : "Achtergrond"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapeta"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -31809,6 +34131,12 @@
             "value" : "Sta Mission Control toe te openen wanneer vensters naar de bovenkant van het scherm worden gesleept"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Whether to allow Mission Control to open when windows\nare dragged to the top of the screen."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -31889,6 +34217,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Breedte"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szerokość"
           }
         },
         "pt-BR" : {
@@ -31974,6 +34308,12 @@
             "value" : "Venster"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okno"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32057,6 +34397,12 @@
             "value" : "Venster gaten"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstępy między oknami"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32136,8 +34482,14 @@
         },
         "nl-BE" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Window Snapping"
+            "state" : "translated",
+            "value" : "Vensterplakken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przyciąganie okien"
           }
         },
         "pt-BR" : {
@@ -32222,6 +34574,12 @@
             "value" : "Window snapping gebruikt nog steeds het voorbeeld."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Window snapping will still use the preview."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32300,6 +34658,12 @@
           }
         },
         "nl-BE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "X"
@@ -32388,6 +34752,12 @@
             "value" : "Y"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32471,6 +34841,12 @@
             "value" : "Je kan maximaal %lld toetsen gebruiken in een toetscombinatie."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz użyć tylko %lld klawiszy w skrócie."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -32551,6 +34927,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Je kunt maximaal %lld toetsen gebruiken in uw activatie knop."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz użyć tylko %lld klawiszy w wyzwalaczu."
           }
         },
         "pt-BR" : {
@@ -32636,6 +35018,12 @@
             "value" : "Je kunt niet iets exporteren dat niet bestaat!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie możesz eksportować czegoś, co nie istnieje!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32718,6 +35106,12 @@
             "value" : "Je hebt %lld keer gelooped!"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyłeś Loop %lld razy!"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32798,6 +35192,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Je hebt... uhh... ik... ben de tel kwijt..."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyłeś Loop… yyy… ja… straciłem rachubę…"
           }
         },
         "pt-BR" : {
