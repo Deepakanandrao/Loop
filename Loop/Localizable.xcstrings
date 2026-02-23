@@ -344,8 +344,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "%@ is not in your Applications folder. Would you like to install the update to your Applications folder instead?"
+            "state" : "translated",
+            "value" : "%@不在你的应用程序文件夹中。你想要将更新安装到应用程序文件夹吗？"
           }
         },
         "zh-Hant" : {
@@ -609,8 +609,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "A single %1$@ action can only track one window. To stash\nmultiple windows, add additional %2$@ actions."
+            "state" : "translated",
+            "value" : "单个%1$@操作只能应用于单个窗口。要收纳多个窗口，请添加更多%2$@操作。"
           }
         },
         "zh-Hant" : {
@@ -698,8 +698,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Accent opacity"
+            "state" : "translated",
+            "value" : "强调色不透明度"
           }
         },
         "zh-Hant" : {
@@ -1051,8 +1051,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Actions"
+            "state" : "translated",
+            "value" : "操作"
           }
         },
         "zh-Hant" : {
@@ -1229,8 +1229,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Allow radial menu customization"
+            "state" : "translated",
+            "value" : "允许自定义环形菜单"
           }
         },
         "zh-Hant" : {
@@ -2023,8 +2023,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Automatically install updates"
+            "state" : "translated",
+            "value" : "自动安装更新"
           }
         },
         "zh-Hant" : {
@@ -2112,8 +2112,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Background"
+            "state" : "translated",
+            "value" : "背景"
           }
         },
         "zh-Hant" : {
@@ -3177,8 +3177,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Cancel"
+            "state" : "translated",
+            "value" : "取消"
           }
         },
         "zh-Hant" : {
@@ -3531,8 +3531,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Check for Updates…"
+            "state" : "translated",
+            "value" : "检查更新…"
           }
         },
         "zh-Hant" : {
@@ -3619,8 +3619,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Clear Keybind"
+            "state" : "translated",
+            "value" : "清除快捷键"
           }
         },
         "zh-Hant" : {
@@ -3886,8 +3886,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Configure…"
+            "state" : "translated",
+            "value" : "配置…"
           }
         },
         "zh-Hant" : {
@@ -4596,8 +4596,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Custom Action"
+            "state" : "translated",
+            "value" : "自定义操作"
           }
         },
         "zh-Hant" : {
@@ -4773,8 +4773,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Customize this action's custom frame."
+            "state" : "translated",
+            "value" : "自定义此操作的边框位置。"
           }
         },
         "zh-Hant" : {
@@ -4950,8 +4950,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Customize what this action cycles through."
+            "state" : "translated",
+            "value" : "自定义此操作的循环内容。"
           }
         },
         "zh-Hant" : {
@@ -6012,8 +6012,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enable blur"
+            "state" : "translated",
+            "value" : "启用模糊"
           }
         },
         "zh-Hant" : {
@@ -6631,8 +6631,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Failed to resolve linked keybind"
+            "state" : "translated",
+            "value" : "无法解析关联的快捷键"
           }
         },
         "zh-Hant" : {
@@ -6720,8 +6720,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Fill Available Space"
+            "state" : "translated",
+            "value" : "填充可用区域"
           }
         },
         "zh-Hant" : {
@@ -7254,8 +7254,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Focus Next In Stack"
+            "state" : "translated",
+            "value" : "聚焦下一个窗口"
           }
         },
         "zh-Hant" : {
@@ -9118,8 +9118,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Hide when no action is selected"
+            "state" : "translated",
+            "value" : "未选择操作时隐藏"
           }
         },
         "zh-Hant" : {
@@ -12031,8 +12031,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Install failed"
+            "state" : "translated",
+            "value" : "安装失败"
           }
         },
         "zh-Hant" : {
@@ -12120,8 +12120,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Install to Applications"
+            "state" : "translated",
+            "value" : "安装到应用程序文件夹"
           }
         },
         "zh-Hant" : {
@@ -12386,8 +12386,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Keep in Current Location"
+            "state" : "translated",
+            "value" : "安装到当前位置"
           }
         },
         "zh-Hant" : {
@@ -12653,8 +12653,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Larger (Proportional)"
+            "state" : "translated",
+            "value" : "放大一点（按比例）"
           }
         },
         "zh-Hant" : {
@@ -13452,8 +13452,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Left-click to step through cycle actions."
+            "state" : "translated",
+            "value" : "左键单击以遍历循环操作。"
           }
         },
         "zh-Hant" : {
@@ -13541,8 +13541,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Link Trigger Key"
+            "state" : "translated",
+            "value" : "关联触发键"
           }
         },
         "zh-Hant" : {
@@ -17705,8 +17705,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Move to Applications Folder?"
+            "state" : "translated",
+            "value" : "要移动到应用程序文件夹吗？"
           }
         },
         "zh-Hant" : {
@@ -18414,8 +18414,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "No radial menu actions"
+            "state" : "translated",
+            "value" : "无环形菜单操作"
           }
         },
         "zh-Hant" : {
@@ -23346,8 +23346,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Please include at least one modifier key."
+            "state" : "translated",
+            "value" : "请包含至少一个修饰键。"
           }
         },
         "zh-Hant" : {
@@ -23787,8 +23787,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Press \"Add\" to add an action"
+            "state" : "translated",
+            "value" : "点按“添加”以添加操作"
           }
         },
         "zh-Hant" : {
@@ -24408,8 +24408,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Quit %@"
+            "state" : "translated",
+            "value" : "退出%@"
           }
         },
         "zh-Hant" : {
@@ -24585,8 +24585,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Radial Menu"
+            "state" : "translated",
+            "value" : "环形菜单"
           }
         },
         "zh-Hant" : {
@@ -24674,8 +24674,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "重启以完成更新"
+            "state" : "translated",
+            "value" : "重新启动以完成更新"
           }
         },
         "zh-Hant" : {
@@ -25206,8 +25206,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset keybinds?"
+            "state" : "translated",
+            "value" : "要重置所有快捷键吗？"
           }
         },
         "zh-Hant" : {
@@ -25295,8 +25295,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset radial menu actions"
+            "state" : "translated",
+            "value" : "重置环形菜单操作"
           }
         },
         "zh-Hant" : {
@@ -25383,8 +25383,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Reset radial menu actions?"
+            "state" : "translated",
+            "value" : "要重置所有环形菜单操作吗？"
           }
         },
         "zh-Hant" : {
@@ -29452,8 +29452,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Smaller (Proportional)"
+            "state" : "translated",
+            "value" : "缩小一点（按比例）"
           }
         },
         "zh-Hant" : {
@@ -29895,8 +29895,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Start hidden"
+            "state" : "translated",
+            "value" : "开始隐藏"
           }
         },
         "zh-Hant" : {
@@ -31045,8 +31045,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This action is linked to a keybind. Changes made to this action will affect both."
+            "state" : "translated",
+            "value" : "此操作关联了快捷键。对此操作的改动将同时影响两者。"
           }
         },
         "zh-Hant" : {
@@ -31134,8 +31134,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This macOS version is no longer supported."
+            "state" : "translated",
+            "value" : "此macOS版本不再受支持。"
           }
         },
         "zh-Hant" : {
@@ -31223,8 +31223,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This will reset all keybinds to their original defaults."
+            "state" : "translated",
+            "value" : "这将重置所有快捷键为默认值。"
           }
         },
         "zh-Hant" : {
@@ -31312,8 +31312,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "This will reset all radial menu actions to their default configuration."
+            "state" : "translated",
+            "value" : "这将重置所有环形菜单操作为默认配置。"
           }
         },
         "zh-Hant" : {
@@ -32466,8 +32466,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Try again later"
+            "state" : "translated",
+            "value" : "请稍后再试"
           }
         },
         "zh-Hant" : {
@@ -32644,8 +32644,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unlink Trigger Key"
+            "state" : "translated",
+            "value" : "取消关联触发键"
           }
         },
         "zh-Hant" : {
@@ -32910,8 +32910,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Update from: %@"
+            "state" : "translated",
+            "value" : "从%@更新"
           }
         },
         "zh-Hant" : {
@@ -33176,8 +33176,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Updates will only be installed when %@ is in the background."
+            "state" : "translated",
+            "value" : "只有在%@处于后台时才会安装更新。"
           }
         },
         "zh-Hant" : {
@@ -33706,8 +33706,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Version %@"
+            "state" : "translated",
+            "value" : "%@版本"
           }
         },
         "zh-Hant" : {
@@ -34861,8 +34861,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "You can only use up to %lld keys in a keybind."
+            "state" : "translated",
+            "value" : "你最多只能使用%lld个按键组成快捷键。"
           }
         },
         "zh-Hant" : {
@@ -34950,7 +34950,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "你最多只能使用%lld个按键作为触发键。"
+            "value" : "你最多只能使用%lld个按键组成触发键。"
           }
         },
         "zh-Hant" : {
