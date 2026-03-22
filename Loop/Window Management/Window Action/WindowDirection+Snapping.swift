@@ -129,7 +129,7 @@ extension WindowDirection {
         currentDirection: WindowDirection,
         zones: EdgeZoneDirections
     ) -> WindowDirection {
-        // Near edge ~1% (1/95): corner
+        // Near edge ~0%-1% (0 to 1/95): corner
         if mousePos < axisMax - (axisLength * 94 / 95) {
             return zones.nearCorner
         }
@@ -139,22 +139,22 @@ extension WindowDirection {
             return zones.half
         }
 
-        // Near edge 6.3%-33% (6/95 to 1/3): third
+        // Near edge ~6.3%-33% (6/95 to 1/3): third
         if mousePos < axisMax - (axisLength * 2 / 3) {
             return zones.third
         }
 
-        // Far edge ~1% (1/95): corner
+        // Far edge ~99%-100% (94/95 to 1): corner
         if mousePos > axisMax - (axisLength * 1 / 95) {
             return zones.farCorner
         }
 
-        // Far edge ~1%-6.3% (1/95 to 6/95): half
+        // Far edge ~93.7%-99% (89/95 to 94/95): half
         if mousePos > axisMax - (axisLength * 6 / 95) {
             return zones.farHalf
         }
 
-        // Far edge 6.3%-33% (6/95 to 1/3): third
+        // Far edge ~67%-93.7% (2/3 to 89/95): third
         if mousePos > axisMax - (axisLength * 1 / 3) {
             return zones.farThird
         }
@@ -226,12 +226,27 @@ extension WindowDirection {
         let maxX = screenFrame.maxX
         let width = screenFrame.width
 
-        // Outer 1/5 edges (0-20% and 80-100%): top half
-        if mouseX < maxX - (width * 4 / 5) || mouseX > maxX - (width * 1 / 5) {
+        // Near edge ~0%-1% (0 to 1/95): corner
+        if mouseX < maxX - (width * 94 / 95) {
+            return .topLeftQuarter
+        }
+
+        // Near edge ~1%-20% (1/95 to 1/5): half
+        if mouseX < maxX - (width * 4 / 5) {
             return .topHalf
         }
 
-        // Center zone (20-80%): maximize
+        // Far edge ~99%-100% (94/95 to 1): corner
+        if mouseX > maxX - (width * 1 / 95) {
+            return .topRightQuarter
+        }
+
+        // Far edge ~80%-99% (4/5 to 94/95): half
+        if mouseX > maxX - (width * 1 / 5) {
+            return .topHalf
+        }
+
+        // Center 20%-80%: maximize
         return .maximize
     }
 }
