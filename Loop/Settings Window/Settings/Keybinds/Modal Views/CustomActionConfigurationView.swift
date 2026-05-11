@@ -84,7 +84,7 @@ struct CustomActionConfigurationView: View {
             unitToggle()
         }
 
-        Group {
+        LuminareSection(outerPadding: 0) {
             if currentTab == .position {
                 positionConfiguration()
             } else {
@@ -178,7 +178,7 @@ struct CustomActionConfigurationView: View {
     }
 
     private func positionConfiguration() -> some View {
-        LuminareSection(outerPadding: 0) {
+        Group {
             LuminareToggle(
                 "Use coordinates",
                 isOn: Binding(
@@ -279,7 +279,7 @@ struct CustomActionConfigurationView: View {
     }
 
     private func sizeConfiguration() -> some View {
-        LuminareSection(outerPadding: 0) {
+        Group {
             LuminarePicker(
                 elements: CustomWindowActionSizeMode.allCases,
                 selection: Binding(

@@ -82,7 +82,7 @@ struct StashActionConfigurationView: View {
             tabPicker()
         }
 
-        Group {
+        LuminareSection(outerPadding: 0) {
             if currentTab == .position {
                 positionConfiguration()
             } else {
@@ -164,7 +164,7 @@ struct StashActionConfigurationView: View {
     }
 
     private func positionConfiguration() -> some View {
-        LuminareSection(outerPadding: 0) {
+        Group {
             if action.positionMode ?? .generic == .generic {
                 LuminarePicker(
                     elements: anchors,
@@ -222,7 +222,7 @@ struct StashActionConfigurationView: View {
     }
 
     private func sizeConfiguration() -> some View {
-        LuminareSection(outerPadding: 0) {
+        Group {
             LuminarePicker(
                 elements: sizeModes,
                 selection: Binding(
