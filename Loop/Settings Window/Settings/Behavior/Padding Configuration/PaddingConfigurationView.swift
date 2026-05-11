@@ -14,6 +14,7 @@ struct PaddingConfigurationView: View {
     @Default(.enablePadding) private var enablePadding
 
     @State var paddingModel = Defaults[.padding]
+    @State private var isDeferringDefaultsCommit = false
     @Binding var isPresented: Bool
 
     let range: ClosedRange<Double> = 0...100
@@ -57,6 +58,7 @@ struct PaddingConfigurationView: View {
         }
         .padding(16)
         .onChange(of: paddingModel) { _ in
+            guard !isDeferringDefaultsCommit else { return }
             // This fixes some weird animations.
             Defaults[.padding] = paddingModel
         }
@@ -125,7 +127,9 @@ struct PaddingConfigurationView: View {
             in: range,
             format: .number.precision(.fractionLength(0...1)),
             clampsUpper: false,
-            suffix: Text("px", comment: "Unit symbol: pixels")
+            suffix: Text("px", comment: "Unit symbol: pixels"),
+            onEditingChanged: handleSliderEditingChanged,
+            onEditingCommit: commitSliderChanges
         )
     }
 
@@ -137,7 +141,9 @@ struct PaddingConfigurationView: View {
                 in: range,
                 format: .number.precision(.fractionLength(0...1)),
                 clampsUpper: false,
-                suffix: Text("px", comment: "Unit symbol: pixels")
+                suffix: Text("px", comment: "Unit symbol: pixels"),
+                onEditingChanged: handleSliderEditingChanged,
+                onEditingCommit: commitSliderChanges
             )
             .luminareSliderLayout(.compact(textBoxWidth: 76))
 
@@ -147,7 +153,9 @@ struct PaddingConfigurationView: View {
                 in: range,
                 format: .number.precision(.fractionLength(0...1)),
                 clampsUpper: false,
-                suffix: Text("px", comment: "Unit symbol: pixels")
+                suffix: Text("px", comment: "Unit symbol: pixels"),
+                onEditingChanged: handleSliderEditingChanged,
+                onEditingCommit: commitSliderChanges
             )
             .luminareSliderLayout(.compact(textBoxWidth: 76))
 
@@ -157,7 +165,9 @@ struct PaddingConfigurationView: View {
                 in: range,
                 format: .number.precision(.fractionLength(0...1)),
                 clampsUpper: false,
-                suffix: Text("px", comment: "Unit symbol: pixels")
+                suffix: Text("px", comment: "Unit symbol: pixels"),
+                onEditingChanged: handleSliderEditingChanged,
+                onEditingCommit: commitSliderChanges
             )
             .luminareSliderLayout(.compact(textBoxWidth: 76))
 
@@ -167,7 +177,9 @@ struct PaddingConfigurationView: View {
                 in: range,
                 format: .number.precision(.fractionLength(0...1)),
                 clampsUpper: false,
-                suffix: Text("px", comment: "Unit symbol: pixels")
+                suffix: Text("px", comment: "Unit symbol: pixels"),
+                onEditingChanged: handleSliderEditingChanged,
+                onEditingCommit: commitSliderChanges
             )
             .luminareSliderLayout(.compact(textBoxWidth: 76))
         }
@@ -181,7 +193,9 @@ struct PaddingConfigurationView: View {
                 in: range,
                 format: .number.precision(.fractionLength(0...1)),
                 clampsUpper: false,
-                suffix: Text("px", comment: "Unit symbol: pixels")
+                suffix: Text("px", comment: "Unit symbol: pixels"),
+                onEditingChanged: handleSliderEditingChanged,
+                onEditingCommit: commitSliderChanges
             )
             .luminareSliderLayout(.compact(textBoxWidth: 76))
 
@@ -189,7 +203,9 @@ struct PaddingConfigurationView: View {
                 value: $paddingModel.externalBar.doubleBinding,
                 in: range,
                 format: .number.precision(.fractionLength(0...1)),
-                suffix: Text("px", comment: "Unit symbol: pixels")
+                suffix: Text("px", comment: "Unit symbol: pixels"),
+                onEditingChanged: handleSliderEditingChanged,
+                onEditingCommit: commitSliderChanges
             ) {
                 Text("External bar", comment: "Label for a slider in Loop’s padding settings")
                     .padding(.trailing, 4)
@@ -200,5 +216,14 @@ struct PaddingConfigurationView: View {
             }
             .luminareSliderLayout(.compact(textBoxWidth: 76))
         }
+    }
+
+    private func handleSliderEditingChanged(_ isEditing: Bool) {
+        isDeferringDefaultsCommit = isEditing
+    }
+
+    private func commitSliderChanges() {
+        isDeferringDefaultsCommit = false
+        Defaults[.padding] = paddingModel
     }
 }

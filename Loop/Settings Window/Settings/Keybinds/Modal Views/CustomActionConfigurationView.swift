@@ -17,6 +17,7 @@ struct CustomActionConfigurationView: View {
 
     @State private var action: WindowAction
     @State private var currentTab: Tab = .position
+    @State private var isDeferringExternalCommit = false
 
     private enum Tab: LocalizedStringKey, CaseIterable {
         case position = "Position", size = "Size"
@@ -57,12 +58,15 @@ struct CustomActionConfigurationView: View {
             ScreenView(isBlurred: action.sizeMode != .custom) {
                 ActionPreview(action: action)
             }
-            .onChange(of: action) { windowAction = $0 }
 
             configurationSections()
             actionButtons()
         }
         .padding(16)
+        .onChange(of: action) { newValue in
+            guard !isDeferringExternalCommit else { return }
+            windowAction = newValue
+        }
     }
 
     @ViewBuilder
@@ -256,7 +260,9 @@ struct CustomActionConfigurationView: View {
                     in: actionUnit == .percentage ? 0...100 : 0...Double(screenSize.width),
                     format: .number.precision(actionUnit.fractionLength),
                     clampsUpper: false,
-                    suffix: Text(action.unit?.suffix ?? CustomWindowActionUnit.percentage.suffix)
+                    suffix: Text(action.unit?.suffix ?? CustomWindowActionUnit.percentage.suffix),
+                    onEditingChanged: handleSliderEditingChanged,
+                    onEditingCommit: commitSliderChanges
                 )
 
                 LuminareSlider(
@@ -272,7 +278,9 @@ struct CustomActionConfigurationView: View {
                     in: actionUnit == .percentage ? 0...100 : 0...Double(screenSize.height),
                     format: .number.precision(actionUnit.fractionLength),
                     clampsUpper: false,
-                    suffix: Text(action.unit?.suffix ?? CustomWindowActionUnit.percentage.suffix)
+                    suffix: Text(action.unit?.suffix ?? CustomWindowActionUnit.percentage.suffix),
+                    onEditingChanged: handleSliderEditingChanged,
+                    onEditingCommit: commitSliderChanges
                 )
             }
         }
@@ -321,7 +329,9 @@ struct CustomActionConfigurationView: View {
                     in: actionUnit == .percentage ? 0...100 : 0...Double(screenSize.width),
                     format: .number.precision(actionUnit.fractionLength),
                     clampsUpper: false,
-                    suffix: .init(action.unit?.suffix ?? CustomWindowActionUnit.percentage.suffix)
+                    suffix: .init(action.unit?.suffix ?? CustomWindowActionUnit.percentage.suffix),
+                    onEditingChanged: handleSliderEditingChanged,
+                    onEditingCommit: commitSliderChanges
                 )
 
                 LuminareSlider(
@@ -337,9 +347,20 @@ struct CustomActionConfigurationView: View {
                     in: actionUnit == .percentage ? 0...100 : 0...Double(screenSize.height),
                     format: .number.precision(actionUnit.fractionLength),
                     clampsUpper: false,
-                    suffix: .init(action.unit?.suffix ?? CustomWindowActionUnit.percentage.suffix)
+                    suffix: .init(action.unit?.suffix ?? CustomWindowActionUnit.percentage.suffix),
+                    onEditingChanged: handleSliderEditingChanged,
+                    onEditingCommit: commitSliderChanges
                 )
             }
         }
+    }
+
+    private func handleSliderEditingChanged(_ isEditing: Bool) {
+        isDeferringExternalCommit = isEditing
+    }
+
+    private func commitSliderChanges() {
+        isDeferringExternalCommit = false
+        windowAction = action
     }
 }
