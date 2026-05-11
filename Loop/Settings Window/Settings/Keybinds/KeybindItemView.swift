@@ -81,10 +81,7 @@ struct KeybindItemView: View {
                         Image(systemName: "slider.horizontal.3")
                     }
                     .buttonStyle(.plain)
-                    .luminareModalWithPredefinedSheetStyle(
-                        isPresented: $isConfiguringCustom,
-                        isCompact: false
-                    ) {
+                    .luminareModal(isPresented: $isConfiguringCustom) {
                         if action.direction == .custom {
                             CustomActionConfigurationView(
                                 action: $action,
@@ -99,6 +96,7 @@ struct KeybindItemView: View {
                             .frame(width: 400)
                         }
                     }
+                    .luminareModalCornerRadius(24)
                     .help("Customize this action's custom frame.")
                 }
 
@@ -109,16 +107,14 @@ struct KeybindItemView: View {
                         Image(systemName: "repeat")
                     }
                     .buttonStyle(.plain)
-                    .luminareModalWithPredefinedSheetStyle(
-                        isPresented: $isConfiguringCycle,
-                        isCompact: false
-                    ) {
+                    .luminareModal(isPresented: $isConfiguringCycle) {
                         CycleActionConfigurationView(
                             action: $action,
                             isPresented: $isConfiguringCycle
                         )
                         .frame(width: 400)
                     }
+                    .luminareModalCornerRadius(24)
                     .help("Customize what this action cycles through.")
                 }
             }
@@ -126,7 +122,7 @@ struct KeybindItemView: View {
             .foregroundStyle(isHovering ? .primary : .secondary)
         }
         .background(alignment: .leading) {
-            if isHovering || isDirectionPickerPresented {
+            if isDirectionPickerPresented || isHovering {
                 Color.clear
                     .frame(width: 300 - 24)
                     .luminarePopover(
@@ -141,7 +137,6 @@ struct KeybindItemView: View {
                         )
                         .frame(width: 300, height: 300)
                     }
-                    .luminareSheetClosesOnDefocus(true)
                     .onChange(of: isDirectionPickerPresented) { _ in
                         if !isDirectionPickerPresented {
                             PickerListEventMonitorManager.shared.removeAllMonitors()

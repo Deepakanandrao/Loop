@@ -19,7 +19,7 @@ final class SettingsWindowManager: ObservableObject {
     private var previewActionTimerTask: Task<(), Error>?
 
     @Published var isPreviewingUserSelection: Bool = false {
-        didSet { restartTimer() }
+        didSet { restartTimerIfNeeded() }
     }
 
     @Published private(set) var previewedParentAction: WindowAction? = nil
@@ -94,7 +94,6 @@ final class SettingsWindowManager: ObservableObject {
             controller = NSWindowController(window: window)
         }
 
-        startTimer()
         NSApp.setActivationPolicy(.regular)
 
         controller?.showWindow(self)
@@ -124,7 +123,9 @@ final class SettingsWindowManager: ObservableObject {
         }
     }
 
-    private func restartTimer() {
+    private func restartTimerIfNeeded() {
+        guard showInspector else { return }
+
         stopTimer()
         startTimer()
     }

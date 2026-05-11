@@ -62,6 +62,7 @@ struct CustomActionConfigurationView: View {
             configurationSections()
             actionButtons()
         }
+        .padding(16)
     }
 
     @ViewBuilder

@@ -67,6 +67,7 @@ struct StashActionConfigurationView: View {
             configurationSections()
             actionButtons()
         }
+        .padding(16)
     }
 
     @ViewBuilder

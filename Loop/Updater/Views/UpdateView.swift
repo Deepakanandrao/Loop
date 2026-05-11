@@ -67,6 +67,8 @@ struct UpdateView: View {
             footerView()
         }
         .frame(width: 500, height: 480)
+        .padding(.top, 38) // titlebar
+        .luminareBackground()
     }
 
     private func theLoopTimesView() -> some View {

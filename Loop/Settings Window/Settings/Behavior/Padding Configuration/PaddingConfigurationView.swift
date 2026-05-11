@@ -53,7 +53,9 @@ struct PaddingConfigurationView: View {
             } label: {
                 Text("Close", comment: "Label for a button that closes a modal window")
             }
+            .luminareCornerRadius(8)
         }
+        .padding(16)
         .onChange(of: paddingModel) { _ in
             // This fixes some weird animations.
             Defaults[.padding] = paddingModel

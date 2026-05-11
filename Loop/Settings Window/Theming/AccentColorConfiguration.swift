@@ -78,7 +78,7 @@ struct AccentColorConfigurationView: View {
                     .luminareRoundingBehavior(top: true, bottom: true)
                 }
             }
-            .luminareSheetClosesOnDefocus()
+            .luminareModalClosesOnDefocus()
             .animation(luminareAnimation, value: useGradient)
         }
     }

@@ -92,6 +92,7 @@ struct CycleActionConfigurationView: View {
             }
             .luminareCornerRadius(8)
         }
+        .padding(16)
         .onAppear {
             if action.cycle == nil {
                 action.cycle = []
