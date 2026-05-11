@@ -476,13 +476,15 @@ final class Window {
         }
     }
 
-    @concurrent
+    @MainActor
     func setFrameAnimated(
         _ rect: CGRect,
         bounds: CGRect,
         resolvedProperties: ResolvedProperties? = nil
     ) async throws {
-        guard await !MainActor.run(resultType: Bool.self, body: { applyOwnWindowFrame(rect) }) else {
+        try Task.checkCancellation()
+
+        guard !applyOwnWindowFrame(rect) else {
             return
         }
 
@@ -494,28 +496,27 @@ final class Window {
             log.info("\(appName ?? "This app")'s enhanced UI will be temporarily disabled while resizing.")
             enhancedUserInterface = false
         }
-
-        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<(), Error>) in
-            Task {
-                try Task.checkCancellation()
-                let animation = WindowTransformAnimation(
-                    rect,
-                    window: self,
-                    bounds: bounds,
-                    shouldSetSize: shouldSetSize
-                ) { error in
-                    if let error {
-                        continuation.resume(throwing: error)
-                    } else {
-                        continuation.resume(returning: ())
-                    }
-                }
-                await animation.start()
+        defer {
+            if enhancedUI {
+                enhancedUserInterface = true
             }
         }
 
-        if enhancedUI {
-            enhancedUserInterface = true
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<(), Error>) in
+            let animation = WindowTransformAnimation(
+                rect,
+                window: self,
+                bounds: bounds,
+                shouldSetSize: shouldSetSize
+            ) { error in
+                if let error {
+                    continuation.resume(throwing: error)
+                } else {
+                    continuation.resume(returning: ())
+                }
+            }
+
+            animation.start()
         }
     }
 }
