@@ -90,11 +90,11 @@ final class StashManager {
     }
 
     /// Cancels all monitoring and restores every stashed window to its initial frame.
-    func shutdown() async {
+    func shutdown() {
         mouseMovedTask?.cancel()
         mouseMovedTask = nil
         stopListeningToRevealTriggers()
-        await restoreAllStashedWindows(animate: false)
+        restoreAllStashedWindows()
     }
 
     func onConfigurationChanged() async {
@@ -242,32 +242,43 @@ extension StashManager {
         log.info("unstash \(window.window.description)")
 
         if resetFrame {
-            let action = WindowAction(.initialFrame)
-            let initialFrame = await WindowFrameResolver.getFrame(
-                for: action,
-                window: window.window,
-                bounds: window.screen.cgSafeScreenFrame
-            )
-
             if resetFrameAnimated {
                 try? await window.window.setFrameAnimated(
-                    initialFrame,
+                    window.restoreFrame,
                     bounds: .zero
                 )
             } else {
-                await window.window.setFrame(initialFrame)
+                await window.window.setFrame(window.restoreFrame)
             }
         }
 
         unmanage(windowID: window.window.cgWindowID)
     }
 
-    func restoreAllStashedWindows(animate: Bool) async {
+    func restoreAllStashedWindows() {
         let stashedWindowIDs = Array(store.stashed.keys)
 
         for stashedWindowID in stashedWindowIDs {
-            await unstash(stashedWindowID, resetFrame: true, resetFrameAnimated: animate)
+            unstashSynchronously(stashedWindowID, resetFrame: true)
         }
+    }
+
+    private func unstashSynchronously(_ windowID: CGWindowID, resetFrame: Bool) {
+        if let windowToUnstash = store.stashed[windowID] {
+            unstashSynchronously(windowToUnstash, resetFrame: resetFrame)
+        } else {
+            unmanage(windowID: windowID)
+        }
+    }
+
+    private func unstashSynchronously(_ window: StashedWindowInfo, resetFrame: Bool) {
+        log.info("unstash \(window.window.description)")
+
+        if resetFrame {
+            window.window.setFrameSynchronously(window.restoreFrame)
+        }
+
+        unmanage(windowID: window.window.cgWindowID)
     }
 }
 
@@ -452,17 +463,10 @@ private extension StashManager {
         frontmostAppMonitor?.cancel()
         frontmostAppMonitor = nil
 
-        // Stop and release the monitor
-        // The monitor's deinit will handle cleanup of the event tap
-        mouseMonitor?.stop()
-
-        // Delay the release to allow the run loop to process the stop
         let monitor = mouseMonitor
         mouseMonitor = nil
-
-        DispatchQueue.main.async {
-            _ = monitor // Keep alive until run loop processes the removal
-        }
+        monitor?.stop()
+        withExtendedLifetime(monitor) {}
     }
 
     /// Handles mouse movement events with a debounce to avoid excessive processing.

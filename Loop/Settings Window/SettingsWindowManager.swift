@@ -95,7 +95,7 @@ final class SettingsWindowManager: ObservableObject {
         }
 
         NSApp.setActivationPolicy(.regular)
-        
+
         if showInspector {
             startTimer()
         }

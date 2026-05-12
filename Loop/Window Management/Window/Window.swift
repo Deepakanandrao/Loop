@@ -371,7 +371,7 @@ final class Window {
     func setPosition(_ point: CGPoint) {
         if isOwnWindow {
             Task { @MainActor in
-                guard let win = NSApp.keyWindow else { return }
+                guard let win = ownNSWindow() else { return }
                 win.setFrameOrigin(CGRect(origin: point, size: win.frame.size).flipY(screen: .screens[0]).origin)
             }
         } else {
@@ -398,7 +398,7 @@ final class Window {
     func setSize(_ size: CGSize) {
         if isOwnWindow {
             Task { @MainActor in
-                guard let win = NSApp.keyWindow else { return }
+                guard let win = ownNSWindow() else { return }
                 win.setFrame(CGRect(origin: win.frame.origin, size: size), display: false)
             }
         } else {
@@ -432,7 +432,7 @@ final class Window {
         guard isOwnWindow else {
             return false
         }
-        guard let window = NSApp.keyWindow else {
+        guard let window = ownNSWindow() else {
             log.info("Failed to get own main window to resize")
             return true
         }
@@ -443,12 +443,79 @@ final class Window {
         return true
     }
 
+    @MainActor
+    private func ownNSWindow() -> NSWindow? {
+        NSApp.windows.first { CGWindowID($0.windowNumber) == cgWindowID } ?? NSApp.keyWindow ?? NSApp.mainWindow
+    }
+
+    @discardableResult
+    private func applyOwnWindowFrameSynchronously(_ rect: CGRect) -> Bool {
+        guard isOwnWindow else {
+            return false
+        }
+
+        if Thread.isMainThread {
+            MainActor.assumeIsolated {
+                guard let window = ownNSWindow() else {
+                    log.info("Failed to get own main window to resize")
+                    return
+                }
+                window.setFrame(rect.flipY(screen: .screens[0]), display: false)
+            }
+        } else {
+            DispatchQueue.main.sync {
+                MainActor.assumeIsolated {
+                    guard let window = ownNSWindow() else {
+                        log.info("Failed to get own main window to resize")
+                        return
+                    }
+                    window.setFrame(rect.flipY(screen: .screens[0]), display: false)
+                }
+            }
+        }
+
+        return true
+    }
+
     func setFrame(
         _ rect: CGRect,
         sizeFirst: Bool = false,
         resolvedProperties: ResolvedProperties? = nil
     ) async {
         guard await !MainActor.run(resultType: Bool.self, body: { applyOwnWindowFrame(rect) }) else {
+            return
+        }
+
+        let enhancedUI = resolvedProperties?.isEnhancedUserInterface ?? enhancedUserInterface
+        let shouldSetSize = resolvedProperties?.isResizable ?? true
+
+        if enhancedUI {
+            let appName = nsRunningApplication?.localizedName
+            log.info("\(appName ?? "This app")'s enhanced UI will be temporarily disabled while resizing.")
+            enhancedUserInterface = false
+        }
+
+        if sizeFirst, shouldSetSize {
+            setSize(rect.size)
+        }
+
+        setPosition(rect.origin)
+
+        if shouldSetSize {
+            setSize(rect.size)
+        }
+
+        if enhancedUI {
+            enhancedUserInterface = true
+        }
+    }
+
+    func setFrameSynchronously(
+        _ rect: CGRect,
+        sizeFirst: Bool = false,
+        resolvedProperties: ResolvedProperties? = nil
+    ) {
+        guard !applyOwnWindowFrameSynchronously(rect) else {
             return
         }
 

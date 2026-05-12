@@ -14,12 +14,14 @@ struct StashedWindowInfo: Equatable {
     let window: Window
     let screen: NSScreen
     let action: WindowAction
+    let restoreFrame: CGRect
     let revealedFrame: CGRect
     let stashedFrame: CGRect
 
     // MARK: - Frame computation
 
     static func create(window: Window, screen: NSScreen, action: WindowAction, peekSize: CGFloat) async -> StashedWindowInfo {
+        let restoreFrame = await WindowRecords.shared.getInitialFrame(for: window) ?? window.frame
         let revealedFrame = await WindowFrameResolver.getRevealedFrame(for: action, window: window, screen: screen)
         let stashedFrame = await WindowFrameResolver.getStashedFrame(for: action, window: window, screen: screen, peekSize: peekSize)
 
@@ -27,6 +29,7 @@ struct StashedWindowInfo: Equatable {
             window: window,
             screen: screen,
             action: action,
+            restoreFrame: restoreFrame,
             revealedFrame: revealedFrame,
             stashedFrame: stashedFrame
         )
@@ -39,6 +42,7 @@ struct StashedWindowInfo: Equatable {
             window: window,
             screen: screen,
             action: action,
+            restoreFrame: restoreFrame,
             revealedFrame: revealedFrame,
             stashedFrame: stashedFrame
         )

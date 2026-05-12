@@ -116,9 +116,9 @@ struct WindowAction: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
 
     var iconResolvedAction: WindowAction {
         if direction == .cycle, let first = cycle?.first {
-            return first
+            first
         } else {
-            return self
+            self
         }
     }
 
