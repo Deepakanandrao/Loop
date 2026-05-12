@@ -238,6 +238,7 @@ struct UpdateView: View {
             }
             .allowsHitTesting(updater.installState.isUpdateButtonInteractive)
         }
+        .buttonStyle(.luminare(overrideUseMainStyle: true))
         .luminareCornerRadius(8)
         .padding(12)
         .animation(luminareAnimation, value: updater.installState)
