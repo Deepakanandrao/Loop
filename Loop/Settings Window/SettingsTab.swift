@@ -107,6 +107,8 @@ enum SettingsTab: @MainActor LuminareTabItem, CaseIterable {
 }
 
 struct SettingsTabIconView: View {
+    @Environment(\.colorScheme) private var colorScheme
+
     let tab: SettingsTab
 
     var body: some View {
@@ -114,7 +116,8 @@ struct SettingsTabIconView: View {
             .foregroundStyle(tab.color.gradient)
             .opacity(0.8)
             .overlay {
-                if #available(macOS 26.0, *) {
+                // Only add shine in dark mode; in light mode it makes the icon look fuzzy/blurred.
+                if colorScheme == .dark, #available(macOS 26.0, *) {
                     borderShine(in: .rect(cornerRadius: 6))
                 }
 

@@ -131,6 +131,7 @@ struct ExcludedListAppView: View, Equatable {
                 hasFixedHeight: true
             )
             .luminareRoundingBehavior(top: true, bottom: true)
+            .luminareSurfaceStyle(.flat)
         }
         .padding(.horizontal, 12)
         .task {

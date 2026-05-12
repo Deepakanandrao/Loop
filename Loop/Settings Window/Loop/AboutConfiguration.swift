@@ -223,6 +223,7 @@ struct AboutConfigurationView: View {
                         hasFixedHeight: true
                     )
                     .luminareRoundingBehavior(top: true, bottom: true)
+                    .luminareSurfaceStyle(.flat)
                     .popover(isPresented: $model.didCompleteCopyToClipboard) {
                         Text("Copied!")
                             .padding(4)
@@ -348,6 +349,7 @@ struct AboutConfigurationView: View {
                 hasFixedHeight: true
             )
             .luminareRoundingBehavior(top: true, bottom: true)
+            .luminareSurfaceStyle(.flat)
         }
         .padding(12)
     }

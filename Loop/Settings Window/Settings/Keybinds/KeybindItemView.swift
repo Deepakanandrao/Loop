@@ -10,7 +10,6 @@ import Luminare
 import SwiftUI
 
 struct KeybindItemView: View {
-    @Environment(\.luminareItemBeingHovered) private var isHovering
     @Environment(\.luminareAnimation) var luminareAnimation
 
     @Default(.triggerKey) private var triggerKey
@@ -119,7 +118,7 @@ struct KeybindItemView: View {
                 }
             }
             .font(.title3)
-            .foregroundStyle(isHovering ? .primary : .secondary)
+            .foregroundStyle(.secondary)
         }
         .background(alignment: .leading) {
             Color.clear
@@ -149,7 +148,7 @@ struct KeybindItemView: View {
             if let cycleIndex {
                 Text("\(cycleIndex)")
                     .frame(width: 27, height: 27)
-                    .luminarePlateau()
+                    .luminareSurface()
             } else {
                 HStack(spacing: 6) {
                     keycorderSection()
@@ -230,7 +229,7 @@ struct KeybindItemView: View {
                 .font(.callout)
                 .padding(6)
                 .frame(height: 27)
-                .luminarePlateau()
+                .luminareSurface()
 
                 Image(systemName: "plus")
                     .foregroundStyle(.secondary)
