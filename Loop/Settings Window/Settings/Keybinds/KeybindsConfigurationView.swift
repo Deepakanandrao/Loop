@@ -116,11 +116,11 @@ struct KeybindsConfigurationView: View {
     private var keybindsSection: some View {
         LuminareSection(String(localized: "Keybinds", comment: "Section header shown in settings")) {
             LuminareButtonRow {
-                Button("Add") {
+                Button(String(localized: "Add", comment: "Used to add items to a list")) {
                     keybinds.insert(.init(.noAction), at: 0)
                 }
 
-                Button("Remove", role: .destructive) {
+                Button(String(localized: "Remove", comment: "Used to remove items from a list"), role: .destructive) {
                     keybinds.removeAll(where: model.selectedKeybinds.contains)
                 }
                 .disabled(model.selectedKeybinds.isEmpty)

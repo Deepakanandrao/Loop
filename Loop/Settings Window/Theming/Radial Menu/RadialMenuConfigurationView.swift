@@ -65,11 +65,11 @@ struct RadialMenuConfigurationView: View {
                     String(localized: "Left-click to step through cycle actions.", comment: "Section footer shown in settings")
                 ) {
                     LuminareButtonRow {
-                        Button("Add") {
+                        Button(String(localized: "Add", comment: "Used to add items to a list")) {
                             radialMenuActions.insert(.custom(.init(.noAction)), at: 0)
                         }
 
-                        Button("Remove", role: .destructive) {
+                        Button(String(localized: "Remove", comment: "Used to remove items from a list"), role: .destructive) {
                             radialMenuActions.removeAll(where: selectedRadialMenuActions.contains)
                         }
                         .disabled(selectedRadialMenuActions.isEmpty)

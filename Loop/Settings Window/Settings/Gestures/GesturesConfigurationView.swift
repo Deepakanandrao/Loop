@@ -45,14 +45,14 @@ struct GesturesConfigurationView: View {
     private var gesturesSection: some View {
         LuminareSection {
             LuminareButtonRow {
-                Button(String(localized: "Add", comment: "Button to add a new gesture")) {
+                Button(String(localized: "Add", comment: "Used to add items to a list")) {
                     gestures.insert(
                         GestureBinding(),
                         at: 0
                     )
                 }
 
-                Button(String(localized: "Remove", comment: "Button to remove selected gestures"), role: .destructive) {
+                Button(String(localized: "Remove", comment: "Used to remove items from a list"), role: .destructive) {
                     let selectedIDs = Set(model.selectedGestures.map(\.id))
                     gestures.removeAll { selectedIDs.contains($0.id) }
                 }

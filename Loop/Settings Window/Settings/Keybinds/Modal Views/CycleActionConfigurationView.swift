@@ -36,7 +36,7 @@ struct CycleActionConfigurationView: View {
 
             LuminareSection(outerPadding: 0) {
                 LuminareButtonRow {
-                    Button("Add") {
+                    Button(String(localized: "Add", comment: "Used to add items to a list")) {
                         if action.cycle == nil {
                             action.cycle = []
                         }
@@ -44,7 +44,7 @@ struct CycleActionConfigurationView: View {
                         action.cycle?.insert(.init(.noAction), at: 0)
                     }
 
-                    Button("Remove", role: .destructive) {
+                    Button(String(localized: "Remove", comment: "Used to remove items from a list"), role: .destructive) {
                         action.cycle?.removeAll(where: { selectedKeybinds.contains($0) })
                     }
                     .disabled(selectedKeybinds.isEmpty)
