@@ -10,13 +10,13 @@ import Luminare
 import SwiftUI
 
 struct RadialMenuConfigurationView: View {
-    @EnvironmentObject private var windowModel: SettingsWindowManager
     @Environment(\.luminareAnimation) private var luminareAnimation
+    @EnvironmentObject private var windowModel: SettingsWindowManager
 
     @Default(.radialMenuVisibility) private var radialMenuVisibility
     @Default(.radialMenuCornerRadius) private var radialMenuCornerRadius
     @Default(.radialMenuThickness) private var radialMenuThickness
-    @Default(.enableRadialMenuCustomization) var enableRadialMenuCustomization
+    @Default(.enableRadialMenuCustomization) private var enableRadialMenuCustomization
     @Default(.radialMenuActions) private var radialMenuActions
     @State private var selectedRadialMenuActions: Set<RadialMenuAction> = []
 
@@ -88,15 +88,11 @@ struct RadialMenuConfigurationView: View {
                             moveDown: { moveAction(action.wrappedValue, down: true) }
                         )
                     } emptyView: {
-                        HStack {
-                            Spacer()
-                            VStack {
-                                Text("No radial menu actions")
-                                    .font(.title3)
-                                Text("Press \"Add\" to add an action")
-                                    .font(.caption)
-                            }
-                            Spacer()
+                        VStack {
+                            Text("No radial menu actions")
+                                .font(.title3)
+                            Text("Press \"Add\" to add an action")
+                                .font(.caption)
                         }
                         .foregroundStyle(.secondary)
                         .padding()

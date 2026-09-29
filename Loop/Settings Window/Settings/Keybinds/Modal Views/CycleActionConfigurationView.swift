@@ -10,8 +10,8 @@ import Luminare
 import SwiftUI
 
 struct CycleActionConfigurationView: View {
-    @Binding var windowAction: WindowAction
-    @Binding var isPresented: Bool
+    @Binding private var windowAction: WindowAction
+    @Binding private var isPresented: Bool
 
     @State private var action: WindowAction // this is so that onChange is called for each property
 
@@ -69,15 +69,11 @@ struct CycleActionConfigurationView: View {
                     )
                     .environmentObject(KeybindsConfigurationModel())
                 } emptyView: {
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Text("Nothing to cycle through")
-                                .font(.title3)
-                            Text("Press \"Add\" to add a cycle item")
-                                .font(.caption)
-                        }
-                        Spacer()
+                    VStack {
+                        Text("Nothing to cycle through")
+                            .font(.title3)
+                        Text("Press \"Add\" to add a cycle item")
+                            .font(.caption)
                     }
                     .foregroundStyle(.secondary)
                     .padding()
